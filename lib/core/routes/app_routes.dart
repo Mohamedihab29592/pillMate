@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 
+import '../../features/initial/splash/splash.dart';
+
 
 class Routes {
   static const String initialRoute = '/';
@@ -9,7 +11,7 @@ class Routes {
 Widget appRoutes(String route, dynamic arg) {
   switch (route) {
     case Routes.initialRoute:
-     // return const SplashScreen();
+     return const SplashScreen();
 
 
 
