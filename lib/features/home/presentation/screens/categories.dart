@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:pill_mate/features/home/presentation/widgets/common/app_bar_pop_icon.dart';
 import 'package:pill_mate/features/home/presentation/widgets/common/app_bar_title.dart';
+import 'package:pill_mate/features/home/presentation/widgets/common/search_text_field.dart';
 
 class CategoriesScreen extends StatelessWidget {
   const CategoriesScreen({super.key});
@@ -15,11 +16,16 @@ class CategoriesScreen extends StatelessWidget {
         title: const AppBarTitle(appBarTitle: 'Categories'),
         centerTitle: true,
       ),
-      body: const Padding(
-        padding: EdgeInsets.only(left: 16, right: 16, top: 40),
+      body: Padding(
+        padding: const EdgeInsets.only(left: 16, right: 16),
         child: SingleChildScrollView(
           child: Column(
-            children: [],
+            children: [
+              CustomSearchBar(
+                onChanged: (p0) {},
+                hintText: 'Search',
+              ),
+            ],
           ),
         ),
       ),
