@@ -2,6 +2,7 @@ const String imagePath = "assets/images";
 
 class ImageAssets {
   static const String baseUrl = 'assets/images/';
+  static const String categoryImages = '${baseUrl}category/';
 
   static const String appLogo = '${baseUrl}logo.png';
   static const String onBoarding1 = '${baseUrl}onBoarding1.png';
@@ -10,4 +11,17 @@ class ImageAssets {
   static const String factorAuthentication =
       '${baseUrl}factorAuthentication.png';
   static const String searchIcon = '${baseUrl}search.svg';
+
+  static const String firstCategory = '${categoryImages}1.png';
+  static const String secondCategory = '${categoryImages}2.png';
+  static const String thirdCategory = '${categoryImages}3.png';
+  static const String fourthCategory = '${categoryImages}4.png';
+  static const String fifthCategory = '${categoryImages}5.png';
+  static const String sixthCategory = '${categoryImages}6.png';
+  static const String seventhCategory = '${categoryImages}7.png';
+  static const String eighthCategory = '${categoryImages}8.png';
+  static const String ninthCategory = '${categoryImages}9.png';
+  static const String tenthCategory = '${categoryImages}10.png';
+  static const String eleventhCategory = '${categoryImages}11.png';
+  static const String twelfthCategory = '${categoryImages}12.png';
 }
