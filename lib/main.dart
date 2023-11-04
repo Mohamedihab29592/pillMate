@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:pill_mate/core/utilis/app_strings.dart';
-import 'package:pill_mate/features/initial/splash/splash.dart';
-
+import 'package:pill_mate/features/home/presentation/screens/categories.dart';
 import 'core/utilis/themes.dart';
 
 void main() {
@@ -17,9 +16,8 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: AppStrings.appName,
       theme: AppThemes.lightMode,
-      home: SplashScreen(),
+      // home: SplashScreen(),
+      home: const CategoriesScreen(),
     );
   }
 }
-
-
