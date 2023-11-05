@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:pill_mate/core/helpers/search_helper.dart';
 import 'package:pill_mate/core/utilis/app_assets.dart';
 import 'package:pill_mate/features/home/data/models/category_model.dart';
 import 'package:pill_mate/features/home/presentation/widgets/categories_screen_widgets/category_grid_view.dart';
@@ -6,22 +7,27 @@ import 'package:pill_mate/features/home/presentation/widgets/common/app_bar_pop_
 import 'package:pill_mate/features/home/presentation/widgets/common/app_bar_title.dart';
 import 'package:pill_mate/features/home/presentation/widgets/common/search_text_field.dart';
 
-class CategoriesScreen extends StatelessWidget {
+class CategoriesScreen extends StatefulWidget {
   const CategoriesScreen({super.key});
 
-  final List categories = const [
+  @override
+  State<CategoriesScreen> createState() => _CategoriesScreenState();
+}
+
+class _CategoriesScreenState extends State<CategoriesScreen> {
+
+  final List<CategoryModel> allCategories = const [
     CategoryModel(
-      categoryImage: ImageAssets.firstCategory,
-      categoryName: 'medical tools',
-    ),
+        categoryImage: ImageAssets.firstCategory,
+        categoryName: 'Medical tools'),
     CategoryModel(
-        categoryImage: ImageAssets.secondCategory, categoryName: 'skincare'),
+        categoryImage: ImageAssets.secondCategory, categoryName: 'Skincare'),
     CategoryModel(
         categoryImage: ImageAssets.thirdCategory, categoryName: 'Pills'),
     CategoryModel(
-        categoryImage: ImageAssets.fourthCategory, categoryName: 'cold&cough'),
+        categoryImage: ImageAssets.fourthCategory, categoryName: 'Cold&cough'),
     CategoryModel(
-        categoryImage: ImageAssets.fifthCategory, categoryName: 'wheelchairs'),
+        categoryImage: ImageAssets.fifthCategory, categoryName: 'Wheelchairs'),
     CategoryModel(
         categoryImage: ImageAssets.sixthCategory, categoryName: 'Pills'),
     CategoryModel(
@@ -37,6 +43,27 @@ class CategoriesScreen extends StatelessWidget {
     CategoryModel(
         categoryImage: ImageAssets.twelfthCategory, categoryName: 'Pills')
   ];
+  List<CategoryModel> categories = const [];
+
+  @override
+  void initState() {
+    //in the initial state .. categories will contain all categories
+    categories = allCategories;
+    super.initState();
+  }
+
+
+void search(String value) {
+  List<CategoryModel> results = SearchHelper.search(
+    allCategories,
+    value,
+    (CategoryModel category) => category.categoryName,
+  );
+  //in CustomSearchBar onChanged.. categories filtered to contain only the items which contain the value
+  setState(() {
+    categories = results;
+  });
+}
 
   @override
   Widget build(BuildContext context) {
@@ -54,7 +81,7 @@ class CategoriesScreen extends StatelessWidget {
           child: Column(
             children: [
               CustomSearchBar(
-                onChanged: (p0) {},
+                onChanged: (value) => search(value),
                 hintText: 'Search',
               ),
               const SizedBox(

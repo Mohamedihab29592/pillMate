@@ -14,7 +14,7 @@ class CategoryGridView extends StatelessWidget {
     return GridView.builder(
         physics: const BouncingScrollPhysics(),
         shrinkWrap: true,
-        itemCount: 12,
+        itemCount: categories.length,
         gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
             crossAxisCount: 2,
             mainAxisSpacing: 12,
