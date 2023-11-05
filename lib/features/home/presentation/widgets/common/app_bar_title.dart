@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:pill_mate/core/utilis/app_colors.dart';
-import 'package:pill_mate/core/utilis/app_text-style.dart';
+import 'package:pill_mate/core/utilis/app_text_style.dart';
 
 class AppBarTitle extends StatelessWidget {
   const AppBarTitle({

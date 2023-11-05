@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:pill_mate/core/utilis/app_text-style.dart';
+import 'package:pill_mate/core/utilis/app_text_style.dart';
 
 import 'app_colors.dart';
 
