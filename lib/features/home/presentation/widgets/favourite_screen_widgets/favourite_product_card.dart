@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
-import 'package:pill_mate/features/home/presentation/widgets/category_screen_widgets/discount.dart';
 import 'package:pill_mate/features/home/presentation/widgets/common/favourite.dart';
-import 'package:pill_mate/features/home/presentation/widgets/category_screen_widgets/product_card_base_content.dart';
+import 'package:pill_mate/features/home/presentation/widgets/favourite_screen_widgets/favourite_product_card_base_content.dart';
 
-class ProductCard extends StatelessWidget {
-  const ProductCard({super.key, required this.productName});
-  final String productName;
+class FavouriteProductCard extends StatelessWidget {
+  const FavouriteProductCard({
+    super.key,
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -26,21 +26,15 @@ class ProductCard extends StatelessWidget {
               ),
             ],
           ),
-          child: Stack(
+          child: const Stack(
             children: [
               //product's image,name,price and cart icon
-              ProductCardBaseContent(productName: productName),
-              //discount widget
-              const Positioned(
-                left: 8,
-                top: 13.5,
-                child: Discount(),
-              ),
+              FavouriteProductCardBaseContent(),
               //favourite widget
-              const Positioned(
+              Positioned(
                 right: 8,
                 top: 13.5,
-                child: FavouriteIcon(isForFavouriteScreen: false),
+                child: FavouriteIcon(isForFavouriteScreen: true),
               )
             ],
           ),

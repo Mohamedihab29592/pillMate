@@ -5,10 +5,7 @@ import 'package:pill_mate/core/utilis/app_text_style.dart';
 import 'package:pill_mate/features/home/presentation/widgets/category_screen_widgets/price_and_cart_icon.dart';
 
 class ProductCardBaseContent extends StatelessWidget {
-  const ProductCardBaseContent({
-    super.key,
-    required this.productName
-  });
+  const ProductCardBaseContent({super.key, required this.productName});
   final String productName;
 
   @override
@@ -30,7 +27,7 @@ class ProductCardBaseContent extends StatelessWidget {
             padding: const EdgeInsets.symmetric(horizontal: 10.0),
             child: AutoSizeText(
               productName,
-              style: regularStyle(color: const Color(0xff636161), fontSize: 16),
+              style: regularStyle(color: const Color(0XFF121212), fontSize: 16),
               minFontSize: 14,
               maxLines: 2,
               overflow: TextOverflow.ellipsis,
