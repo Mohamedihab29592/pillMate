@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:pill_mate/core/utilis/app_strings.dart';
+import 'package:pill_mate/core/utils/app_strings.dart';
 import 'package:pill_mate/features/initial/splash/splash.dart';
 
-import 'core/utilis/themes.dart';
+import 'core/utils/themes.dart';
 
 void main() {
   runApp(const MyApp());
@@ -21,5 +21,3 @@ class MyApp extends StatelessWidget {
     );
   }
 }
-
-
