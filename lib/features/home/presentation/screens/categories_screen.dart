@@ -61,9 +61,9 @@ class CategoriesScreen extends StatelessWidget {
                 height: 20,
               ),
              BlocBuilder<SearchCubit<CategoryModel>, List<CategoryModel>?>(
-                builder: (context, filtered) {
+                builder: (context, filteredList) {
                   return CategoryGridView(
-                      categories: searchController.text.isEmpty ? allCategories : filtered!);
+                      categories: searchController.text.isEmpty ? allCategories : filteredList!);
                 },
               )
             ],

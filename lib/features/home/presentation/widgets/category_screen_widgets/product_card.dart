@@ -4,7 +4,8 @@ import 'package:pill_mate/features/home/presentation/widgets/category_screen_wid
 import 'package:pill_mate/features/home/presentation/widgets/category_screen_widgets/product_card_base_content.dart';
 
 class ProductCard extends StatelessWidget {
-  const ProductCard({super.key});
+  const ProductCard({super.key,required this.productName});
+  final String productName;
 
   @override
   Widget build(BuildContext context) {
@@ -25,10 +26,10 @@ class ProductCard extends StatelessWidget {
               ),
             ],
           ),
-          child: const Stack(
+          child:  Stack(
             children: [
               //product's image,name,price and cart icon
-              ProductCardBaseContent(),
+              ProductCardBaseContent(productName: productName),
               //discount widget
               Positioned(
                 left: 8,

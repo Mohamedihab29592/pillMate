@@ -7,7 +7,9 @@ import 'package:pill_mate/features/home/presentation/widgets/category_screen_wid
 class ProductCardBaseContent extends StatelessWidget {
   const ProductCardBaseContent({
     super.key,
+    required this.productName
   });
+  final String productName;
 
   @override
   Widget build(BuildContext context) {
@@ -27,7 +29,7 @@ class ProductCardBaseContent extends StatelessWidget {
           Padding(
             padding: const EdgeInsets.symmetric(horizontal: 10.0),
             child: AutoSizeText(
-              'Vitaferrol B12 Vitaferrol B12',
+              productName,
               style: regularStyle(color: const Color(0xff636161), fontSize: 16),
               minFontSize: 14,
               maxLines: 2,

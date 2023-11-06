@@ -18,7 +18,10 @@ Widget appRoutes(String route, dynamic arg) {
         child: const CategoriesScreen(),
       );
     case Routes.categoryRoute:
-      return const CategoryScreen();
+      return BlocProvider(
+        create: (context) => SearchCubit<String>(),
+        child: const CategoryScreen(),
+      );
 
     default:
       return const Scaffold(
