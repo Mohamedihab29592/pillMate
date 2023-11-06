@@ -5,15 +5,17 @@ import 'package:pill_mate/core/utilis/app_colors.dart';
 import 'package:pill_mate/core/utilis/app_text_style.dart';
 
 class CustomSearchBar extends StatelessWidget {
-  const CustomSearchBar({super.key, required this.onChanged, this.hintText});
+  const CustomSearchBar({super.key, required this.onChanged, this.hintText,this.textEditingController});
   final void Function(String)? onChanged;
   final String? hintText;
+  final TextEditingController? textEditingController;
 
   @override
   Widget build(BuildContext context) {
     return Padding(
       padding: const EdgeInsets.only(top: 24),
       child: TextFormField(
+         controller: textEditingController,
         onChanged: onChanged,
         style: regularStyle(color: AppColors.black, fontSize: 18),
         cursorColor: AppColors.kPrimaryColor,

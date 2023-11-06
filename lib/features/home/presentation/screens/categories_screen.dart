@@ -1,19 +1,15 @@
 import 'package:flutter/material.dart';
-import 'package:pill_mate/core/helpers/search_helper.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:pill_mate/core/utilis/app_assets.dart';
 import 'package:pill_mate/features/home/data/models/category_model.dart';
+import 'package:pill_mate/features/home/presentation/manager/cubit/search_cubit.dart';
 import 'package:pill_mate/features/home/presentation/widgets/categories_screen_widgets/category_grid_view.dart';
 import 'package:pill_mate/features/home/presentation/widgets/common/custom_app_bar.dart';
 import 'package:pill_mate/features/home/presentation/widgets/common/search_text_field.dart';
 
-class CategoriesScreen extends StatefulWidget {
+class CategoriesScreen extends StatelessWidget {
   const CategoriesScreen({super.key});
 
-  @override
-  State<CategoriesScreen> createState() => _CategoriesScreenState();
-}
-
-class _CategoriesScreenState extends State<CategoriesScreen> {
   final List<CategoryModel> allCategories = const [
     CategoryModel(
         categoryImage: ImageAssets.firstCategory,
@@ -41,29 +37,11 @@ class _CategoriesScreenState extends State<CategoriesScreen> {
     CategoryModel(
         categoryImage: ImageAssets.twelfthCategory, categoryName: 'Pills')
   ];
-  List<CategoryModel> categories = const [];
-
-  @override
-  void initState() {
-    //in the initial state .. categories will contain all categories
-    categories = allCategories;
-    super.initState();
-  }
-
-  void search(String value) {
-    List<CategoryModel> results = SearchHelper.search(
-      allCategories,
-      value,
-      (CategoryModel category) => category.categoryName,
-    );
-    //in CustomSearchBar onChanged.. categories filtered to contain only the items which contain the value
-    setState(() {
-      categories = results;
-    });
-  }
 
   @override
   Widget build(BuildContext context) {
+    final searchCubit = BlocProvider.of<SearchCubit<CategoryModel>>(context);
+    TextEditingController searchController = TextEditingController();
     return Scaffold(
       appBar: const CustomAppBar(appBarTitle: 'Categories'),
       body: Padding(
@@ -72,13 +50,22 @@ class _CategoriesScreenState extends State<CategoriesScreen> {
           child: Column(
             children: [
               CustomSearchBar(
-                onChanged: (value) => search(value),
+                textEditingController: searchController,
+                onChanged: (query) => searchCubit.filterSearchResults(
+                    allCategories,
+                    query,
+                    (CategoryModel category) => category.categoryName),
                 hintText: 'Search',
               ),
               const SizedBox(
                 height: 20,
               ),
-              CategoryGridView(categories: categories)
+             BlocBuilder<SearchCubit<CategoryModel>, List<CategoryModel>?>(
+                builder: (context, filtered) {
+                  return CategoryGridView(
+                      categories: searchController.text.isEmpty ? allCategories : filtered!);
+                },
+              )
             ],
           ),
         ),
@@ -86,4 +73,3 @@ class _CategoriesScreenState extends State<CategoriesScreen> {
     );
   }
 }
-
