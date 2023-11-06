@@ -17,7 +17,7 @@ class AppBarPopIcon extends StatelessWidget {
         onPressed: () {},
         icon: const Icon(
           FontAwesomeIcons.chevronLeft,
-          color: AppColors.iconsColor,
+          color: AppColors.kDarkPrimaryColor,
         ),
       ),
     );

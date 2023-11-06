@@ -11,12 +11,14 @@ class CategoryGridView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    bool isPortrait =
+        MediaQuery.of(context).orientation == Orientation.portrait;
     return GridView.builder(
         physics: const BouncingScrollPhysics(),
         shrinkWrap: true,
         itemCount: categories.length,
-        gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
-            crossAxisCount: 2,
+        gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+            crossAxisCount: !isPortrait ? 3 : 2,
             mainAxisSpacing: 12,
             crossAxisSpacing: 16,
             childAspectRatio: 1.85),

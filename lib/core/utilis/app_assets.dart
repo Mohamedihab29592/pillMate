@@ -24,4 +24,9 @@ class ImageAssets {
   static const String tenthCategory = '${categoryImages}10.png';
   static const String eleventhCategory = '${categoryImages}11.png';
   static const String twelfthCategory = '${categoryImages}12.png';
+
+  static const String product = '${baseUrl}product.png';
+
+  static const String notFavouriteIcon = '${baseUrl}not favourite.svg';
+  static const String favouriteIcon = '${baseUrl}favourite.svg';
 }
