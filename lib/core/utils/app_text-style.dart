@@ -1,14 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
-
 TextStyle _textStyle({
   required TextDecoration textDeco,
   required Color color,
   required double fontSize,
   required FontWeight fontWeight,
 }) {
-  return GoogleFonts.macondo(
+  return GoogleFonts.manrope(
     color: color,
     decoration: textDeco,
     fontSize: fontSize,
@@ -18,8 +17,7 @@ TextStyle _textStyle({
 
 // bold style
 TextStyle regularStyle({
-  required Color color ,
-
+  required Color color,
   required double fontSize,
 }) =>
     _textStyle(
@@ -31,8 +29,8 @@ TextStyle regularStyle({
 
 // regular style
 TextStyle boldStyle({
-  required Color color ,
-  required double fontSize ,
+  required Color color,
+  required double fontSize,
 }) =>
     _textStyle(
       textDeco: TextDecoration.none,
@@ -40,4 +38,3 @@ TextStyle boldStyle({
       fontSize: fontSize,
       fontWeight: FontWeight.w800,
     );
-
