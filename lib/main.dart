@@ -20,6 +20,7 @@ class MyApp extends StatelessWidget {
       routes: {
         Routes.initialRoute: (context) => appRoutes(Routes.initialRoute, null),
         Routes.categoryRoute: (context) => appRoutes(Routes.categoryRoute, null),
+        Routes.favouriteRoute: (context) => appRoutes(Routes.favouriteRoute, null),
       },
     );
   }

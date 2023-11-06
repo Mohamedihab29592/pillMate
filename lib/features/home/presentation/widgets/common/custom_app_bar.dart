@@ -3,8 +3,9 @@ import 'package:pill_mate/features/home/presentation/widgets/common/app_bar_pop_
 import 'package:pill_mate/features/home/presentation/widgets/common/app_bar_title.dart';
 
 class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
-  const CustomAppBar({super.key, required this.appBarTitle});
+  const CustomAppBar({super.key, required this.appBarTitle, this.appBarAction});
   final String appBarTitle;
+  final List<Widget>? appBarAction;
 
   @override
   Size get preferredSize => const Size.fromHeight(kToolbarHeight);
@@ -17,6 +18,7 @@ class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
       leading: const AppBarPopIcon(),
       title: AppBarTitle(appBarTitle: appBarTitle),
       centerTitle: true,
+      actions: appBarAction
     );
   }
 }

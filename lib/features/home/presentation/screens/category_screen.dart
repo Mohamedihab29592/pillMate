@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:pill_mate/core/functions/navigate.dart';
+import 'package:pill_mate/core/routes/app_routes.dart';
 import 'package:pill_mate/features/home/presentation/manager/cubit/search_cubit.dart';
 import 'package:pill_mate/features/home/presentation/widgets/category_screen_widgets/product_grid_view.dart';
 import 'package:pill_mate/features/home/presentation/widgets/common/custom_app_bar.dart';
@@ -29,7 +32,23 @@ class CategoryScreen extends StatelessWidget {
     final searchCubit = BlocProvider.of<SearchCubit<String>>(context);
     TextEditingController searchController = TextEditingController();
     return Scaffold(
-      appBar: CustomAppBar(appBarTitle: arguments['category name']),
+      appBar: CustomAppBar(
+        appBarTitle: arguments['category name'],
+        //!just for navigating to favourite screen in this task
+        appBarAction: [
+          Padding(
+            padding: const EdgeInsets.only(right: 16),
+            child: GestureDetector(
+              onTap: () =>
+                  navigate(context: context, route: Routes.favouriteRoute),
+              child: const Icon(
+                FontAwesomeIcons.chevronRight,
+                color: Colors.black,
+              ),
+            ),
+          )
+        ],
+      ),
       body: CustomScrollView(
         slivers: [
           SliverToBoxAdapter(
