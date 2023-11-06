@@ -13,4 +13,5 @@ class ImageAssets {
   /// payment screen
   static const String vodCash = '${baseUrl}vodcash.png';
   static const String visa = '${baseUrl}visa.png';
+  static const String product = '${baseUrl}product.png';
 }

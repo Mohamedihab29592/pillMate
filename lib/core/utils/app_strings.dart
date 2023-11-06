@@ -19,4 +19,10 @@ class AppStrings {
   static const String enterCardnNum = 'Enter Your Card Number';
   static const String expiryDate = 'Expiry Date';
   static const String cvv = 'CVV';
+
+  /// details screen
+  static const String details = 'Details';
+  static const String deliveryAddress = 'Delivery Address';
+  static const String paymentMethod = 'Payment Method';
+  static const String order = 'Order';
 }
