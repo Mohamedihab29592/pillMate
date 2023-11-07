@@ -1,8 +1,9 @@
 import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/material.dart';
 import 'package:pill_mate/core/utilis/app_assets.dart';
+import 'package:pill_mate/core/utilis/app_colors.dart';
 import 'package:pill_mate/core/utilis/app_text_style.dart';
-import 'package:pill_mate/features/home/presentation/widgets/favourite_screen_widgets/add_to_cart_button.dart';
+import 'package:pill_mate/features/home/presentation/widgets/common/main_button.dart';
 
 class FavouriteProductCardBaseContent extends StatelessWidget {
   const FavouriteProductCardBaseContent({
@@ -51,9 +52,15 @@ class FavouriteProductCardBaseContent extends StatelessWidget {
           const Spacer(
             flex: 2,
           ),
-          const Padding(
-            padding: EdgeInsets.only(left: 10, right: 10),
-            child: AddToCartButton(),
+          Padding(
+            padding: const EdgeInsets.only(left: 10, right: 10),
+            child: MainButton(
+                backGroundColor: AppColors.white,
+                backGroundColorAfterClicked: AppColors.kPrimaryColor,
+                borderColor: AppColors.kPrimaryColor,
+                buttonName: 'Add To Cart',
+                contentPadding:
+                    const EdgeInsets.symmetric(vertical: 8, horizontal: 8)),
           ),
           const Spacer(),
         ],

@@ -5,7 +5,9 @@ import 'package:flutter_svg/svg.dart';
 import 'package:pill_mate/core/utilis/app_assets.dart';
 import 'package:pill_mate/core/utilis/app_colors.dart';
 import 'package:pill_mate/core/utilis/app_text_style.dart';
+import 'package:pill_mate/features/home/presentation/widgets/category_screen_widgets/product_card.dart';
 import 'package:pill_mate/features/home/presentation/widgets/common/custom_app_bar.dart';
+import 'package:pill_mate/features/home/presentation/widgets/common/main_button.dart';
 
 class ProductScreen extends StatelessWidget {
   const ProductScreen({super.key});
@@ -14,6 +16,8 @@ class ProductScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     var height = MediaQuery.of(context).size.height;
     var width = MediaQuery.of(context).size.width;
+    bool isPortrait =
+        MediaQuery.of(context).orientation == Orientation.portrait;
     return Scaffold(
       appBar: CustomAppBar(appBarTitle: '', appBarAction: [
         Padding(
@@ -32,7 +36,7 @@ class ProductScreen extends StatelessWidget {
             children: [
               Center(
                 child: SizedBox(
-                    height: height / 3.5,
+                    height: !isPortrait ? width / 3.5 : height / 3.5,
                     width: width,
                     child: Image.asset(ImageAssets.productPageItem)),
               ),
@@ -126,6 +130,51 @@ class ProductScreen extends StatelessWidget {
                       minFontSize: 14,
                       maxLines: 4,
                       overflow: TextOverflow.ellipsis,
+                    ),
+                    Padding(
+                        padding: const EdgeInsets.symmetric(vertical: 12),
+                        child: GridView.builder(
+                          shrinkWrap: true,
+                          itemCount: 2,
+                          physics: const NeverScrollableScrollPhysics(),
+                          gridDelegate:
+                              SliverGridDelegateWithFixedCrossAxisCount(
+                                  crossAxisCount: isPortrait ? 2 : 3,
+                                  childAspectRatio: 0.9,
+                                  crossAxisSpacing: 16,
+                                  mainAxisSpacing: 12),
+                          itemBuilder: (context, index) {
+                            return const ProductCard(
+                                productName: 'Vitaferrol B12 Vitaferrol B12');
+                          },
+                        )),
+                    Padding(
+                      padding: const EdgeInsets.symmetric(vertical: 12),
+                      child: Row(
+                        children: [
+                          Expanded(
+                              child: MainButton(
+                            backGroundColor: AppColors.white,
+                            backGroundColorAfterClicked:
+                                AppColors.kPrimaryColor,
+                            borderColor: AppColors.kPrimaryColor,
+                            buttonName: 'Add To Card',
+                            contentPadding: const EdgeInsets.symmetric(
+                                vertical: 16, horizontal: 8),
+                          )),
+                          const SizedBox(
+                            width: 16,
+                          ),
+                          Expanded(
+                              child: MainButton(
+                            backGroundColor: AppColors.kPrimaryColor,
+                            borderColor: AppColors.kPrimaryColor,
+                            buttonName: 'Buy Now',
+                            contentPadding: const EdgeInsets.symmetric(
+                                vertical: 16, horizontal: 8),
+                          )),
+                        ],
+                      ),
                     ),
                   ],
                 ),
