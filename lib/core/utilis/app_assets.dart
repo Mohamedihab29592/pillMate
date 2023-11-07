@@ -29,4 +29,8 @@ class ImageAssets {
 
   static const String notFavouriteIcon = '${baseUrl}not favourite.svg';
   static const String favouriteIcon = '${baseUrl}favourite.svg';
+
+  static const String productPageItem = '${baseUrl}product page.png';
+  static const String plusIcon = '${baseUrl}plus.svg';
+  static const String minusIcon = '${baseUrl}minus.svg';
 }

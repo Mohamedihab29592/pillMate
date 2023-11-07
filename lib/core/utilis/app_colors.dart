@@ -15,4 +15,5 @@ class AppColors {
   static const Color kDarkPrimaryColor = Color(0xff224A46);
   static const Color kSoftPrimaryColor = Color(0xffCBE8DB);
   static const Color appBarTitleColor = Color(0xff141D21);
+  static const Color grayColor = Color(0xffe4e4e4);
 }
