@@ -44,7 +44,11 @@ class ProductCard extends StatelessWidget {
                 const Positioned(
                   right: 8,
                   top: 13.5,
-                  child: FavouriteIcon(isForFavouriteScreen: false),
+                  child: FavouriteIcon(
+                    isForFavouriteScreen: false,
+                    iconHeight: 28,
+                    iconWidth: 28,
+                  ),
                 )
               ],
             ),

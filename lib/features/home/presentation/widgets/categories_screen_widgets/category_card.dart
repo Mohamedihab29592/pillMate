@@ -29,11 +29,14 @@ class CategoriesCard extends StatelessWidget {
               ),
             ),
             Expanded(
-              child: Text(
-                category.categoryName,
-                style:
-                    regularStyle(color: const Color(0xff636161), fontSize: 18),
-                overflow: TextOverflow.ellipsis,
+              child: Padding(
+                padding: const EdgeInsets.only(right: 8),
+                child: Text(
+                  category.categoryName,
+                  style: regularStyle(
+                      color: const Color(0xff636161), fontSize: 18),
+                  overflow: TextOverflow.ellipsis,
+                ),
               ),
             )
           ],

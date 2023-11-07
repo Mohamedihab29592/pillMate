@@ -3,8 +3,11 @@ import 'package:flutter_svg/svg.dart';
 import 'package:pill_mate/core/utilis/app_assets.dart';
 
 class FavouriteIcon extends StatefulWidget {
-  const FavouriteIcon({super.key, required this.isForFavouriteScreen});
+  const FavouriteIcon({super.key, required this.isForFavouriteScreen,required this.iconHeight,required this.iconWidth});
   final bool isForFavouriteScreen;
+  //!because i need more bigger icon in product screen
+  final double iconHeight;
+  final double iconWidth;
 
   @override
   State<FavouriteIcon> createState() => _FavouriteIconState();
@@ -28,8 +31,8 @@ class _FavouriteIconState extends State<FavouriteIcon> {
       },
       child: SvgPicture.asset(
         isFavourite ? ImageAssets.favouriteIcon : ImageAssets.notFavouriteIcon,
-        height: 28,
-        width: 28,
+        height: widget.iconHeight,
+        width: widget.iconWidth,
       ),
     );
   }

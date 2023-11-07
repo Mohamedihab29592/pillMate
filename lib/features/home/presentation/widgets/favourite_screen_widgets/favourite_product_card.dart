@@ -38,7 +38,7 @@ class FavouriteProductCard extends StatelessWidget {
                 Positioned(
                   right: 8,
                   top: 13.5,
-                  child: FavouriteIcon(isForFavouriteScreen: true),
+                  child: FavouriteIcon(isForFavouriteScreen: true,iconHeight: 28,iconWidth: 28,),
                 )
               ],
             ),

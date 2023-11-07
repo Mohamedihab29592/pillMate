@@ -57,13 +57,15 @@ class CategoriesScreen extends StatelessWidget {
                     (CategoryModel category) => category.categoryName),
                 hintText: 'Search',
               ),
-              const SizedBox(
-                height: 20,
-              ),
-             BlocBuilder<SearchCubit<CategoryModel>, List<CategoryModel>?>(
+              BlocBuilder<SearchCubit<CategoryModel>, List<CategoryModel>?>(
                 builder: (context, filteredList) {
-                  return CategoryGridView(
-                      categories: searchController.text.isEmpty ? allCategories : filteredList!);
+                  return Padding(
+                    padding: const EdgeInsets.symmetric(vertical: 20),
+                    child: CategoryGridView(
+                        categories: searchController.text.isEmpty
+                            ? allCategories
+                            : filteredList!),
+                  );
                 },
               )
             ],
