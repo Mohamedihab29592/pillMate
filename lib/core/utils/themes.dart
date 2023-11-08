@@ -10,7 +10,7 @@ class AppThemes {
             backgroundColor: MaterialStateProperty.all(AppColors.darkGrey),
             foregroundColor: MaterialStateProperty.all(Colors.white))),
     cardTheme: CardTheme(color: AppColors.darkGrey),
-    scaffoldBackgroundColor: AppColors.kPrimaryColor,
+    scaffoldBackgroundColor: AppColors.black,
     colorScheme: const ColorScheme.dark(),
     bottomNavigationBarTheme: BottomNavigationBarThemeData(
       backgroundColor: AppColors.darkGrey,
@@ -29,7 +29,7 @@ class AppThemes {
       buttonColor: AppColors.kPrimaryColor,
     ),
     textTheme: TextTheme(
-        bodyLarge: boldStyle(fontSize: 17, color: AppColors.white),
+        bodyLarge: boldStyle(fontSize: 18, color: AppColors.white),
         titleMedium: boldStyle(fontSize: 16, color: AppColors.white),
         titleSmall: regularStyle(fontSize: 14, color: AppColors.white)),
   );

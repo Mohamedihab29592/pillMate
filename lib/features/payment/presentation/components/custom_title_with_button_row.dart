@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:pill_mate/core/utils/app_colors.dart';
-import 'package:pill_mate/core/utils/app_text-style.dart';
+
 import 'package:pill_mate/features/payment/presentation/components/custom_change_button.dart';
 
 class CustomTitlewithButtonRow extends StatelessWidget {
@@ -18,7 +17,7 @@ class CustomTitlewithButtonRow extends StatelessWidget {
       children: [
         Text(
           title,
-          style: boldStyle(color: AppColors.black, fontSize: 16),
+          style: Theme.of(context).textTheme.titleMedium!,
         ),
         CustomChangeButton(
           onPressed: onPressed,

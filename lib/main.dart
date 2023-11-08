@@ -3,8 +3,6 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:pill_mate/core/routes/app_routes.dart';
 import 'package:pill_mate/core/utils/app_strings.dart';
 import 'package:pill_mate/features/payment/presentation/screens/details_screens.dart';
-// import 'package:pill_mate/features/initial/splash/splash.dart';
-import 'package:pill_mate/features/payment/presentation/screens/payment_screen.dart';
 
 import 'core/utils/themes.dart';
 
@@ -23,7 +21,7 @@ class MyApp extends StatelessWidget {
       child: MaterialApp(
         debugShowCheckedModeBanner: false,
         title: AppStrings.appName,
-        theme: AppThemes.lightMode,
+        theme: AppThemes.darkMode,
         home: const DetailsScreen(),
         onGenerateRoute: (settings) {
           return MaterialPageRoute(

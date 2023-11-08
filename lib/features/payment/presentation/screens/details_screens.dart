@@ -6,7 +6,6 @@ import 'package:pill_mate/core/utils/app_strings.dart';
 import 'package:pill_mate/core/utils/app_text-style.dart';
 import 'package:pill_mate/core/widgets/custom_appbar.dart';
 import 'package:pill_mate/core/widgets/custom_button.dart';
-import 'package:pill_mate/features/payment/presentation/components/custom_change_button.dart';
 import 'package:pill_mate/features/payment/presentation/components/custom_payment_method_row.dart';
 import 'package:pill_mate/features/payment/presentation/components/custom_product_name_price_desc.dart';
 import 'package:pill_mate/features/payment/presentation/components/custom_row_receipt.dart';
@@ -39,7 +38,7 @@ class DetailsScreen extends StatelessWidget {
                 children: [
                   Text(
                     '25 Nasr City, Egypt',
-                    style: regularStyle(color: AppColors.grey, fontSize: 16),
+                    style:Theme.of(context).textTheme.titleSmall!,
                   ),
                 ],
               ),
@@ -98,9 +97,9 @@ class DetailsScreen extends StatelessWidget {
                     width: 15.w,
                   ),
                   Text(
-                    '01',
+                    '1',
                     style:
-                        regularStyle(color: AppColors.darkGrey, fontSize: 14),
+                        Theme.of(context).textTheme.bodyLarge,
                   ),
                   SizedBox(
                     width: 15.w,

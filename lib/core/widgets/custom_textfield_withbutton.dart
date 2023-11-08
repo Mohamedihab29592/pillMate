@@ -32,8 +32,7 @@ class CustomTextFieldWithButton extends StatelessWidget {
                   onTap: onTap,
                   color: buttonColor ?? AppColors.kPrimaryColor,
                   text: buttonText ?? '',
-                  textStyle: buttonTextStyle ??
-                      regularStyle(color: AppColors.black, fontSize: 12),
+                  textStyle: Theme.of(context).textTheme.bodyMedium!,
                 ),
               )
             : null,

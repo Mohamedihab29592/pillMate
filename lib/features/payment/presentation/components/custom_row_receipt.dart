@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:pill_mate/core/utils/app_colors.dart';
-import 'package:pill_mate/core/utils/app_text-style.dart';
+
 
 class CustomRowReceipt extends StatelessWidget {
   const CustomRowReceipt({
@@ -20,11 +19,11 @@ class CustomRowReceipt extends StatelessWidget {
         children: [
           Text(
             text,
-            style: regularStyle(color: AppColors.black, fontSize: 14),
+            style: Theme.of(context).textTheme.bodyMedium!,
           ),
           Text(
             '$price\$',
-            style: boldStyle(color: AppColors.black, fontSize: 16),
+            style:Theme.of(context).textTheme.bodyLarge!,
           ),
         ],
       ),

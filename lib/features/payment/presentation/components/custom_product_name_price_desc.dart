@@ -22,14 +22,14 @@ class CustomProductNameDescriptionPriceColumn extends StatelessWidget {
       children: [
         Text(
           productName,
-          style: regularStyle(color: AppColors.black, fontSize: 14),
+          style: Theme.of(context).textTheme.titleSmall,
         ),
         SizedBox(
           height: 5.h,
         ),
         Text(
           description,
-          style: regularStyle(color: AppColors.grey, fontSize: 10),
+          style: Theme.of(context).textTheme.bodySmall,
         ),
         SizedBox(
           height: 20.h,

@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:pill_mate/core/utils/app_colors.dart';
-import 'package:pill_mate/core/utils/app_text-style.dart';
+
 import 'package:pill_mate/core/widgets/back_arrow.dart';
 
 class CustomAppBar extends StatelessWidget {
@@ -25,7 +24,7 @@ class CustomAppBar extends StatelessWidget {
               const Spacer(),
               Text(
                 title,
-                style: regularStyle(color: AppColors.black, fontSize: 18),
+                style:Theme.of(context).textTheme.bodyLarge!,
                 maxLines: 1,
                 textAlign: TextAlign.end,
               ),
