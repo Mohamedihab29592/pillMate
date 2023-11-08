@@ -1,11 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:pill_mate/features/home/data/models/category_model.dart';
-import 'package:pill_mate/features/home/presentation/manager/cubit/search_cubit.dart';
 import 'package:pill_mate/features/home/presentation/screens/categories_screen.dart';
 import 'package:pill_mate/features/home/presentation/screens/category_screen.dart';
 import 'package:pill_mate/features/home/presentation/screens/favourite_screen.dart';
 import 'package:pill_mate/features/home/presentation/screens/product_screen.dart';
+
+import '../../features/home/presentation/bloc/cubit/search_cubit.dart';
 
 class Routes {
   static const String initialRoute = '/';

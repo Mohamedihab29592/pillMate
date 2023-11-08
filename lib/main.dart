@@ -15,7 +15,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       title: AppStrings.appName,
-      theme: AppThemes.lightMode,
+      theme: AppThemes.darkMode,
       initialRoute: Routes.initialRoute,
       routes: {
         Routes.initialRoute: (context) => appRoutes(Routes.initialRoute, null),

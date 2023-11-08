@@ -8,7 +8,7 @@ class AppThemes{
 
     elevatedButtonTheme: ElevatedButtonThemeData(style:ButtonStyle(backgroundColor:MaterialStateProperty.all(AppColors.darkGrey),foregroundColor:MaterialStateProperty.all(Colors.white) ) ),
     cardTheme: CardTheme(color: AppColors.darkGrey),
-    scaffoldBackgroundColor: AppColors.kPrimaryColor,
+    scaffoldBackgroundColor: AppColors.black,
     colorScheme: const ColorScheme.dark(),
     bottomNavigationBarTheme: BottomNavigationBarThemeData(
       backgroundColor: AppColors.darkGrey,

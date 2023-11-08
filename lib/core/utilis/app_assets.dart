@@ -33,4 +33,6 @@ class ImageAssets {
   static const String productPageItem = '${baseUrl}product page.png';
   static const String plusIcon = '${baseUrl}plus.svg';
   static const String minusIcon = '${baseUrl}minus.svg';
+  static const String cart = '${baseUrl}cart.svg';
+  static const String inCart = '${baseUrl}inCart.svg';
 }

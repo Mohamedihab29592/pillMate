@@ -19,7 +19,7 @@ class FavouriteGridView extends StatelessWidget {
         (BuildContext context, int index) {
           return const FavouriteProductCard();
         },
-        childCount: 20,
+        childCount: 5,
       ),
     );
   }

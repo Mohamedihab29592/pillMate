@@ -49,7 +49,7 @@ class _PriceAndCountState extends State<PriceAndCount> {
                 child: Center(
                   child: AutoSizeText(
                     count.toString(),
-                    style: boldStyle(color: AppColors.black, fontSize: 26),
+                    style:Theme.of(context).textTheme.bodyLarge,
                     minFontSize: 14,
                     maxLines: 2,
                     overflow: TextOverflow.ellipsis,

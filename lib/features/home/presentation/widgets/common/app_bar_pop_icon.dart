@@ -9,16 +9,13 @@ class AppBarPopIcon extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Padding(
-      padding: const EdgeInsets.only(left: 16),
-      child: IconButton(
-        splashRadius: 28,
-        padding: EdgeInsets.zero,
-        onPressed: () {},
-        icon: const Icon(
-          FontAwesomeIcons.chevronLeft,
-          color: AppColors.kDarkPrimaryColor,
-        ),
+    return IconButton(
+      splashRadius: 28,
+      padding: EdgeInsets.zero,
+      onPressed: () {Navigator.pop(context);},
+      icon: const Icon(
+        FontAwesomeIcons.chevronLeft,
+        color: AppColors.kDarkPrimaryColor,
       ),
     );
   }
