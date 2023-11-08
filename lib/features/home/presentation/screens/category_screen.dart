@@ -42,7 +42,7 @@ class CategoryScreen extends StatelessWidget {
               padding: const EdgeInsets.symmetric(horizontal: 16),
               child: CustomSearchBar(
                 textEditingController: searchController,
-                hintText: 'Search For City',
+                hintText: 'Search',
                 onChanged: (query) => searchCubit.filterSearchResults(
                     productsNames, query, (String productName) => productName),
               ),
