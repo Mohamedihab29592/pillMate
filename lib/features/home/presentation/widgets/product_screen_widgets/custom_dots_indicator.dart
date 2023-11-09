@@ -1,6 +1,7 @@
 import 'package:dots_indicator/dots_indicator.dart';
 import 'package:flutter/material.dart';
-import 'package:pill_mate/core/utilis/app_colors.dart';
+
+import '../../../../../core/utils/app_colors.dart';
 
 class CustomDotsIndicator extends StatelessWidget {
   const CustomDotsIndicator({
@@ -15,7 +16,7 @@ class CustomDotsIndicator extends StatelessWidget {
         dotsCount: 3,
         position: dotsPosition!.toInt(),
         decorator: DotsDecorator(
-          activeColor: AppColors.kDarkPrimaryColor,
+          activeColor: AppColors.kPrimaryColor,
           color: AppColors.kPrimaryColor,
           spacing: const EdgeInsets.symmetric(vertical: 12, horizontal: 2),
           size: const Size(18.0, 7.0),

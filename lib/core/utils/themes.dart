@@ -1,12 +1,14 @@
 import 'package:flutter/material.dart';
-import 'package:pill_mate/core/utilis/app_text_style.dart';
 
 import 'app_colors.dart';
+import 'app_text_style.dart';
 
-class AppThemes{
-  static final darkMode=ThemeData(
-
-    elevatedButtonTheme: ElevatedButtonThemeData(style:ButtonStyle(backgroundColor:MaterialStateProperty.all(AppColors.darkGrey),foregroundColor:MaterialStateProperty.all(Colors.white) ) ),
+class AppThemes {
+  static final darkMode = ThemeData(
+    elevatedButtonTheme: ElevatedButtonThemeData(
+        style: ButtonStyle(
+            backgroundColor: MaterialStateProperty.all(AppColors.darkGrey),
+            foregroundColor: MaterialStateProperty.all(Colors.white))),
     cardTheme: CardTheme(color: AppColors.darkGrey),
     scaffoldBackgroundColor: AppColors.black,
     colorScheme: const ColorScheme.dark(),
@@ -16,33 +18,31 @@ class AppThemes{
       unselectedItemColor: AppColors.grey,
       elevation: 20,
       type: BottomNavigationBarType.fixed,
-      selectedLabelStyle:  TextStyle(
+      selectedLabelStyle: TextStyle(
         color: AppColors.kPrimaryColor,
       ),
       unselectedLabelStyle: const TextStyle(
         color: AppColors.grey,
       ),
     ),
-    buttonTheme:  ButtonThemeData(
+    buttonTheme: ButtonThemeData(
       buttonColor: AppColors.kPrimaryColor,
     ),
-    textTheme:   TextTheme(
-        bodyLarge: boldStyle(fontSize: 17, color: AppColors.white),
-        titleMedium: boldStyle(fontSize: 16,color: AppColors.white),
-        titleSmall: regularStyle(fontSize: 14,color: AppColors.white)
-    ),
+    textTheme: TextTheme(
+        bodyLarge: boldStyle(fontSize: 18, color: AppColors.white),
+        titleMedium: boldStyle(fontSize: 16, color: AppColors.white),
+        titleSmall: regularStyle(fontSize: 14, color: AppColors.white)),
   );
 
-
-  static final lightMode=ThemeData(
-    elevatedButtonTheme: ElevatedButtonThemeData(style:ButtonStyle(backgroundColor:MaterialStateProperty.all(AppColors.white),foregroundColor:MaterialStateProperty.all(Colors.black) ) ),
-
+  static final lightMode = ThemeData(
+    elevatedButtonTheme: ElevatedButtonThemeData(
+        style: ButtonStyle(
+            backgroundColor: MaterialStateProperty.all(AppColors.white),
+            foregroundColor: MaterialStateProperty.all(Colors.black))),
     cardTheme: const CardTheme(color: AppColors.white),
-
-
     scaffoldBackgroundColor: AppColors.white,
     colorScheme: const ColorScheme.light(),
-    bottomNavigationBarTheme:  BottomNavigationBarThemeData(
+    bottomNavigationBarTheme: BottomNavigationBarThemeData(
       backgroundColor: AppColors.white,
       selectedItemColor: AppColors.kPrimaryColor,
       unselectedItemColor: AppColors.grey,
@@ -55,15 +55,12 @@ class AppThemes{
         color: AppColors.grey,
       ),
     ),
-    buttonTheme:  ButtonThemeData(
+    buttonTheme: ButtonThemeData(
       buttonColor: AppColors.kPrimaryColor,
     ),
-    textTheme:   TextTheme(
-      bodyLarge: boldStyle(fontSize: 17,color: AppColors.black),
-      titleMedium: boldStyle(fontSize: 16,color: AppColors.black),
-      titleSmall: regularStyle(fontSize: 14,color: AppColors.black)
-    ),
-
-
+    textTheme: TextTheme(
+        bodyLarge: boldStyle(fontSize: 17, color: AppColors.black),
+        titleMedium: boldStyle(fontSize: 16, color: AppColors.black),
+        titleSmall: regularStyle(fontSize: 14, color: AppColors.black)),
   );
 }

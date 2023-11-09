@@ -1,9 +1,11 @@
 import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/material.dart';
-import 'package:pill_mate/core/utilis/app_assets.dart';
-import 'package:pill_mate/core/utilis/app_colors.dart';
-import 'package:pill_mate/core/utilis/app_text_style.dart';
+
 import 'package:pill_mate/features/home/presentation/widgets/common/main_button.dart';
+
+import '../../../../../core/utils/app_assets.dart';
+import '../../../../../core/utils/app_colors.dart';
+import '../../../../../core/utils/app_text_style.dart';
 
 class FavouriteProductCardBaseContent extends StatelessWidget {
   const FavouriteProductCardBaseContent({

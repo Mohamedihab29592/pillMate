@@ -3,7 +3,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 
-import '../../../../../core/utilis/app_assets.dart';
+import '../../../../../core/utils/app_assets.dart';
+
 
 class CartIcon extends StatefulWidget {
   const CartIcon({

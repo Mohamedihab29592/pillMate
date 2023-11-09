@@ -1,8 +1,9 @@
 // ignore_for_file: public_member_api_docs, sort_constructors_first
 import 'package:flutter/material.dart';
 
-import 'package:pill_mate/core/utilis/app_colors.dart';
-import 'package:pill_mate/core/utilis/app_text_style.dart';
+import '../../../../../core/utils/app_colors.dart';
+import '../../../../../core/utils/app_text_style.dart';
+
 
 class MainButton extends StatefulWidget {
   const MainButton({
@@ -54,7 +55,7 @@ class _MainButtonState extends State<MainButton> {
             child: Text(
               widget.buttonName,
               style: regularStyle(
-                  color: AppColors.kDarkPrimaryColor, fontSize: 16),
+                  color: AppColors.kPrimaryColor, fontSize: 16),
               maxLines: 1,
               overflow: TextOverflow.ellipsis,
             ),

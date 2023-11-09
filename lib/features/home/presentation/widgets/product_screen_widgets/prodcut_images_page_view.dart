@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:pill_mate/core/utilis/app_assets.dart';
+
+import '../../../../../core/utils/app_assets.dart';
 
 class ProductImagesPageView extends StatelessWidget {
   const ProductImagesPageView({super.key, required this.controller});

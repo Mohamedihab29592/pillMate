@@ -1,9 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:pill_mate/core/functions/navigate.dart';
 import 'package:pill_mate/core/routes/app_routes.dart';
-import 'package:pill_mate/core/utilis/app_colors.dart';
-import 'package:pill_mate/core/utilis/app_text_style.dart';
+
 import 'package:pill_mate/features/home/data/models/category_model.dart';
+
+import '../../../../../core/utils/app_colors.dart';
+import '../../../../../core/utils/app_text_style.dart';
 
 class CategoriesCard extends StatelessWidget {
   const CategoriesCard({super.key, required this.category});

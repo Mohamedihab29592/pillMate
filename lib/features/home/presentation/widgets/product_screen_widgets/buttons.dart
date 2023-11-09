@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:pill_mate/core/utilis/app_colors.dart';
 import 'package:pill_mate/features/home/presentation/widgets/common/main_button.dart';
+
+import '../../../../../core/utils/app_colors.dart';
 
 class ProductScreenButtons extends StatelessWidget {
   const ProductScreenButtons({

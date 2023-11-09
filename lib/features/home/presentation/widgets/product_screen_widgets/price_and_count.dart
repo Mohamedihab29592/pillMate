@@ -1,9 +1,11 @@
 import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/material.dart';
-import 'package:pill_mate/core/utilis/app_assets.dart';
-import 'package:pill_mate/core/utilis/app_colors.dart';
-import 'package:pill_mate/core/utilis/app_text_style.dart';
+
 import 'package:pill_mate/features/home/presentation/widgets/product_screen_widgets/count_widget_button.dart';
+
+import '../../../../../core/utils/app_assets.dart';
+import '../../../../../core/utils/app_colors.dart';
+import '../../../../../core/utils/app_text_style.dart';
 
 class PriceAndCount extends StatefulWidget {
   const PriceAndCount({
@@ -23,7 +25,7 @@ class _PriceAndCountState extends State<PriceAndCount> {
       children: [
         AutoSizeText(
           '\$ 10',
-          style: boldStyle(color: AppColors.kDarkPrimaryColor, fontSize: 24),
+          style: boldStyle(color: AppColors.kPrimaryColor, fontSize: 24),
           minFontSize: 14,
           maxLines: 2,
           overflow: TextOverflow.ellipsis,
@@ -39,7 +41,7 @@ class _PriceAndCountState extends State<PriceAndCount> {
                 });
               },
               buttonIcon: ImageAssets.minusIcon,
-              buttonColor: AppColors.grayColor,
+              buttonColor: AppColors.grey,
             ),
             Padding(
               padding: const EdgeInsets.symmetric(horizontal: 8),
@@ -66,7 +68,7 @@ class _PriceAndCountState extends State<PriceAndCount> {
                 });
               },
               buttonIcon: ImageAssets.plusIcon,
-              buttonColor: AppColors.kDarkPrimaryColor,
+              buttonColor: AppColors.kPrimaryColor,
             )
           ],
         )
