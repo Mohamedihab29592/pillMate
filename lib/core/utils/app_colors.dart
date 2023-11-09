@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 
 class AppColors {
-// Color of Background of All Application.
   static Color kPrimaryColor = const Color(0xff8BC4B5);
 
   static const Color cardColors = Colors.black26;

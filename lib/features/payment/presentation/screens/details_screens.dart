@@ -3,14 +3,15 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:pill_mate/core/utils/app_assets.dart';
 import 'package:pill_mate/core/utils/app_colors.dart';
 import 'package:pill_mate/core/utils/app_strings.dart';
-import 'package:pill_mate/core/utils/app_text-style.dart';
-import 'package:pill_mate/core/widgets/custom_appbar.dart';
-import 'package:pill_mate/core/widgets/custom_button.dart';
+import 'package:pill_mate/core/components/custom_appbar.dart';
+import 'package:pill_mate/core/components/custom_button.dart';
 import 'package:pill_mate/features/payment/presentation/components/custom_payment_method_row.dart';
 import 'package:pill_mate/features/payment/presentation/components/custom_product_name_price_desc.dart';
 import 'package:pill_mate/features/payment/presentation/components/custom_row_receipt.dart';
 import 'package:pill_mate/features/payment/presentation/components/custom_square_button.dart';
 import 'package:pill_mate/features/payment/presentation/components/custom_title_with_button_row.dart';
+
+import '../../../../core/utils/app_text_style.dart';
 
 class DetailsScreen extends StatelessWidget {
   const DetailsScreen({super.key});

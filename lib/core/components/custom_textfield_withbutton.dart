@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:pill_mate/core/utils/app_colors.dart';
-import 'package:pill_mate/core/utils/app_text-style.dart';
-import 'package:pill_mate/core/widgets/custom_button.dart';
+import 'package:pill_mate/core/components/custom_button.dart';
+
+import '../utils/app_text_style.dart';
 
 class CustomTextFieldWithButton extends StatelessWidget {
   const CustomTextFieldWithButton({

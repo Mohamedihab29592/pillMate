@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:pill_mate/core/utils/app_strings.dart';
-import 'package:pill_mate/core/widgets/custom_textfield_withbutton.dart';
+import 'package:pill_mate/core/components/custom_textfield_withbutton.dart';
 
 class CustomVisaData extends StatelessWidget {
   const CustomVisaData({

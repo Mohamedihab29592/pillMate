@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
-import 'package:pill_mate/core/widgets/back_arrow.dart';
+import 'package:pill_mate/core/components/back_arrow.dart';
 
 class CustomAppBar extends StatelessWidget {
   const CustomAppBar({

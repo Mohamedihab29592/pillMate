@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:pill_mate/core/utils/app_text-style.dart';
 
 import 'app_colors.dart';
+import 'app_text_style.dart';
 
 class AppThemes {
   static final darkMode = ThemeData(

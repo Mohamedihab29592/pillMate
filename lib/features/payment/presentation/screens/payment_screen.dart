@@ -3,13 +3,14 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:pill_mate/core/utils/app_assets.dart';
 import 'package:pill_mate/core/utils/app_colors.dart';
 import 'package:pill_mate/core/utils/app_strings.dart';
-import 'package:pill_mate/core/utils/app_text-style.dart';
-import 'package:pill_mate/core/widgets/custom_appbar.dart';
-import 'package:pill_mate/core/widgets/custom_button.dart';
-import 'package:pill_mate/core/widgets/custom_textfield_withbutton.dart';
+import 'package:pill_mate/core/components/custom_appbar.dart';
+import 'package:pill_mate/core/components/custom_button.dart';
+import 'package:pill_mate/core/components/custom_textfield_withbutton.dart';
 import 'package:pill_mate/features/payment/data/local_data_source.dart';
 import 'package:pill_mate/features/payment/presentation/components/custom_row_receipt.dart';
 import 'package:pill_mate/features/payment/presentation/components/custom_visa_data.dart';
+
+import '../../../../core/utils/app_text_style.dart';
 
 class PaymentScreen extends StatefulWidget {
   const PaymentScreen({super.key});
