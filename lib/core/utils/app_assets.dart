@@ -2,8 +2,8 @@ const String imagePath = "assets/images";
 
 class ImageAssets {
   static const String baseUrl = 'assets/images/';
-  static const String categoryImages = '${baseUrl}category/';
 
+  static const String categoryImages = '${baseUrl}category/';
   static const String appLogo = '${baseUrl}logo.png';
   static const String onBoarding1 = '${baseUrl}onBoarding1.png';
   static const String onBoarding2 = '${baseUrl}onBoarding2.png';
@@ -28,7 +28,6 @@ class ImageAssets {
   static const String product = '${baseUrl}product.png';
   static const String visa = '${baseUrl}visa.png';
   static const String vodCash = '${baseUrl}vodcash.png';
-
 
   static const String notFavouriteIcon = '${baseUrl}not favourite.svg';
   static const String favouriteIcon = '${baseUrl}favourite.svg';
