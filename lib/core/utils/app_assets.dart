@@ -29,7 +29,6 @@ class ImageAssets {
   static const String visa = '${baseUrl}visa.png';
   static const String vodCash = '${baseUrl}vodcash.png';
 
-
   static const String notFavouriteIcon = '${baseUrl}not favourite.svg';
   static const String favouriteIcon = '${baseUrl}favourite.svg';
 
@@ -38,4 +37,10 @@ class ImageAssets {
   static const String minusIcon = '${baseUrl}minus.svg';
   static const String cart = '${baseUrl}cart.svg';
   static const String inCart = '${baseUrl}inCart.svg';
+  static const String sms = '${baseUrl}sms.png';
+  static const String twoFactorAuthentication =
+      '${baseUrl}Two factor authentication-bro 1.png';
+  static const String newPassword = '${baseUrl}newPassword.svg';
+  static const String eyeSlash = '${baseUrl}eye-slash.png';
+  static const String lock = '${baseUrl}lock.png';
 }
