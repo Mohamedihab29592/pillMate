@@ -118,19 +118,17 @@ class DetailsScreen extends StatelessWidget {
               const Divider(
                 thickness: 1.5,
               ),
-              CustomRowReceipt(text: AppStrings.delivery, price: 'Free '),
+              const CustomRowReceipt(text: AppStrings.delivery, price: 'Free '),
               SizedBox(
                 height: 10.h,
               ),
-              CustomRowReceipt(text: AppStrings.total, price: '100'),
+              const CustomRowReceipt(text: AppStrings.total, price: '100'),
               SizedBox(
                 height: 40.h,
               ),
               CustomButton(
                 onTap: () {},
-                color: AppColors.kPrimaryColor,
                 text: 'Pay Now',
-                textStyle: regularStyle(color: AppColors.black, fontSize: 16),
                 horizontal: 150.w,
                 vertical: 15.h,
               )

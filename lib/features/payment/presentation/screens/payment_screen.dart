@@ -140,9 +140,7 @@ class _PaymentScreenState extends State<PaymentScreen> {
               ),
               CustomButton(
                 onTap: () {},
-                color: AppColors.kPrimaryColor,
                 text: 'Pay',
-                textStyle: regularStyle(color: AppColors.black, fontSize: 16),
                 horizontal: 170.w,
                 vertical: 15.h,
               )

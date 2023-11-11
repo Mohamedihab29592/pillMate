@@ -15,7 +15,6 @@ class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
     return AppBar(
       backgroundColor: Colors.transparent,
       elevation: 0,
-      leading: const AppBarPopIcon(),
       title: AppBarTitle(appBarTitle: appBarTitle),
       centerTitle: true,
       actions: appBarAction

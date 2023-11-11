@@ -4,10 +4,15 @@ class AppStrings {
   /// app route
   static const String noRouteFound = 'No Route Found';
 
-  ///dio error
+///https error
   static const String serverFailure = 'Server Failure';
   static const String cacheFailure = 'Cache Failure';
   static const String unExpectedError = 'Un Expected Error';
+///Home Screen
+  static const String home = 'Home';
+  static const String favorites = 'Favorites';
+  static const String cart = 'Cart';
+  static const String account = 'Account';
 
   /// payment screen
   static const String paymentDetails = 'Payment Details';
