@@ -7,7 +7,7 @@ class CustomTextField extends StatelessWidget {
       required this.prefixIcon,
       required this.hintText,
       this.obscureText = false,
-      this.suffixIcon});
+      this.suffixIcon, required Color color, required TextStyle style});
   final String prefixIcon;
   String? suffixIcon;
   final String hintText;

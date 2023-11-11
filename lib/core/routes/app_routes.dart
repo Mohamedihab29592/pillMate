@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:pill_mate/features/auth/presenation/screens/login_screen.dart';
+import 'package:pill_mate/features/auth/presenation/screens/register_screen.dart';
 import 'package:pill_mate/features/home/presentation/screens/category_screen.dart';
 import 'package:pill_mate/features/home/presentation/screens/favourite_screen.dart';
 import 'package:pill_mate/features/home/presentation/screens/product_screen.dart';
@@ -22,6 +24,8 @@ import '../../features/sevices/payment/presentation/screens/payment_screen.dart'
 
 class Routes {
   static const String initialRoute = '/';
+  static const String login = 'login';
+  static const String register = 'register';
 static const String categoryRoute = '/category';
 static const String favouriteRoute = '/favourite';
 static const String productRoute = '/product';
@@ -38,6 +42,12 @@ Widget appRoutes(String route, dynamic arg) {
     case Routes.initialRoute:
 
       return const SplashScreen();
+    case Routes.login:
+
+      return const LoginScreen();
+    case Routes.register:
+
+      return const RegisterScreen();
 
     case Routes.categoryRoute:
       return BlocProvider(
