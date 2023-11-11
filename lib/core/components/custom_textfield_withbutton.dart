@@ -31,9 +31,7 @@ class CustomTextFieldWithButton extends StatelessWidget {
                 padding: const EdgeInsets.all(8.0),
                 child: CustomButton(
                   onTap: onTap,
-                  color: buttonColor ?? AppColors.kPrimaryColor,
                   text: buttonText ?? '',
-                  textStyle: Theme.of(context).textTheme.bodyMedium!,
                 ),
               )
             : null,

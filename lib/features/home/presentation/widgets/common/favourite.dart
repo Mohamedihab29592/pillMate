@@ -30,11 +30,8 @@ class _FavouriteIconState extends State<FavouriteIcon> {
         isFavourite = !isFavourite;
         setState(() {});
       },
-      child: SvgPicture.asset(
-        isFavourite ? ImageAssets.favouriteIcon : ImageAssets.notFavouriteIcon,
-        height: widget.iconHeight,
-        width: widget.iconWidth,
-      ),
+      child: Image.asset(        isFavourite ? ImageAssets.selectHeart : ImageAssets.heart,
+      )
     );
   }
 }

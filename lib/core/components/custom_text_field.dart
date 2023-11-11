@@ -5,11 +5,11 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 class CustomTextField extends StatelessWidget {
   CustomTextField(
       {super.key,
-      required this.prefixIcon,
+       this.prefixIcon,
       required this.hintText,
       this.obscureText = false,
-      this.suffixIcon});
-  final String prefixIcon;
+      this.suffixIcon, });
+   String ? prefixIcon;
   String? suffixIcon;
   final String hintText;
   bool obscureText;
@@ -27,12 +27,12 @@ class CustomTextField extends StatelessWidget {
         style: const TextStyle(color: Color(0xFF141D21)),
         obscureText: obscureText,
         decoration: InputDecoration(
-          prefixIcon: Padding(
+          prefixIcon:prefixIcon == null ? null : Padding(
             padding: const EdgeInsets.symmetric(vertical: 8, horizontal: 8),
             child: SizedBox(
               width: 24,
               height: 24,
-              child: Image.asset(prefixIcon),
+              child: Image.asset(prefixIcon!),
             ),
           ),
           suffixIcon: (suffixIcon == null)

@@ -40,9 +40,7 @@ class CustomSearchBar extends StatelessWidget {
               padding: const EdgeInsets.symmetric(
                 horizontal: 15,
               ),
-              child: SvgPicture.asset(
-                ImageAssets.searchIcon,
-              ),
+              child: Image.asset(ImageAssets.searchIcon,),
             ),
             hintStyle:
                 regularStyle(color: const Color(0xff636161), fontSize: 18)),

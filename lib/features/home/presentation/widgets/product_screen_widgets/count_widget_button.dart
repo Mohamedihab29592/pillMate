@@ -1,16 +1,19 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 
+import '../../../../../core/utils/app_colors.dart';
+
 class CountWidgetButton extends StatelessWidget {
   const CountWidgetButton(
-      {super.key, required this.buttonIcon, required this.buttonColor,required this.onPressed});
-  final String buttonIcon;
+      {super.key,  required this.buttonColor,required this.onPressed, this.icon});
   final Color buttonColor;
+  final IconData? icon;
   final void Function()? onPressed;
 
   @override
   Widget build(BuildContext context) {
     return ElevatedButton(
+
         onPressed: onPressed,
         style: ButtonStyle(
             elevation: const MaterialStatePropertyAll(0),
@@ -21,8 +24,8 @@ class CountWidgetButton extends StatelessWidget {
             )),
             backgroundColor: MaterialStatePropertyAll(buttonColor),
             minimumSize: const MaterialStatePropertyAll(Size(40, 40))),
-        child: SvgPicture.asset(
-          buttonIcon,
-        ));
+        child: Icon(icon,color: AppColors.white,),
+
+    );
   }
 }

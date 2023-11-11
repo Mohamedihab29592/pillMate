@@ -17,7 +17,7 @@ class CustomDotsIndicator extends StatelessWidget {
         position: dotsPosition!.toInt(),
         decorator: DotsDecorator(
           activeColor: AppColors.kPrimaryColor,
-          color: AppColors.kPrimaryColor,
+          color: Colors.grey,
           spacing: const EdgeInsets.symmetric(vertical: 12, horizontal: 2),
           size: const Size(18.0, 7.0),
           activeSize: const Size(18.0, 7.0),

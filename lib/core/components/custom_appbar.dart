@@ -21,15 +21,13 @@ class CustomAppBar extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
             textDirection: TextDirection.rtl,
             children: [
-              const Spacer(),
               Text(
                 title,
                 style:Theme.of(context).textTheme.bodyLarge!,
                 maxLines: 1,
                 textAlign: TextAlign.end,
               ),
-              const Spacer(),
-              const BackArrow(),
+
             ],
           )
         : Row(

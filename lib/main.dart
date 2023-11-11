@@ -1,10 +1,21 @@
 import 'package:flutter/material.dart';
+
+
+
+
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:pill_mate/core/routes/app_routes.dart';
 import 'package:pill_mate/core/utils/app_strings.dart';
-import 'package:pill_mate/features/newPassword/presentation/screens/new-password.dart';
+
+import 'package:pill_mate/features/auth/presenation/screens/login_screen.dart';
+import 'package:pill_mate/features/sevices/location/presenation/screens/location_screen.dart';
+
+import 'core/routes/app_routes.dart';
+
+
 
 import 'core/utils/themes.dart';
+
+
 
 void main() {
   runApp(const MyApp());
@@ -21,8 +32,11 @@ class MyApp extends StatelessWidget {
       child: MaterialApp(
         debugShowCheckedModeBanner: false,
         title: AppStrings.appName,
-        theme: AppThemes.darkMode,
-        home: const NewPassword(),
+
+
+        theme: AppThemes.lightMode,
+        home: const LoginScreen(),
+
         onGenerateRoute: (settings) {
           return MaterialPageRoute(
             builder: (context) => appRoutes(settings.name!, settings.arguments),
