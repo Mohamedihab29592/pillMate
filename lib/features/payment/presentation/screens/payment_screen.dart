@@ -10,7 +10,6 @@ import 'package:pill_mate/features/payment/data/local_data_source.dart';
 import 'package:pill_mate/features/payment/presentation/components/custom_row_receipt.dart';
 import 'package:pill_mate/features/payment/presentation/components/custom_visa_data.dart';
 
-import '../../../../core/utils/app_text_style.dart';
 
 class PaymentScreen extends StatefulWidget {
   const PaymentScreen({super.key});
@@ -44,7 +43,7 @@ class _PaymentScreenState extends State<PaymentScreen> {
                 buttonText: AppStrings.apply,
                 buttonColor: AppColors.kPrimaryColor,
                 buttonTextStyle:
-                    regularStyle(color: AppColors.black, fontSize: 12),
+                    Theme.of(context).textTheme.bodyMedium?.copyWith(fontSize: 12)
               ),
               SizedBox(
                 height: 20.h,
@@ -88,7 +87,7 @@ class _PaymentScreenState extends State<PaymentScreen> {
                             onChanged: (value) {
                               setState(() {
                                 groupValue = value as PaymentType;
-                                print(groupValue);
+                                debugPrint(groupValue.toString());
                               });
                             },
                           ),
@@ -112,7 +111,7 @@ class _PaymentScreenState extends State<PaymentScreen> {
                             onChanged: (value) {
                               setState(() {
                                 groupValue = value as PaymentType;
-                                print(groupValue);
+                                debugPrint(groupValue.toString());
                               });
                             },
                           ),
@@ -142,7 +141,7 @@ class _PaymentScreenState extends State<PaymentScreen> {
                 onTap: () {},
                 color: AppColors.kPrimaryColor,
                 text: 'Pay',
-                textStyle: regularStyle(color: AppColors.black, fontSize: 16),
+                textStyle: Theme.of(context).textTheme.bodyMedium!.copyWith(fontSize: 16),
                 horizontal: 170.w,
                 vertical: 15.h,
               )

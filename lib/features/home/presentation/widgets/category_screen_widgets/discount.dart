@@ -1,8 +1,6 @@
 import 'package:flutter/material.dart';
 
 import '../../../../../core/utils/app_colors.dart';
-import '../../../../../core/utils/app_text_style.dart';
-
 
 class Discount extends StatelessWidget {
   const Discount({
@@ -18,7 +16,10 @@ class Discount extends StatelessWidget {
           borderRadius: BorderRadius.circular(8)),
       child: Text(
         '50 %',
-        style: regularStyle(color: AppColors.kPrimaryColor, fontSize: 16),
+        style: Theme.of(context)
+            .textTheme
+            .bodyLarge
+            ?.copyWith(fontSize: 16, color: AppColors.darkGreen),
         maxLines: 1,
         overflow: TextOverflow.visible,
       ),

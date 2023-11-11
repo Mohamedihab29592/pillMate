@@ -1,13 +1,15 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 
-
 import '../../../../../core/utils/app_assets.dart';
 import '../../../../../core/utils/app_colors.dart';
-import '../../../../../core/utils/app_text_style.dart';
 
 class CustomSearchBar extends StatelessWidget {
-  const CustomSearchBar({super.key, required this.onChanged, this.hintText,this.textEditingController});
+  const CustomSearchBar(
+      {super.key,
+      required this.onChanged,
+      this.hintText,
+      this.textEditingController});
   final void Function(String)? onChanged;
   final String? hintText;
   final TextEditingController? textEditingController;
@@ -15,13 +17,15 @@ class CustomSearchBar extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.only(top: 24),
-      child: TextFormField(
-         controller: textEditingController,
-        onChanged: onChanged,
-        style: regularStyle(color: AppColors.black, fontSize: 18),
-        cursorColor: AppColors.kPrimaryColor,
-        decoration: InputDecoration(
+        padding: const EdgeInsets.only(top: 24),
+        child: TextFormField(
+          controller: textEditingController,
+          onChanged: onChanged,
+          style: Theme.of(context).textTheme.bodyLarge?.copyWith(
+                fontSize: 18,
+              ),
+          cursorColor: AppColors.kPrimaryColor,
+          decoration: InputDecoration(
             contentPadding:
                 const EdgeInsets.symmetric(horizontal: 15, vertical: 18),
             enabledBorder: const OutlineInputBorder(
@@ -44,9 +48,11 @@ class CustomSearchBar extends StatelessWidget {
                 ImageAssets.searchIcon,
               ),
             ),
-            hintStyle:
-                regularStyle(color: const Color(0xff636161), fontSize: 18)),
-      ),
-    );
+            hintStyle: Theme.of(context)
+                .textTheme
+                .bodyMedium
+                ?.copyWith(fontSize: 18, color: AppColors.grey),
+          ),
+        ));
   }
 }

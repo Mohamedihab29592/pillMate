@@ -26,13 +26,15 @@ class CategoryScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final arguments = (ModalRoute.of(context)?.settings.arguments ??
-        <String, dynamic>{}) as Map;
+    final arguments =
+        ModalRoute.of(context)?.settings.arguments as Map<String, dynamic>? ??
+            {};
+    final categoryName = arguments['category name'] as String;
     final searchCubit = BlocProvider.of<SearchCubit<String>>(context);
     TextEditingController searchController = TextEditingController();
     return Scaffold(
       appBar: CustomAppBar(
-        appBarTitle: arguments['category name'],
+        appBarTitle: categoryName,
         //!just for navigating to favourite screen in this task
       ),
       body: CustomScrollView(
