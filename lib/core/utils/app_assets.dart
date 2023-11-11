@@ -43,6 +43,8 @@ class ImageAssets {
   static const String shopping = '${homeImages}shopping-bag.png';
   static const String selectProfile = '${homeImages}select-profile-circle.png';
   static const String selectHome = '${homeImages}select_home.png';
+  static const String messageHome = '${homeImages}messages.png';
+
 
 
 
