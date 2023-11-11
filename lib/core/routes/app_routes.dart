@@ -9,6 +9,9 @@ import 'package:pill_mate/features/payment/presentation/screens/payment_screen.d
 
 import '../../features/initial/splash/splash.dart';
 import '../../features/home/presentation/bloc/cubit/search_cubit.dart';
+import '../../features/notifications/presentation/screens/notifications_screen.dart';
+import '../../features/profile/presentation/screens/account_screen.dart';
+import '../../features/profile/presentation/screens/profile_screen.dart';
 
 
 
@@ -22,6 +25,9 @@ static const String favouriteRoute = '/favourite';
 static const String productRoute = '/product';
   static const String paymentScreen = '/paymentScreen';
   static const String detailsScreen = '/detailsScreen';
+  static const String profileScreen = '/profileScreen';
+  static const String accountScreen = '/accountScreen';
+  static const String notificationScreen = '/notificationScreen';
 
 }
 
@@ -45,6 +51,12 @@ Widget appRoutes(String route, dynamic arg) {
       return const PaymentScreen();
     case Routes.detailsScreen:
       return const DetailsScreen();
+    case Routes.accountScreen:
+      return const AccountScreen();
+    case Routes.profileScreen:
+      return const ProfileScreen();
+    case Routes.notificationScreen:
+      return NotificationScreen();
 
     default:
       return const Scaffold(
