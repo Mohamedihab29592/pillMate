@@ -13,7 +13,7 @@ class ImageAssets {
   static const String forgetPassword = '${baseUrl}forgotPassword.png';
   static const String factorAuthentication =
       '${baseUrl}factorAuthentication.png';
-  static const String searchIcon = '${baseUrl}search.svg';
+  static const String searchIcon = '${baseUrl}search.png';
 
   static const String firstCategory = '${categoryImages}1.png';
   static const String secondCategory = '${categoryImages}2.png';
@@ -33,6 +33,7 @@ class ImageAssets {
   static const String vodCash = '${paymentImages}vodcash.png';
 
 
+
   static const String location = '${homeImages}location.png';
   static const String notification = '${homeImages}notification.png';
   static const String slider = '${homeImages}slider.png';
@@ -43,14 +44,18 @@ class ImageAssets {
   static const String selectProfile = '${homeImages}select-profile-circle.png';
   static const String selectHome = '${homeImages}select_home.png';
 
-  static const String notFavouriteIcon = '${baseUrl}not favourite.svg';
-  static const String favouriteIcon = '${baseUrl}favourite.svg';
 
-  static const String productPageItem = '${baseUrl}product page.png';
+
+  static const String productPageItem = '${baseUrl}productItem.png';
   static const String plusIcon = '${baseUrl}plus.svg';
   static const String minusIcon = '${baseUrl}minus.svg';
-  static const String cart = '${baseUrl}cart.svg';
   static const String inCart = '${baseUrl}inCart.svg';
+  static const String sms = '${baseUrl}sms.png';
+  static const String twoFactorAuthentication =
+      '${baseUrl}Two factor authentication-bro 1.png';
+  static const String newPassword = '${baseUrl}newPassword.svg';
+  static const String eyeSlash = '${baseUrl}eye-slash.png';
+  static const String lock = '${baseUrl}lock.png';
   static const String home = '${baseUrl}home.png';
   static const String profile = '${baseUrl}profile-circle.png';
 }

@@ -23,17 +23,13 @@ class PayNowScreen extends StatelessWidget {
             ),
             Text(
               'Done 🎉',
-              style: TextStyle(
-                  fontWeight: FontWeight.w700,
-                  fontSize: 20.sp,
-                  color: Colors.white),
-            ),
+              style: Theme.of(context).textTheme.titleMedium,),
             SizedBox(
               height: 16.h,
             ),
-            const Text(
+             Text(
               'your order will arrive in 30 min',
-              style: TextStyle(color: Colors.white),
+                style: Theme.of(context).textTheme.titleMedium,
             ),
             SizedBox(
               height: 83.h,

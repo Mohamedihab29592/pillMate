@@ -49,8 +49,8 @@ class _ProductScreenState extends State<ProductScreen> {
               children: [
                 Center(
                   child: SizedBox(
-                      height: !isPortrait ? width / 3.5 : height / 3.5,
-                      width: width,
+                      height:100,
+
                       child: ProductImagesPageView(
                         controller: pageController!,
                       )),

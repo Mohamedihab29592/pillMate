@@ -3,9 +3,9 @@ import 'package:pill_mate/core/components/custom_button.dart';
 import 'package:pill_mate/core/functions/navigate.dart';
 import 'package:pill_mate/core/routes/app_routes.dart';
 import 'package:pill_mate/features/auth/presenation/widgets/Custom_authentication_button.dart';
-import 'package:pill_mate/features/auth/presenation/widgets/custom_button.dart';
 
-import 'package:pill_mate/features/auth/presenation/widgets/custom_text_field.dart';
+import '../../../../core/components/custom_text_field.dart';
+
 
 class LoginScreen extends StatelessWidget {
   const LoginScreen({super.key});
@@ -46,12 +46,7 @@ class LoginScreen extends StatelessWidget {
             CustomTextField(
               prefixIcon: 'assets/images/user.png',
               hintText: 'Enter Yor Email',
-              color: const Color(0xffF5F5F5),
-              style: const TextStyle(
-                fontSize: 12,
-                fontWeight: FontWeight.w400,
-                color: Color(0xff141D21),
-              ),
+
             ),
             const SizedBox(
               height: 10,
@@ -61,29 +56,31 @@ class LoginScreen extends StatelessWidget {
               hintText: 'Enter Your Password',
               obscureText: true,
               suffixIcon: 'assets/images/eye-slash.png',
-              color: const Color(0xffF5F5F5),
-              style: const TextStyle(
-                fontSize: 12,
-                fontWeight: FontWeight.w400,
-                color: Color(0xff141D21),
-              ),
+
             ),
             const SizedBox(
               height: 10,
             ),
-            const Row(
+             Row(
               mainAxisAlignment: MainAxisAlignment.end,
               children: [
-                Text(
-                  'Forget password ?',
-                  style: TextStyle(decoration: TextDecoration.underline),
+                InkWell(
+                  onTap: (){
+                    navigateReplacement(context: context, route: Routes.forgetPassword);
+                  },
+                  child: Text(
+                    'Forget password ?',
+                    style: TextStyle(decoration: TextDecoration.underline),
+                  ),
                 )
               ],
             ),
             const SizedBox(
               height: 30,
             ),
-             CustomButton(onTap: (){}, text: "Login"),
+             CustomButton(onTap: (){
+               navigateAndKill(context: context, route: Routes.layOut);
+             }, text: "Login"),
             const SizedBox(
               height: 20,
             ),

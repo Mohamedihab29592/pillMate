@@ -33,7 +33,6 @@ class CategoryScreen extends StatelessWidget {
     return Scaffold(
       appBar: CustomAppBar(
         appBarTitle: arguments['category name'],
-        //!just for navigating to favourite screen in this task
       ),
       body: CustomScrollView(
         slivers: [

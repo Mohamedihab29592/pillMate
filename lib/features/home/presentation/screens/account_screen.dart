@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:pill_mate/core/functions/navigate.dart';
+import 'package:pill_mate/core/routes/app_routes.dart';
 import 'package:pill_mate/features/home/presentation/screens/profile_screen.dart';
 import '../../../../core/utils/app_colors.dart';
 import '../../../sevices/notifications/presentation/screens/notifications_screen.dart';
@@ -138,6 +140,7 @@ class AccountScreen extends StatelessWidget {
                     title: "Log Out",
                     onTapAction: (){
 
+                      navigateAndKill(context: context, route: Routes.login);
                     },
                   ),
                 ],

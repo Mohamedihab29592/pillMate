@@ -26,7 +26,7 @@ class ProductScreenButtons extends StatelessWidget {
         ),
         Expanded(
             child: MainButton(
-          backGroundColor: AppColors.kPrimaryColor,
+          backGroundColor: AppColors.kLightPrimaryColor,
           borderColor: AppColors.kPrimaryColor,
           buttonName: 'Buy Now',
           contentPadding:

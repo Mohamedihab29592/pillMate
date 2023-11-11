@@ -43,7 +43,7 @@ dependencies:
   flutter_bloc: ^8.1.3
   flutter_screenutil: ^5.9.0
   fluttertoast: ^8.2.2
-
+  flutter_otp_text_field: ^1.1.1
   google_fonts: ^6.1.0
   http: ^1.1.0
   shared_preferences: ^2.2.2
@@ -78,6 +78,7 @@ flutter:
     - assets/images/
     - assets/images/category/
     - assets/images/home/
+    - assets/images/payment/
 
 
   #   - images/a_dot_ham.jpeg

@@ -1,7 +1,7 @@
-/*
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:pill_mate/core/components/custom_button.dart';
+import 'package:pill_mate/core/components/custom_text_field.dart';
 
 
 
@@ -22,21 +22,17 @@ class LocationScreen extends StatelessWidget {
                 height: 500.h,
                 child: Image.asset('assets/images/Medicine-bro 1.png'),
               ),
-              const CustomTextFieeld(text: 'Adress', vertical: 40),
+             CustomTextField( hintText: "Adress"),
               SizedBox(
                 height: 10.h,
               ),
-              const CustomTextFieeld(
-                text: 'Floor Number',
-                vertical: 0,
-              ),
+              CustomTextField(hintText: "Floor Number"),
+
               SizedBox(
                 height: 10.h,
               ),
-              const CustomTextFieeld(
-                text: 'Apartment Number',
-                vertical: 0,
-              ),
+              CustomTextField( hintText: "Apartment number"),
+
               SizedBox(
                 height: 16.h,
               ),
@@ -48,4 +44,3 @@ class LocationScreen extends StatelessWidget {
     );
   }
 }
-*/

@@ -40,7 +40,7 @@ class _PriceAndCountState extends State<PriceAndCount> {
                   }
                 });
               },
-              buttonIcon: ImageAssets.minusIcon,
+              icon: Icons.minimize,
               buttonColor: AppColors.grey,
             ),
             Padding(
@@ -67,7 +67,7 @@ class _PriceAndCountState extends State<PriceAndCount> {
                   }
                 });
               },
-              buttonIcon: ImageAssets.plusIcon,
+              icon:Icons.add ,
               buttonColor: AppColors.kPrimaryColor,
             )
           ],

@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:pill_mate/core/components/custom_button.dart';
 import 'package:pill_mate/core/functions/navigate.dart';
 import 'package:pill_mate/core/routes/app_routes.dart';
-import 'package:pill_mate/features/auth/presenation/widgets/custom_button.dart';
-import 'package:pill_mate/features/auth/presenation/widgets/custom_text_field.dart';
+
+
+import '../../../../core/components/custom_text_field.dart';
 
 class RegisterScreen extends StatelessWidget {
   const RegisterScreen({super.key});
@@ -28,12 +30,7 @@ class RegisterScreen extends StatelessWidget {
             CustomTextField(
               prefixIcon: 'assets/images/user.png',
               hintText: 'Moamen',
-              color: const Color(0xffF5F5F5),
-              style: const TextStyle(
-                fontSize: 12,
-                fontWeight: FontWeight.w400,
-                color: Color(0xff141D21),
-              ),
+
             ),
             const SizedBox(
               height: 10,
@@ -41,12 +38,7 @@ class RegisterScreen extends StatelessWidget {
             CustomTextField(
               prefixIcon: 'assets/images/sms.png',
               hintText: 'moamenelsayed@gmail.com',
-              color: const Color(0xffF5F5F5),
-              style: const TextStyle(
-                fontSize: 12,
-                fontWeight: FontWeight.w400,
-                color: Color(0xff141D21),
-              ),
+
             ),
             const SizedBox(
               height: 10,
@@ -54,12 +46,7 @@ class RegisterScreen extends StatelessWidget {
             CustomTextField(
               prefixIcon: 'assets/images/call.png',
               hintText: '01011277063',
-              color: const Color(0xffF5F5F5),
-              style: const TextStyle(
-                fontSize: 12,
-                fontWeight: FontWeight.w400,
-                color: Color(0xff141D21),
-              ),
+
             ),
             const SizedBox(
               height: 10,
@@ -67,12 +54,7 @@ class RegisterScreen extends StatelessWidget {
             CustomTextField(
               prefixIcon: 'assets/images/location.png',
               hintText: 'Mansoura, Ahmed Maher',
-              color: const Color(0xffF5F5F5),
-              style: const TextStyle(
-                fontSize: 12,
-                fontWeight: FontWeight.w400,
-                color: Color(0xff141D21),
-              ),
+
             ),
             const SizedBox(
               height: 10,
@@ -81,29 +63,19 @@ class RegisterScreen extends StatelessWidget {
               prefixIcon: 'assets/images/lock.png',
               hintText: 'Moamen@142004',
               suffixIcon: 'assets/images/eye.png',
-              color: const Color(0xffF5F5F5),
-              style: const TextStyle(
-                fontSize: 12,
-                fontWeight: FontWeight.w400,
-                color: Color(0xff141D21),
-              ),
+
             ),
             const SizedBox(height: 10),
             CustomTextField(
               prefixIcon: 'assets/images/lock.png',
               hintText: '*************',
               suffixIcon: 'assets/images/eye-slash.png',
-              color: const Color(0xffF5F5F5),
-              style: const TextStyle(
-                fontSize: 12,
-                fontWeight: FontWeight.w400,
-                color: Color(0xff141D21),
-              ),
+
             ),
             const SizedBox(
               height: 20,
             ),
-            const Custombutton(text: 'Register'),
+             CustomButton(text: 'Register', onTap: () {  },),
             const SizedBox(
               height: 10,
             ),

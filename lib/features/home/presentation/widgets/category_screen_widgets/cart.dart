@@ -28,12 +28,8 @@ class _CartIconState extends State<CartIcon> {
         isCart = !isCart;
         setState(() {});
       },
-      child: SvgPicture.asset(
-
-       isCart? ImageAssets.cart:ImageAssets.inCart,
-        height: 28,
-        width: 28,
-      ),
+      child: Image.asset(       isCart? ImageAssets.shopping:ImageAssets.selectShopping,
+      )
     );
   }
 }

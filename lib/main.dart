@@ -1,17 +1,21 @@
 import 'package:flutter/material.dart';
 
 
+
+
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:pill_mate/core/utils/app_strings.dart';
-import 'package:pill_mate/features/auth/presenation/screens/login_screen.dart';
-import 'package:pill_mate/features/auth/presenation/screens/register_screen.dart';
-import 'package:pill_mate/features/sevices/presenation/screens/chat_screen.dart';
 
+import 'package:pill_mate/features/auth/presenation/screens/login_screen.dart';
+import 'package:pill_mate/features/sevices/location/presenation/screens/location_screen.dart';
 
 import 'core/routes/app_routes.dart';
+
+
+
 import 'core/utils/themes.dart';
-import 'features/home/presentation/screens/home_screen.dart';
-import 'features/home/presentation/screens/layout.dart';
+
+
 
 void main() {
   runApp(const MyApp());
@@ -29,8 +33,10 @@ class MyApp extends StatelessWidget {
         debugShowCheckedModeBanner: false,
         title: AppStrings.appName,
 
+
         theme: AppThemes.lightMode,
         home: const LoginScreen(),
+
         onGenerateRoute: (settings) {
           return MaterialPageRoute(
             builder: (context) => appRoutes(settings.name!, settings.arguments),
