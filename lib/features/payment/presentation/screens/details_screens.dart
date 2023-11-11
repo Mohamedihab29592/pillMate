@@ -118,11 +118,11 @@ class DetailsScreen extends StatelessWidget {
               const Divider(
                 thickness: 1.5,
               ),
-              CustomRowReceipt(text: AppStrings.delivery, price: 'Free '),
+              const CustomRowReceipt(text: AppStrings.delivery, price: 'Free '),
               SizedBox(
                 height: 10.h,
               ),
-              CustomRowReceipt(text: AppStrings.total, price: '100'),
+              const CustomRowReceipt(text: AppStrings.total, price: '100'),
               SizedBox(
                 height: 40.h,
               ),

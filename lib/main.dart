@@ -4,9 +4,10 @@ import 'package:pill_mate/core/routes/app_routes.dart';
 
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:pill_mate/core/utils/app_strings.dart';
-import 'package:pill_mate/features/payment/presentation/screens/payment_screen.dart';
 
 import 'core/utils/themes.dart';
+import 'features/home/presentation/screens/home_screen.dart';
+import 'features/home/presentation/screens/layout.dart';
 
 
 void main() {
@@ -25,8 +26,8 @@ class MyApp extends StatelessWidget {
       child: MaterialApp(
         debugShowCheckedModeBanner: false,
         title: AppStrings.appName,
-        theme: AppThemes.darkMode,
-        home: const PaymentScreen(),
+        theme: AppThemes.lightMode,
+        home: const LayOut(),
         onGenerateRoute: (settings) {
           return MaterialPageRoute(
             builder: (context) => appRoutes(settings.name!, settings.arguments),
