@@ -128,9 +128,7 @@ class DetailsScreen extends StatelessWidget {
               ),
               CustomButton(
                 onTap: () {},
-                color: AppColors.kPrimaryColor,
                 text: 'Pay Now',
-                textStyle: regularStyle(color: AppColors.black, fontSize: 16),
                 horizontal: 150.w,
                 vertical: 15.h,
               )

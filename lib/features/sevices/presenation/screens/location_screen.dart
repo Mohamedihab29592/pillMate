@@ -1,7 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:pill_mate/features/cart/presentation/widget/custom_button.dart';
-import 'package:pill_mate/features/location/presentation/view/widget/custpm_text_field.dart';
+import 'package:pill_mate/core/components/custom_button.dart';
+import 'package:pill_mate/core/utils/app_colors.dart';
+import 'package:pill_mate/features/cart_noti_paynow/location/presentation/view/widget/custpm_text_field.dart';
+
+
 
 class LocationScreen extends StatelessWidget {
   const LocationScreen({super.key});
@@ -38,9 +41,7 @@ class LocationScreen extends StatelessWidget {
               SizedBox(
                 height: 16.h,
               ),
-              const CyutomButton(
-                text: 'Done',
-              )
+              CustomButton(onTap: (){},  text: "Done", ),
             ],
           ),
         ),

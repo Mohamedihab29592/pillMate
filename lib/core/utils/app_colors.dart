@@ -5,6 +5,7 @@ class AppColors {
 
 
   static Color kLightPrimaryColor = const Color(0xffDAFFF5);
+  static Color kDarkPrimaryColor = const Color(0xff8BC4B5);
 
 
 

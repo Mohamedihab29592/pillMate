@@ -3,8 +3,10 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 import 'package:pill_mate/core/components/custom_appbar.dart';
-import 'package:pill_mate/features/cart/presentation/view/column_of_cart.dart';
-import 'package:pill_mate/features/cart/presentation/widget/custom_button.dart';
+import 'package:pill_mate/core/components/custom_button.dart';
+
+import '../widgets/column_of_cart.dart';
+
 
 class CartScreen extends StatelessWidget {
   const CartScreen({super.key});
@@ -13,8 +15,8 @@ class CartScreen extends StatelessWidget {
     return Scaffold(
       body: SingleChildScrollView(
         child: Padding(
-          padding: EdgeInsets.only(
-            top: 46.h,
+          padding: const EdgeInsets.all(
+           20
           ),
           child: Column(
             children: [
@@ -25,10 +27,11 @@ class CartScreen extends StatelessWidget {
                 itemBuilder: (context, index) => Column(
                   children: [
                     ColumnOfCart(
+                      tapMinus: (){},
                         image: 'assets/images/trash.png',
-                        subTitle: '125',
-                        title: 'titleLarge',
-                        text2: 'text2'),
+                        subTitle: '200 MM',
+                        title: 'Vitamin B12',
+                        text2: 'text2', tapPlus: () {  },),
                     const Divider(
                       color: Colors.grey,
                       thickness: 2,
@@ -44,26 +47,20 @@ class CartScreen extends StatelessWidget {
                 children: [
                   Text(
                     'Total',
-                    style: TextStyle(
-                        fontWeight: FontWeight.w500,
-                        fontSize: 14.sp,
-                        color: Colors.white),
+                    style: Theme.of(context).textTheme.titleMedium,
                   ),
                   Text(
                     '100\$',
-                    style: TextStyle(
-                        fontWeight: FontWeight.w500,
-                        fontSize: 14.sp,
-                        color: Colors.white),
+                    style: Theme.of(context).textTheme.titleMedium,
+
+
                   ),
                 ],
               ),
               SizedBox(
                 height: 50.h,
               ),
-              const CyutomButton(
-                text: 'Check out',
-              )
+               CustomButton(onTap: (){},text: 'Check out', )
             ],
           ),
         ),
