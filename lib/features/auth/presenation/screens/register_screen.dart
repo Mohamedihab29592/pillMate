@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:pill_mate/core/functions/navigate.dart';
+import 'package:pill_mate/core/routes/app_routes.dart';
 import 'package:pill_mate/features/auth/presenation/widgets/custom_button.dart';
 import 'package:pill_mate/features/auth/presenation/widgets/custom_text_field.dart';
 
@@ -105,7 +107,7 @@ class RegisterScreen extends StatelessWidget {
             const SizedBox(
               height: 10,
             ),
-            const Row(
+             Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 Text(
@@ -115,12 +117,17 @@ class RegisterScreen extends StatelessWidget {
                       color: Color(0xff666666),
                       fontWeight: FontWeight.w600,),
                 ),
-                Text(
-                  'Login',
-                  style: TextStyle(
-                      fontSize: 12,
-                      color: Color(0xff224A46),
-                      fontWeight: FontWeight.w600),
+                InkWell(
+                  onTap: (){
+                    navigateAndKill(context: context, route: Routes.login);
+                  },
+                  child: Text(
+                    'Login',
+                    style: TextStyle(
+                        fontSize: 12,
+                        color: Color(0xff224A46),
+                        fontWeight: FontWeight.w600),
+                  ),
                 ),
               ],
             ),

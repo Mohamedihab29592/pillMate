@@ -5,13 +5,13 @@ import 'package:pill_mate/core/utils/app_colors.dart';
 import 'package:pill_mate/core/utils/app_strings.dart';
 import 'package:pill_mate/core/components/custom_appbar.dart';
 import 'package:pill_mate/core/components/custom_button.dart';
-import 'package:pill_mate/features/payment/presentation/components/custom_payment_method_row.dart';
-import 'package:pill_mate/features/payment/presentation/components/custom_product_name_price_desc.dart';
-import 'package:pill_mate/features/payment/presentation/components/custom_row_receipt.dart';
-import 'package:pill_mate/features/payment/presentation/components/custom_square_button.dart';
-import 'package:pill_mate/features/payment/presentation/components/custom_title_with_button_row.dart';
 
-import '../../../../core/utils/app_text_style.dart';
+import '../components/custom_payment_method_row.dart';
+import '../components/custom_product_name_price_desc.dart';
+import '../components/custom_row_receipt.dart';
+import '../components/custom_square_button.dart';
+import '../components/custom_title_with_button_row.dart';
+
 
 class DetailsScreen extends StatelessWidget {
   const DetailsScreen({super.key});
@@ -118,19 +118,17 @@ class DetailsScreen extends StatelessWidget {
               const Divider(
                 thickness: 1.5,
               ),
-              CustomRowReceipt(text: AppStrings.delivery, price: 'Free '),
+              const CustomRowReceipt(text: AppStrings.delivery, price: 'Free '),
               SizedBox(
                 height: 10.h,
               ),
-              CustomRowReceipt(text: AppStrings.total, price: '100'),
+              const CustomRowReceipt(text: AppStrings.total, price: '100'),
               SizedBox(
                 height: 40.h,
               ),
               CustomButton(
                 onTap: () {},
-                color: AppColors.kPrimaryColor,
                 text: 'Pay Now',
-                textStyle: regularStyle(color: AppColors.black, fontSize: 16),
                 horizontal: 150.w,
                 vertical: 15.h,
               )

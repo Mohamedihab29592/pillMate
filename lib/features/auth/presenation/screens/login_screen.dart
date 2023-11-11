@@ -1,4 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:pill_mate/core/components/custom_button.dart';
+import 'package:pill_mate/core/functions/navigate.dart';
+import 'package:pill_mate/core/routes/app_routes.dart';
 import 'package:pill_mate/features/auth/presenation/widgets/Custom_authentication_button.dart';
 import 'package:pill_mate/features/auth/presenation/widgets/custom_button.dart';
 
@@ -24,18 +27,15 @@ class LoginScreen extends StatelessWidget {
             const SizedBox(
               height: 10,
             ),
-            const Row(
+             Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 SizedBox(
                   width: 172,
                   height: 23,
                   child: Text(
-                    'Welcom To PillMate',
-                    style: TextStyle(
-                      fontSize: 17,
-                      fontWeight: FontWeight.w600,
-                    ),
+                    'Welcome To PillMate',
+                    style: Theme.of(context).textTheme.bodyLarge
                   ),
                 ),
               ],
@@ -83,7 +83,7 @@ class LoginScreen extends StatelessWidget {
             const SizedBox(
               height: 30,
             ),
-            const Custombutton(text: 'Login'),
+             CustomButton(onTap: (){}, text: "Login"),
             const SizedBox(
               height: 20,
             ),
@@ -128,7 +128,7 @@ class LoginScreen extends StatelessWidget {
             const SizedBox(
               height: 20,
             ),
-            const Row(
+             Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 Text(
@@ -138,12 +138,17 @@ class LoginScreen extends StatelessWidget {
                     color: Color(0xff224A46),
                   ),
                 ),
-                Text(
-                  'Register',
-                  style: TextStyle(
-                    fontSize: 12,
-                    fontWeight: FontWeight.w600,
-                    color: Color(0xff224A46),
+                InkWell(
+                  onTap: (){
+                    navigateReplacement(context: context, route: Routes.register);
+                  },
+                  child: Text(
+                    'Register',
+                    style: TextStyle(
+                      fontSize: 12,
+                      fontWeight: FontWeight.w600,
+                      color: Color(0xff224A46),
+                    ),
                   ),
                 ),
               ],

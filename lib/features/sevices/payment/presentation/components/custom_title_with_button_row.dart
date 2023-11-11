@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
-import 'package:pill_mate/features/payment/presentation/components/custom_change_button.dart';
+import 'custom_change_button.dart';
+
 
 class CustomTitlewithButtonRow extends StatelessWidget {
   const CustomTitlewithButtonRow({

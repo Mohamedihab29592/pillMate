@@ -4,6 +4,9 @@ class ImageAssets {
   static const String baseUrl = 'assets/images/';
 
   static const String categoryImages = '${baseUrl}category/';
+  static const String homeImages = '${baseUrl}home/';
+  static const String paymentImages = '${baseUrl}payment/';
+
   static const String appLogo = '${baseUrl}logo.png';
   static const String onBoarding1 = '${baseUrl}onBoarding1.png';
   static const String onBoarding2 = '${baseUrl}onBoarding2.png';
@@ -26,8 +29,19 @@ class ImageAssets {
   static const String twelfthCategory = '${categoryImages}12.png';
 
   static const String product = '${baseUrl}product.png';
-  static const String visa = '${baseUrl}visa.png';
-  static const String vodCash = '${baseUrl}vodcash.png';
+  static const String visa = '${paymentImages}visa.png';
+  static const String vodCash = '${paymentImages}vodcash.png';
+
+
+  static const String location = '${homeImages}location.png';
+  static const String notification = '${homeImages}notification.png';
+  static const String slider = '${homeImages}slider.png';
+  static const String heart = '${homeImages}heart.png';
+  static const String selectHeart = '${homeImages}select_heart.png';
+  static const String selectShopping= '${homeImages}select-shopping-bag.png';
+  static const String shopping = '${homeImages}shopping-bag.png';
+  static const String selectProfile = '${homeImages}select-profile-circle.png';
+  static const String selectHome = '${homeImages}select_home.png';
 
   static const String notFavouriteIcon = '${baseUrl}not favourite.svg';
   static const String favouriteIcon = '${baseUrl}favourite.svg';
@@ -37,4 +51,6 @@ class ImageAssets {
   static const String minusIcon = '${baseUrl}minus.svg';
   static const String cart = '${baseUrl}cart.svg';
   static const String inCart = '${baseUrl}inCart.svg';
+  static const String home = '${baseUrl}home.png';
+  static const String profile = '${baseUrl}profile-circle.png';
 }
