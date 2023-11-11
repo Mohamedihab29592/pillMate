@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:pill_mate/features/home/presentation/screens/home_screen.dart';
+import 'package:pill_mate/features/home/presentation/screens/profile_screen.dart';
 
 import '../widgets/custom_navbar.dart';
+import 'account_screen.dart';
 import 'cart.dart';
 import 'favourite_screen.dart';
 
@@ -28,7 +30,7 @@ class _LayOutState extends State<LayOut> {
    HomeScreen(),
     FavouriteScreen(),
     CartScreen(),
-    FavouriteScreen(),
+    AccountScreen(),
 
 
   ];

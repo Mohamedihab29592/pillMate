@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:pill_mate/core/components/back_arrow.dart';
 
-import '../../../../core/utils/app_colors.dart';
-import '../../../../core/utils/themes.dart';
+import '../../../../../core/utils/app_colors.dart';
+
+import '../../../../../core/utils/themes.dart';
 import '../../data/models/notification_model.dart';
 import '../store/notification_cubit.dart';
 import '../store/notification_state.dart';
@@ -39,17 +41,12 @@ class NotificationScreen extends StatelessWidget {
           NotificationCubit.get(context);
           return Scaffold(
             appBar: AppBar(
-              leading: IconButton(
-                icon: Icon(Icons.arrow_back_ios),
-                iconSize: 15,
-                color: AppColors.black,
-                onPressed: () {},
-              ),
-              titleTextStyle: TextStyle(color: AppColors.black),
+              leading: BackArrow(),
+              titleTextStyle: Theme.of(context).textTheme.bodyLarge,
               centerTitle: true,
               backgroundColor: AppColors.white,
               title: const Text(
-                "NotificationScreen",
+                "Notifications",
                 style: TextStyle(fontSize: 15),
               ),
               elevation: 0,

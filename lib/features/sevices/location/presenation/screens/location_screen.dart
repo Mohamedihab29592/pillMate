@@ -1,8 +1,7 @@
+/*
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:pill_mate/core/components/custom_button.dart';
-import 'package:pill_mate/core/utils/app_colors.dart';
-import 'package:pill_mate/features/cart_noti_paynow/location/presentation/view/widget/custpm_text_field.dart';
 
 
 
@@ -49,3 +48,4 @@ class LocationScreen extends StatelessWidget {
     );
   }
 }
+*/

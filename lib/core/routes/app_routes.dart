@@ -4,14 +4,16 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:pill_mate/features/home/presentation/screens/category_screen.dart';
 import 'package:pill_mate/features/home/presentation/screens/favourite_screen.dart';
 import 'package:pill_mate/features/home/presentation/screens/product_screen.dart';
-import 'package:pill_mate/features/payment/presentation/screens/details_screens.dart';
-import 'package:pill_mate/features/payment/presentation/screens/payment_screen.dart';
 
+
+import '../../features/home/presentation/screens/account_screen.dart';
+import '../../features/home/presentation/screens/profile_screen.dart';
 import '../../features/initial/splash/splash.dart';
 import '../../features/home/presentation/bloc/cubit/search_cubit.dart';
-import '../../features/notifications/presentation/screens/notifications_screen.dart';
-import '../../features/profile/presentation/screens/account_screen.dart';
-import '../../features/profile/presentation/screens/profile_screen.dart';
+import '../../features/sevices/notifications/presentation/screens/notifications_screen.dart';
+import '../../features/sevices/payment/presentation/screens/details_screens.dart';
+import '../../features/sevices/payment/presentation/screens/payment_screen.dart';
+
 
 
 

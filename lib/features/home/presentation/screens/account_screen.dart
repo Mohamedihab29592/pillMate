@@ -1,9 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:pill_mate/core/utils/themes.dart';
-import 'package:pill_mate/features/profile/presentation/store/profile_cubit.dart';
+import 'package:pill_mate/features/home/presentation/screens/profile_screen.dart';
 import '../../../../core/utils/app_colors.dart';
-import '../store/profile_state.dart';
+import '../../../sevices/notifications/presentation/screens/notifications_screen.dart';
+import '../bloc/store/profile_cubit.dart';
+import '../bloc/store/profile_state.dart';
 import '../widgets/account_item.dart';
 import '../widgets/toggleItem.dart';
 
@@ -24,18 +25,13 @@ class AccountScreen extends StatelessWidget {
           ProfileScreenCubit.get(context);
           return Scaffold(
             appBar: AppBar(
-              leading: IconButton(
-                icon: Icon(Icons.arrow_back_ios),
-                iconSize: 15,
-                color: AppColors.black,
-                onPressed: () {},
-              ),
-              titleTextStyle: TextStyle(color: AppColors.black),
+              backgroundColor: Theme.of(context).scaffoldBackgroundColor,
+
+              titleTextStyle: Theme.of(context).textTheme.bodyLarge,
               centerTitle: true,
-              backgroundColor: AppColors.white,
-              title: const Text(
+              title:  Text(
                 "Account",
-                style: TextStyle(fontSize: 15),
+                style: Theme.of(context).textTheme.bodyLarge!,
               ),
               elevation: 0,
             ),
@@ -46,7 +42,7 @@ class AccountScreen extends StatelessWidget {
               padding: EdgeInsets.only(top: mq.size.height * 0.05),
               child: Column(
                 children: [
-                  CircleAvatar(
+                  const CircleAvatar(
                     child: Image(
                       image: AssetImage('assets/images/profile.png'),
                     ),
@@ -57,7 +53,7 @@ class AccountScreen extends StatelessWidget {
                   ),
                   Text(
                     "Account Name",
-                    style: AppThemes.lightMode.textTheme.titleLarge,
+                    style: Theme.of(context).textTheme.bodyLarge!,
                   ),
                   SizedBox(
                     height: mq.size.height * 0.03,
@@ -70,10 +66,15 @@ class AccountScreen extends StatelessWidget {
                     itemHeight: mq.size.height * 0.06,
                     title: "Profile",
                     onTapAction: (){
+                      Navigator.push(context, MaterialPageRoute(builder: (context)=>ProfileScreen()));
 
                     },
                   ),
                   ToggleItem(
+                    tap: (){
+                      Navigator.push(context, MaterialPageRoute(builder: (context)=>NotificationScreen()));
+
+                    },
                     imageHeight: mq.size.height * 0.08,
                     imageWidth: mq.size.width * 0.08,
                     itemHeight: mq.size.height * 0.06,
@@ -85,6 +86,7 @@ class AccountScreen extends StatelessWidget {
                     preffixImage: 'assets/images/notification-bing.png',
                   ),
                   ToggleItem(
+
                     imageHeight: mq.size.height * 0.08,
                     imageWidth: mq.size.width * 0.08,
                     itemHeight: mq.size.height * 0.06,

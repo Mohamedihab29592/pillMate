@@ -1,9 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:pill_mate/core/components/back_arrow.dart';
+import 'package:pill_mate/core/components/custom_button.dart';
+import 'package:pill_mate/core/utils/app_text_style.dart';
 import 'package:pill_mate/core/utils/themes.dart';
 import '../../../../core/utils/app_colors.dart';
-import '../../../profile/presentation/store/profile_cubit.dart';
-import '../../../profile/presentation/store/profile_state.dart';
+import '../bloc/store/profile_cubit.dart';
+import '../bloc/store/profile_state.dart';
+
 
 class ProfileScreen extends StatelessWidget {
   const ProfileScreen({super.key});
@@ -22,20 +26,15 @@ class ProfileScreen extends StatelessWidget {
           ProfileScreenCubit.get(context);
           return Scaffold(
             appBar: AppBar(
-              leading: IconButton(
-                icon: Icon(Icons.arrow_back_ios),
-                iconSize: 15,
-                color: AppColors.black,
-                onPressed: () {},
-              ),
-              titleTextStyle: TextStyle(color: AppColors.black),
+              leading: const BackArrow(),
+              titleTextStyle: boldStyle(color: AppColors.black, fontSize: 18),
               centerTitle: true,
-              backgroundColor: AppColors.kPrimaryColor,
+              backgroundColor: AppColors.kLightPrimaryColor,
               title: const Text("Edit Profile"),
               elevation: 0,
             ),
             body: Container(
-              color: AppColors.kPrimaryColor,
+              color: AppColors.kLightPrimaryColor,
               width: mq.size.width,
               height: mq.size.height,
               child: Stack(
@@ -47,7 +46,7 @@ class ProfileScreen extends StatelessWidget {
                       height: mq.size.height * 0.76,
                       padding: const EdgeInsets.only(
                           left: 12.0, right: 10.0, bottom: 5.0, top: 5.0),
-                      decoration: BoxDecoration(
+                      decoration: const BoxDecoration(
                           color: AppColors.white,
                           borderRadius: BorderRadius.only(
                             topLeft: Radius.circular(15),
@@ -61,11 +60,12 @@ class ProfileScreen extends StatelessWidget {
                           GestureDetector(
                             child: SizedBox(
                               width: mq.size.width * 0.7,
-                              child: Row(
+                              child: const Row(
                                 mainAxisAlignment: MainAxisAlignment.center,
                                 children: [
                                   Text(
                                     "Change Profile",
+
                                   ),
                                   Icon(Icons.edit)
                                 ],
@@ -320,30 +320,7 @@ class ProfileScreen extends StatelessWidget {
                               ),
                             ),
                           ),
-                          Padding(
-                            padding:
-                            const EdgeInsets.only(bottom: 5.0, top: 5.0),
-                            child: Material(
-                              borderRadius: BorderRadius.circular(10.0),
-// Set border radius
-                              color: AppColors.kPrimaryColor,
-                              child: InkWell(
-                                borderRadius: BorderRadius.circular(10.0),
-// Match the border radius
-                                onTap: () {},
-                                child: Container(
-                                  alignment: Alignment.center,
-                                  width: mq.size.width,
-                                  height: mq.size.height * 0.07,
-                                  child: Text(
-                                    "Add An Account",
-                                    textAlign: TextAlign.center,
-                                    style: TextStyle(fontSize: 20),
-                                  ),
-                                ),
-                              ),
-                            ),
-                          ),
+                         CustomButton(onTap: (){}, text: "Add An Account")
                         ],
                       ),
                     ),
@@ -351,11 +328,11 @@ class ProfileScreen extends StatelessWidget {
                   Positioned(
                     top: mq.size.height * 0.04,
                     left: mq.size.width / 3,
-                    child: CircleAvatar(
+                    child: const CircleAvatar(
+                      radius: 60,
                       child: Image(
                         image: AssetImage('assets/images/profile.png'),
                       ),
-                      radius: 60,
                     ),
                   ),
                 ],
