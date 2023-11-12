@@ -6,6 +6,7 @@ import 'package:pill_mate/core/components/custom_text_field.dart';
 import 'package:pill_mate/core/functions/navigate.dart';
 import 'package:pill_mate/core/routes/app_routes.dart';
 import 'package:pill_mate/core/utils/app_assets.dart';
+import 'package:pill_mate/core/utils/app_strings.dart';
 
 class NewPassword extends StatelessWidget {
   const NewPassword({super.key});
@@ -32,7 +33,7 @@ class NewPassword extends StatelessWidget {
                     ),
                   ),
                   Text(
-                    'New Password',
+                    AppStrings.newPassword,
                     style: Theme.of(context)
                         .textTheme
                         .bodyLarge
@@ -45,25 +46,23 @@ class NewPassword extends StatelessWidget {
                   CustomTextField(
                       prefixIcon: ImageAssets.lock,
                       suffixIcon: ImageAssets.eyeSlash,
-                      hintText: 'Enter Your Password'),
+                      hintText: AppStrings.enterUrPassword),
                   SizedBox(
                     height: 20.h,
                   ),
                   CustomTextField(
                       prefixIcon: ImageAssets.lock,
                       suffixIcon: ImageAssets.eyeSlash,
-                      hintText: 'confirm Password'),
+                      hintText: AppStrings.confirmPassword),
                   SizedBox(
                     height: 20.h,
                   ),
                   CustomButton(
-                      onTap: () {
-                        navigateAndKill(context: context, route: Routes.login);
-                      },
-                      text: 'Reset',
-                      vertical: 20.h,
-
-
+                    onTap: () {
+                      navigateAndKill(context: context, route: Routes.login);
+                    },
+                    text: AppStrings.reset,
+                    vertical: 20.h,
                   ),
                 ],
               ),
