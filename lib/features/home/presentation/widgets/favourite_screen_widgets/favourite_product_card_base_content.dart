@@ -5,7 +5,6 @@ import 'package:pill_mate/features/home/presentation/widgets/common/main_button.
 
 import '../../../../../core/utils/app_assets.dart';
 import '../../../../../core/utils/app_colors.dart';
-import '../../../../../core/utils/app_text_style.dart';
 
 class FavouriteProductCardBaseContent extends StatelessWidget {
   const FavouriteProductCardBaseContent({
@@ -34,16 +33,20 @@ class FavouriteProductCardBaseContent extends StatelessWidget {
               children: [
                 AutoSizeText(
                   'Vitaferrol B12 Vitaferrol B12 ',
-                  style: regularStyle(
-                      color: const Color(0xff636161), fontSize: 16),
+                  style: Theme.of(context)
+                      .textTheme
+                      .bodyMedium
+                      ?.copyWith(fontSize: 16, color: AppColors.softGrey),
                   minFontSize: 14,
                   maxLines: 1,
                   overflow: TextOverflow.ellipsis,
                 ),
                 AutoSizeText(
                   '12 \$',
-                  style: regularStyle(
-                      color: const Color(0xff636161), fontSize: 16),
+                  style: Theme.of(context)
+                      .textTheme
+                      .bodyMedium
+                      ?.copyWith(fontSize: 16, color: AppColors.softGrey),
                   minFontSize: 14,
                   maxLines: 1,
                   overflow: TextOverflow.ellipsis,

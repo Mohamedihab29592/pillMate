@@ -2,8 +2,6 @@
 import 'package:flutter/material.dart';
 
 import '../../../../../core/utils/app_colors.dart';
-import '../../../../../core/utils/app_text_style.dart';
-
 
 class MainButton extends StatefulWidget {
   const MainButton({
@@ -54,8 +52,10 @@ class _MainButtonState extends State<MainButton> {
           child: Center(
             child: Text(
               widget.buttonName,
-              style: regularStyle(
-                  color: AppColors.kPrimaryColor, fontSize: 16),
+              style: Theme.of(context)
+                  .textTheme
+                  .bodyMedium
+                  ?.copyWith(fontSize: 16, color: AppColors.darkGreen),
               maxLines: 1,
               overflow: TextOverflow.ellipsis,
             ),

@@ -1,21 +1,8 @@
 import 'package:flutter/material.dart';
-
-
-
-
+import 'package:pill_mate/core/routes/app_routes.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:pill_mate/core/utils/app_strings.dart';
-
-import 'package:pill_mate/features/auth/presenation/screens/login_screen.dart';
-import 'package:pill_mate/features/sevices/location/presenation/screens/location_screen.dart';
-
-import 'core/routes/app_routes.dart';
-
-
-
 import 'core/utils/themes.dart';
-
-
 
 void main() {
   runApp(const MyApp());
@@ -32,15 +19,21 @@ class MyApp extends StatelessWidget {
       child: MaterialApp(
         debugShowCheckedModeBanner: false,
         title: AppStrings.appName,
-
-
-        theme: AppThemes.lightMode,
-        home: const LoginScreen(),
-
-        onGenerateRoute: (settings) {
-          return MaterialPageRoute(
-            builder: (context) => appRoutes(settings.name!, settings.arguments),
-          );
+        theme: AppThemes.darkMode,
+        initialRoute: Routes.categoriesIntailRoute,
+        routes: {
+          Routes.categoriesIntailRoute: (context) =>
+              appRoutes(Routes.categoriesIntailRoute, null),
+          Routes.categoryRoute: (context) =>
+              appRoutes(Routes.categoryRoute, null),
+          Routes.favouriteRoute: (context) =>
+              appRoutes(Routes.favouriteRoute, null),
+          Routes.productRoute: (context) =>
+              appRoutes(Routes.productRoute, null),
+          Routes.paymentScreen: (context) =>
+              appRoutes(Routes.paymentScreen, null),
+          Routes.detailsScreen: (context) =>
+              appRoutes(Routes.detailsScreen, null),
         },
       ),
     );

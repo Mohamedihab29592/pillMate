@@ -1,18 +1,20 @@
 import 'package:flutter/material.dart';
 
-import '../utils/app_colors.dart';
-
 class CustomButton extends StatelessWidget {
   const CustomButton({
     super.key,
     required this.onTap,
+    required this.color,
     required this.text,
+    required this.textStyle,
     this.horizontal = 20,
     this.vertical = 5,
   });
 
   final void Function()? onTap;
+  final Color color;
   final String text;
+  final TextStyle? textStyle;
   final double horizontal;
   final double vertical;
 
@@ -21,17 +23,13 @@ class CustomButton extends StatelessWidget {
     return GestureDetector(
       onTap: onTap,
       child: Container(
-        width: double.infinity,
-        height: 50,
-
-
+        padding:
+            EdgeInsets.symmetric(horizontal: horizontal, vertical: vertical),
         decoration: BoxDecoration(
-            color: AppColors.kDarkPrimaryColor, borderRadius: BorderRadius.circular(14)),
-        child: Center(
-          child: Text(
-            text,
-            style: Theme.of(context).textTheme.titleMedium,
-          ),
+            color: color, borderRadius: BorderRadius.circular(14)),
+        child: Text(
+          text,
+          style: textStyle,
         ),
       ),
     );

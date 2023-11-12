@@ -6,11 +6,9 @@ import 'package:pill_mate/core/utils/app_strings.dart';
 import 'package:pill_mate/core/components/custom_appbar.dart';
 import 'package:pill_mate/core/components/custom_button.dart';
 import 'package:pill_mate/core/components/custom_textfield_withbutton.dart';
-
-import '../../../../../core/utils/app_text_style.dart';
-import '../../data/local_data_source.dart';
-import '../components/custom_row_receipt.dart';
-import '../components/custom_visa_data.dart';
+import 'package:pill_mate/features/payment/data/local_data_source.dart';
+import 'package:pill_mate/features/payment/presentation/components/custom_row_receipt.dart';
+import 'package:pill_mate/features/payment/presentation/components/custom_visa_data.dart';
 
 
 class PaymentScreen extends StatefulWidget {
@@ -45,7 +43,7 @@ class _PaymentScreenState extends State<PaymentScreen> {
                 buttonText: AppStrings.apply,
                 buttonColor: AppColors.kPrimaryColor,
                 buttonTextStyle:
-                    regularStyle(color: AppColors.black, fontSize: 12),
+                    Theme.of(context).textTheme.bodyMedium?.copyWith(fontSize: 12)
               ),
               SizedBox(
                 height: 20.h,
@@ -89,7 +87,7 @@ class _PaymentScreenState extends State<PaymentScreen> {
                             onChanged: (value) {
                               setState(() {
                                 groupValue = value as PaymentType;
-                                print(groupValue);
+                                debugPrint(groupValue.toString());
                               });
                             },
                           ),
@@ -113,7 +111,7 @@ class _PaymentScreenState extends State<PaymentScreen> {
                             onChanged: (value) {
                               setState(() {
                                 groupValue = value as PaymentType;
-                                print(groupValue);
+                                debugPrint(groupValue.toString());
                               });
                             },
                           ),
@@ -141,7 +139,9 @@ class _PaymentScreenState extends State<PaymentScreen> {
               ),
               CustomButton(
                 onTap: () {},
+                color: AppColors.kPrimaryColor,
                 text: 'Pay',
+                textStyle: Theme.of(context).textTheme.bodyMedium!.copyWith(fontSize: 16),
                 horizontal: 170.w,
                 vertical: 15.h,
               )

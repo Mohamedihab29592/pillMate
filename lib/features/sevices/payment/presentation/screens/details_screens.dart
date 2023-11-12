@@ -5,12 +5,11 @@ import 'package:pill_mate/core/utils/app_colors.dart';
 import 'package:pill_mate/core/utils/app_strings.dart';
 import 'package:pill_mate/core/components/custom_appbar.dart';
 import 'package:pill_mate/core/components/custom_button.dart';
-
-import '../components/custom_payment_method_row.dart';
-import '../components/custom_product_name_price_desc.dart';
-import '../components/custom_row_receipt.dart';
-import '../components/custom_square_button.dart';
-import '../components/custom_title_with_button_row.dart';
+import 'package:pill_mate/features/payment/presentation/components/custom_payment_method_row.dart';
+import 'package:pill_mate/features/payment/presentation/components/custom_product_name_price_desc.dart';
+import 'package:pill_mate/features/payment/presentation/components/custom_row_receipt.dart';
+import 'package:pill_mate/features/payment/presentation/components/custom_square_button.dart';
+import 'package:pill_mate/features/payment/presentation/components/custom_title_with_button_row.dart';
 
 
 class DetailsScreen extends StatelessWidget {
@@ -39,7 +38,7 @@ class DetailsScreen extends StatelessWidget {
                 children: [
                   Text(
                     '25 Nasr City, Egypt',
-                    style:Theme.of(context).textTheme.titleSmall!,
+                    style: Theme.of(context).textTheme.titleSmall!,
                   ),
                 ],
               ),
@@ -99,8 +98,7 @@ class DetailsScreen extends StatelessWidget {
                   ),
                   Text(
                     '1',
-                    style:
-                        Theme.of(context).textTheme.bodyLarge,
+                    style: Theme.of(context).textTheme.bodyLarge,
                   ),
                   SizedBox(
                     width: 15.w,
@@ -128,7 +126,12 @@ class DetailsScreen extends StatelessWidget {
               ),
               CustomButton(
                 onTap: () {},
+                color: AppColors.kPrimaryColor,
                 text: 'Pay Now',
+                textStyle: Theme.of(context)
+                    .textTheme
+                    .bodyMedium!
+                    .copyWith(fontSize: 16),
                 horizontal: 150.w,
                 vertical: 15.h,
               )
