@@ -30,7 +30,7 @@ class ImageAssets {
 
   static const String product = '${baseUrl}product.png';
   static const String visa = '${paymentImages}visa.png';
-  static const String vodCash = '${paymentImages}vodcash.png';
+  static const String vodCash = '${paymentImages}cash.png';
 
 
 

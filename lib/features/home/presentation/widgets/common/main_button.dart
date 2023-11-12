@@ -6,19 +6,16 @@ import '../../../../../core/utils/app_colors.dart';
 class MainButton extends StatefulWidget {
   const MainButton({
     Key? key,
-    this.backGroundColorAfterClicked,
     required this.buttonName,
     required this.contentPadding,
     required this.backGroundColor,
-    required this.borderColor,
+    required this.borderColor, required this.textColor,
   }) : super(key: key);
   final String buttonName;
   final EdgeInsetsGeometry contentPadding;
   final Color backGroundColor;
+  final Color textColor;
   final Color borderColor;
-  //! it could be null because i use this widget for BuyNow button in product page .. and this button doesn't change its color when clicked
-  //! so this will not take value in Buy Now button and after clicked it will still with its background color
-  final Color? backGroundColorAfterClicked;
 
   @override
   State<MainButton> createState() => _MainButtonState();
@@ -40,12 +37,10 @@ class _MainButtonState extends State<MainButton> {
           width: double.infinity,
           padding: widget.contentPadding,
           decoration: BoxDecoration(
-            color: isClicked
-                ? widget.backGroundColorAfterClicked ?? widget.backGroundColor
-                : widget.backGroundColor,
+            color: isClicked ? AppColors.kLightPrimaryColor : widget.backGroundColor,
             borderRadius: BorderRadius.circular(12),
             border: Border.all(
-              width: 1,
+              width: 2,
               color: widget.borderColor,
             ),
           ),
@@ -54,8 +49,11 @@ class _MainButtonState extends State<MainButton> {
               widget.buttonName,
               style: Theme.of(context)
                   .textTheme
-                  .bodyMedium
-                  ?.copyWith(fontSize: 16, color: AppColors.darkGreen),
+                  .bodyLarge
+                  ?.copyWith(
+                fontSize: 16,
+                color: isClicked ? Colors.black : widget.textColor,
+              ),
               maxLines: 1,
               overflow: TextOverflow.ellipsis,
             ),

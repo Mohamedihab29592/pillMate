@@ -1,21 +1,16 @@
-import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:pill_mate/core/utils/app_assets.dart';
-import 'package:pill_mate/core/utils/app_strings.dart';
 import 'package:pill_mate/features/home/data/models/category_model.dart';
 import 'package:smooth_page_indicator/smooth_page_indicator.dart';
 
-import '../../../../core/utils/app_colors.dart';
 import '../../../../core/utils/app_colors.dart';
 import '../../../sevices/presenation/screens/chat_screen.dart';
 import '../bloc/cubit/search_cubit.dart';
 import '../widgets/categoriesWidget.dart';
 import '../widgets/common/search_text_field.dart';
-import '../widgets/product_screen_widgets/buttons.dart';
 import '../widgets/product_screen_widgets/similar_product_grid_view.dart';
 import 'categories_screen.dart';
-import 'category_screen.dart';
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({Key? key}) : super(key: key);
@@ -72,7 +67,9 @@ class _HomeScreenState extends State<HomeScreen> {
                       backgroundColor: Colors.transparent,
                       // Make the background transparent
                       child: Image.asset(
+
                         'assets/images/pp.png',
+
                         fit: BoxFit
                             .fill, // Adjust the fit to control how the image is displayed
                       ),
@@ -85,7 +82,9 @@ class _HomeScreenState extends State<HomeScreen> {
                         Row(
                           children: [
                             Image.asset(
+
                               ImageAssets.location,
+                              color: Theme.of(context).brightness == Brightness.dark ?AppColors.kLightPrimaryColor:AppColors.kPrimaryColor,
                             ),
                             SizedBox(
                               width: width * .02,
@@ -99,6 +98,7 @@ class _HomeScreenState extends State<HomeScreen> {
                     Spacer(),
                     Image.asset(
                       ImageAssets.notification,
+                      color: Theme.of(context).brightness == Brightness.dark ?AppColors.kLightPrimaryColor:AppColors.kPrimaryColor,
                     ),
                   ],
                 ),
@@ -146,7 +146,7 @@ class _HomeScreenState extends State<HomeScreen> {
                   count: 3,
                   effect: ExpandingDotsEffect(
                     dotHeight: 6,
-                    activeDotColor: AppColors.kPrimaryColor,
+                    activeDotColor: Theme.of(context).brightness == Brightness.dark ?AppColors.kLightPrimaryColor:AppColors.kPrimaryColor,
                   ),
                 ),
 

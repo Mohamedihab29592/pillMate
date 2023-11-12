@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:pill_mate/features/home/presentation/widgets/common/custom_app_bar.dart';
+import 'package:pill_mate/core/components/custom_app_bar.dart';
 import 'package:pill_mate/features/home/presentation/widgets/favourite_screen_widgets/favourite_grid_view.dart';
 
 class FavouriteScreen extends StatelessWidget {

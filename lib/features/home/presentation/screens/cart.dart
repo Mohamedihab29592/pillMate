@@ -2,9 +2,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
-import 'package:pill_mate/core/components/custom_appbar.dart';
 import 'package:pill_mate/core/components/custom_button.dart';
 
+import '../../../../core/components/custom_app_bar.dart';
 import '../widgets/column_of_cart.dart';
 
 
@@ -20,7 +20,7 @@ class CartScreen extends StatelessWidget {
           ),
           child: Column(
             children: [
-              const CustomAppBar(title: 'Cart'),
+               const CustomAppBar(appBarTitle: 'Cart',),
               ListView.builder(
                 shrinkWrap: true,
                 itemCount: 2,

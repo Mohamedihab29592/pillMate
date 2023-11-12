@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:pill_mate/core/components/back_arrow.dart';
 
 import 'package:pill_mate/features/home/presentation/widgets/category_screen_widgets/product_grid_view.dart';
-import 'package:pill_mate/features/home/presentation/widgets/common/custom_app_bar.dart';
+import 'package:pill_mate/core/components/custom_app_bar.dart';
 import 'package:pill_mate/features/home/presentation/widgets/common/search_text_field.dart';
 
 import '../bloc/cubit/search_cubit.dart';
@@ -34,6 +35,7 @@ class CategoryScreen extends StatelessWidget {
     TextEditingController searchController = TextEditingController();
     return Scaffold(
       appBar: CustomAppBar(
+        backArrow: BackArrow(),
         appBarTitle: categoryName,
         //!just for navigating to favourite screen in this task
       ),

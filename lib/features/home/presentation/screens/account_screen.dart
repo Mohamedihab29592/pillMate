@@ -3,8 +3,11 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:pill_mate/core/functions/navigate.dart';
 import 'package:pill_mate/core/routes/app_routes.dart';
 import 'package:pill_mate/features/home/presentation/screens/profile_screen.dart';
+import 'package:pill_mate/features/sevices/payment/presentation/screens/pay_now.dart';
+import 'package:pill_mate/features/sevices/payment/presentation/screens/payment_screen.dart';
 import '../../../../core/utils/app_colors.dart';
 import '../../../sevices/notifications/presentation/screens/notifications_screen.dart';
+import '../../../sevices/payment/presentation/screens/details_screens.dart';
 import '../bloc/store/profile_cubit.dart';
 import '../bloc/store/profile_state.dart';
 import '../widgets/account_item.dart';
@@ -111,6 +114,7 @@ class AccountScreen extends StatelessWidget {
                     },
                   ),
                   AccountItem(
+
                     preffixImage: 'assets/images/wallet-3.png',
                     suffixImage: 'assets/images/right.png',
                     imageHeight: mq.size.height * 0.08,
@@ -118,6 +122,7 @@ class AccountScreen extends StatelessWidget {
                     itemHeight: mq.size.height * 0.06,
                     title: "payment Method",
                     onTapAction: (){
+                      Navigator.push(context, MaterialPageRoute(builder: (context)=>const PaymentScreen()));
 
                     },
                   ),

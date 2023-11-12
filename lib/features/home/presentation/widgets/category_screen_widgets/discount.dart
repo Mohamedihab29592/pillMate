@@ -12,14 +12,14 @@ class Discount extends StatelessWidget {
     return Container(
       padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 2),
       decoration: BoxDecoration(
-          color: AppColors.kPrimaryColor,
+          color: AppColors.kDarkPrimaryColor,
           borderRadius: BorderRadius.circular(8)),
       child: Text(
         '50 %',
         style: Theme.of(context)
             .textTheme
-            .bodyLarge
-            ?.copyWith(fontSize: 16, color: AppColors.darkGreen),
+            .bodyMedium
+            ?.copyWith(fontSize: 14, color: AppColors.kPrimaryColor),
         maxLines: 1,
         overflow: TextOverflow.visible,
       ),

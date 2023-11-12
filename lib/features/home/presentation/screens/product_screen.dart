@@ -1,12 +1,14 @@
 import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/material.dart';
-import 'package:pill_mate/features/home/presentation/widgets/common/custom_app_bar.dart';
-import 'package:pill_mate/features/home/presentation/widgets/common/favourite.dart';
+import 'package:pill_mate/core/components/back_arrow.dart';
+import 'package:pill_mate/core/components/custom_app_bar.dart';
 import 'package:pill_mate/features/home/presentation/widgets/product_screen_widgets/buttons.dart';
 import 'package:pill_mate/features/home/presentation/widgets/product_screen_widgets/custom_dots_indicator.dart';
 import 'package:pill_mate/features/home/presentation/widgets/product_screen_widgets/price_and_count.dart';
 import 'package:pill_mate/features/home/presentation/widgets/product_screen_widgets/prodcut_images_page_view.dart';
 import 'package:pill_mate/features/home/presentation/widgets/product_screen_widgets/similar_product_grid_view.dart';
+
+import '../../../../core/components/favourite.dart';
 
 class ProductScreen extends StatefulWidget {
   const ProductScreen({super.key});
@@ -29,18 +31,17 @@ class _ProductScreenState extends State<ProductScreen> {
 
   @override
   Widget build(BuildContext context) {
-    var height = MediaQuery.of(context).size.height;
-    var width = MediaQuery.of(context).size.width;
-    bool isPortrait =
-        MediaQuery.of(context).orientation == Orientation.portrait;
     return Scaffold(
-      appBar: const CustomAppBar(appBarTitle: '', appBarAction: [
-        FavouriteIcon(
-          isForFavouriteScreen: true,
-          iconHeight: 32,
-          iconWidth: 32,
-        )
-      ]),
+      appBar: const CustomAppBar(
+          backArrow: BackArrow(),
+          appBarTitle: '',
+          appBarAction: [
+            FavouriteIcon(
+              isForFavouriteScreen: true,
+              iconHeight: 32,
+              iconWidth: 32,
+            )
+          ]),
       body: SafeArea(
         child: SingleChildScrollView(
           child: Padding(
@@ -49,8 +50,7 @@ class _ProductScreenState extends State<ProductScreen> {
               children: [
                 Center(
                   child: SizedBox(
-                      height:100,
-
+                      height: 300,
                       child: ProductImagesPageView(
                         controller: pageController!,
                       )),
@@ -81,7 +81,7 @@ class _ProductScreenState extends State<ProductScreen> {
                       const PriceAndCount(),
                       AutoSizeText(
                         'Description',
-                        style: Theme.of(context).textTheme.bodyMedium,
+                        style: Theme.of(context).textTheme.bodyLarge,
                         minFontSize: 14,
                         maxLines: 2,
                         overflow: TextOverflow.ellipsis,

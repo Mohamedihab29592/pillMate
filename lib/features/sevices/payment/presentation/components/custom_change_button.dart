@@ -24,7 +24,9 @@ class CustomChangeButton extends StatelessWidget {
               style: Theme.of(context)
             .textTheme
             .bodyMedium
-            ?.copyWith(fontSize: 14, color: AppColors.darkGreen),
+            ?.copyWith(fontSize: 14, color: Theme.of(context).brightness == Brightness.dark?
+
+              AppColors.kLightPrimaryColor:AppColors.kPrimaryColor,),
             ),
             SizedBox(
               width: 6.w,

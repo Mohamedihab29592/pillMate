@@ -14,7 +14,9 @@ class Price extends StatelessWidget {
   Widget build(BuildContext context) {
     return Text(
       '12:00 \$',
-      style: boldStyle(color: AppColors.kPrimaryColor, fontSize: 20),
+      style: boldStyle(color: Theme.of(context).brightness == Brightness.dark?
+
+      AppColors.kLightPrimaryColor:AppColors.kPrimaryColor, fontSize: 20),
       overflow: TextOverflow.visible,
     );
   }

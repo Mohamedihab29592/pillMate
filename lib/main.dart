@@ -20,8 +20,10 @@ class MyApp extends StatelessWidget {
         debugShowCheckedModeBanner: false,
         title: AppStrings.appName,
         theme: AppThemes.darkMode,
-        initialRoute: Routes.categoriesIntailRoute,
+        initialRoute: Routes.login,
         routes: {
+          Routes.login: (context) =>
+              appRoutes(Routes.login, null),
           Routes.categoriesIntailRoute: (context) =>
               appRoutes(Routes.categoriesIntailRoute, null),
           Routes.categoryRoute: (context) =>

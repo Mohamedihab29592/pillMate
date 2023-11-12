@@ -30,7 +30,6 @@ class ProductCardBaseContent extends StatelessWidget {
               productName,
               style: Theme.of(context).textTheme.bodyMedium?.copyWith(
                   fontSize: 16,
-                  color: AppColors.darkGrey,
                   fontWeight: FontWeight.w500),
               minFontSize: 14,
               maxLines: 2,

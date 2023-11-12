@@ -14,9 +14,17 @@ class ProductScreenButtons extends StatelessWidget {
       children: [
         Expanded(
             child: MainButton(
-          backGroundColor: AppColors.white,
-          backGroundColorAfterClicked: AppColors.kPrimaryColor,
-          borderColor: AppColors.kPrimaryColor,
+              borderColor:  Theme.of(context).brightness == Brightness.dark
+        ? Colors.white
+        : Colors.black,
+
+              textColor: Theme.of(context).brightness == Brightness.dark
+        ? Colors.white
+        : Colors.black,
+
+          backGroundColor: Theme.of(context).brightness == Brightness.dark
+              ? Colors.black
+              : Colors.white,
           buttonName: 'Add To Card',
           contentPadding:
               const EdgeInsets.symmetric(vertical: 16, horizontal: 8),
@@ -26,12 +34,17 @@ class ProductScreenButtons extends StatelessWidget {
         ),
         Expanded(
             child: MainButton(
-          backGroundColor: AppColors.kLightPrimaryColor,
-          borderColor: AppColors.kPrimaryColor,
-          buttonName: 'Buy Now',
+              borderColor:  AppColors.kDarkPrimaryColor,
+
+              textColor: Colors.black,
+
+              backGroundColor: AppColors.kDarkPrimaryColor,
+              buttonName: 'Buy Now',
           contentPadding:
               const EdgeInsets.symmetric(vertical: 16, horizontal: 8),
-        )),
+        )
+
+        ),
       ],
     );
   }

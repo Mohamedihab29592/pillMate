@@ -27,7 +27,7 @@ class CustomTextFieldWithButton extends StatelessWidget {
       decoration: InputDecoration(
         suffixIcon: isButton
             ? Padding(
-                padding: const EdgeInsets.all(8.0),
+                padding: const EdgeInsets.only(left: 250.0,right: 10),
                 child: CustomButton(
                   onTap: onTap,
                   text: buttonText ?? '',
