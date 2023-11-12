@@ -5,6 +5,7 @@ import 'package:pill_mate/core/components/custom_button.dart';
 import 'package:pill_mate/core/functions/navigate.dart';
 import 'package:pill_mate/core/routes/app_routes.dart';
 import 'package:pill_mate/core/utils/app_assets.dart';
+import 'package:pill_mate/core/utils/app_strings.dart';
 
 class Verification extends StatelessWidget {
   const Verification({super.key});
@@ -31,7 +32,7 @@ class Verification extends StatelessWidget {
                     ),
                   ),
                   Text(
-                    'Verification',
+                    AppStrings.verification,
                     style: Theme.of(context)
                         .textTheme
                         .bodyLarge
@@ -45,7 +46,7 @@ class Verification extends StatelessWidget {
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
                       Text(
-                        'Enter the code sent to ',
+                        AppStrings.enterCodeSent,
                         style: Theme.of(context)
                             .textTheme
                             .bodyMedium
@@ -53,7 +54,7 @@ class Verification extends StatelessWidget {
                         textAlign: TextAlign.center,
                       ),
                       Text(
-                        'moam***@gmail.com',
+                        AppStrings.mailExample,
                         style: Theme.of(context)
                             .textTheme
                             .bodyMedium
@@ -83,7 +84,7 @@ class Verification extends StatelessWidget {
                   Column(
                     children: [
                       Text(
-                        '00:120 Sec',
+                        AppStrings.time,
                         style: Theme.of(context).textTheme.bodyMedium,
                       ),
                       SizedBox(
@@ -92,10 +93,10 @@ class Verification extends StatelessWidget {
                       Row(
                         mainAxisAlignment: MainAxisAlignment.center,
                         children: [
-                          const Text('Don’t receive code ? '),
+                          const Text(AppStrings.dontReceiveCode),
                           GestureDetector(
                             child: const Text(
-                              'Re-send',
+                              AppStrings.resend,
                               style: TextStyle(
                                   color: Color(0xFF224A46),
                                   fontWeight: FontWeight.w600),
@@ -108,12 +109,13 @@ class Verification extends StatelessWidget {
                   Padding(
                     padding: EdgeInsets.symmetric(vertical: 32.h),
                     child: CustomButton(
-                        onTap: () {
-                          navigateReplacement(context: context, route: Routes.newPassword);
-                        },
-                       text: 'Continue',
-                        vertical: 20.h,
-                       ),
+                      onTap: () {
+                        navigateReplacement(
+                            context: context, route: Routes.newPassword);
+                      },
+                      text: AppStrings.Continue,
+                      vertical: 20.h,
+                    ),
                   ),
                 ],
               ),

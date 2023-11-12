@@ -5,6 +5,7 @@ import 'package:pill_mate/core/components/custom_text_field.dart';
 import 'package:pill_mate/core/functions/navigate.dart';
 import 'package:pill_mate/core/routes/app_routes.dart';
 import 'package:pill_mate/core/utils/app_assets.dart';
+import 'package:pill_mate/core/utils/app_strings.dart';
 
 class ForgetPassword extends StatelessWidget {
   const ForgetPassword({super.key});
@@ -31,7 +32,7 @@ class ForgetPassword extends StatelessWidget {
                     ),
                   ),
                   Text(
-                    'Forget Password',
+                    AppStrings.forgetPassword,
                     style: Theme.of(context)
                         .textTheme
                         .bodyLarge
@@ -43,30 +44,32 @@ class ForgetPassword extends StatelessWidget {
                   ),
                   CustomTextField(
                       prefixIcon: ImageAssets.sms,
-                      hintText: 'Enter Your Email'),
+                      hintText: AppStrings.enterUrEmail),
                   SizedBox(
                     height: 20.h,
                   ),
                   CustomButton(
-                      onTap: () {
-                        navigateReplacement(context: context, route: Routes.verification);
-                      },
-                      text: 'Continue',
-                      vertical: 20.h,
-                    ),
+                    onTap: () {
+                      navigateReplacement(
+                          context: context, route: Routes.verification);
+                    },
+                    text: AppStrings.Continue,
+                    vertical: 20.h,
+                  ),
                   SizedBox(
                     height: 20.h,
                   ),
                   Row(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
-                      const Text('Remember Your Password ?'),
+                      const Text(AppStrings.rememberUrPassword),
                       GestureDetector(
                         onTap: () {
-                          navigateAndKill(context: context, route: Routes.login);
+                          navigateAndKill(
+                              context: context, route: Routes.login);
                         },
                         child: const Text(
-                          'Login',
+                          AppStrings.login,
                           style: TextStyle(color: Color(0xFF224A46)),
                         ),
                       ),
