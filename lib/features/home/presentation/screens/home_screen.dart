@@ -7,6 +7,8 @@ import 'package:pill_mate/features/home/data/models/category_model.dart';
 import 'package:smooth_page_indicator/smooth_page_indicator.dart';
 
 import '../../../../core/utils/app_colors.dart';
+import '../../../../core/utils/app_colors.dart';
+import '../../../sevices/presenation/screens/chat_screen.dart';
 import '../bloc/cubit/search_cubit.dart';
 import '../widgets/categoriesWidget.dart';
 import '../widgets/common/search_text_field.dart';
@@ -225,7 +227,24 @@ class _HomeScreenState extends State<HomeScreen> {
           ],
             ),
           ),
-        )));
+        )),
+
+        floatingActionButton: FloatingActionButton(
+        onPressed: () {
+
+      Navigator.push(
+        context,
+        MaterialPageRoute(builder: (context) => ChatScreen ()),
+      );
+    },
+    backgroundColor: AppColors.darkGreen,
+    child:  Image.asset(
+      ImageAssets.messageHome,
+    ),
+    ),
+
+    );
+
 
 
   }
