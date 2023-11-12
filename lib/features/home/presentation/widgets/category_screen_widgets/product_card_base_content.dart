@@ -1,9 +1,9 @@
 import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/material.dart';
+import 'package:pill_mate/core/utils/app_colors.dart';
 import 'package:pill_mate/features/home/presentation/widgets/category_screen_widgets/price_and_cart_icon.dart';
 
 import '../../../../../core/utils/app_assets.dart';
-import '../../../../../core/utils/app_text_style.dart';
 
 class ProductCardBaseContent extends StatelessWidget {
   const ProductCardBaseContent({super.key, required this.productName});
@@ -28,7 +28,9 @@ class ProductCardBaseContent extends StatelessWidget {
             padding: const EdgeInsets.symmetric(horizontal: 10.0),
             child: AutoSizeText(
               productName,
-              style: regularStyle(color: const Color(0XFF121212), fontSize: 16),
+              style: Theme.of(context).textTheme.bodyMedium?.copyWith(
+                  fontSize: 16,
+                  fontWeight: FontWeight.w500),
               minFontSize: 14,
               maxLines: 2,
               overflow: TextOverflow.ellipsis,

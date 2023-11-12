@@ -1,10 +1,8 @@
-
-
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 
 import '../../../../../core/utils/app_assets.dart';
-
+import '../../../../../core/utils/app_colors.dart';
 
 class CartIcon extends StatefulWidget {
   const CartIcon({
@@ -15,22 +13,22 @@ class CartIcon extends StatefulWidget {
   State<CartIcon> createState() => _CartIconState();
 }
 
-
 class _CartIconState extends State<CartIcon> {
-   bool isCart =true;
-
-
+  bool isCart = true;
 
   @override
   Widget build(BuildContext context) {
     return InkWell(
-      onTap: (){
-        isCart = !isCart;
-        setState(() {});
-      },
-      child: Image.asset(       isCart? ImageAssets.shopping:ImageAssets.selectShopping,
-      )
-    );
+        onTap: () {
+          isCart = !isCart;
+          setState(() {});
+        },
+        child: Image.asset(
+
+          isCart ? ImageAssets.shopping : ImageAssets.selectShopping,
+          color: Theme.of(context).brightness == Brightness.dark?
+
+          AppColors.kLightPrimaryColor:AppColors.kPrimaryColor,
+        ));
   }
 }
-

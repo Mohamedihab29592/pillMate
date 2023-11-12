@@ -1,7 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:pill_mate/core/components/back_arrow.dart';
+import 'package:pill_mate/core/utils/app_text_style.dart';
 import 'package:pill_mate/features/sevices/presenation/widgets/custom_chat_buble.dart';
 import 'package:pill_mate/features/sevices/presenation/widgets/custom_text_field.dart';
+
+import '../../../../core/utils/app_colors.dart';
 
 class ChatScreen extends StatelessWidget {
   const ChatScreen({super.key});
@@ -17,37 +20,22 @@ class ChatScreen extends StatelessWidget {
         ),
       ),
       child: Scaffold(
-        appBar: PreferredSize(
-          preferredSize: const Size.fromHeight(80),
-          child: AppBar(
-            backgroundColor: const Color(0xff8BC4B5),
-            title: Padding(
-              padding: const EdgeInsets.only(top: 35),
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: [
-                  // SizedBox(
-                  //     height: 24,
-                  //     width: 24,
-                  //     child: Image.asset('assets/images/chevron-right 1.png'),),
-                  const BackArrow(),
-                  const Text(
-                    'Pharmacy Chat',
-                    style: TextStyle(
-                      fontWeight: FontWeight.w600,
-                      fontSize: 16,
-                      color: Colors.black,
-                    ),
-                  ),
-                  SizedBox(
-                      height: 24,
-                      width: 24,
-                      child: Image.asset('assets/images/call.png')),
-                ],
-              ),
+
+        appBar: AppBar(
+          leading: BackArrow(),
+            actions: [ Image.asset('assets/images/call.png'),],
+
+          backgroundColor: const Color(0xff8BC4B5),
+          title: Text(
+            'Pharmacy Chat',
+            style: boldStyle(color: AppColors.black, fontSize: 17)
             ),
           ),
-        ),
+
+
+
+
+
         body: Column(
           children: [
             Expanded(

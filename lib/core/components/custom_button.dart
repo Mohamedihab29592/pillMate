@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:pill_mate/core/utils/app_text_style.dart';
 
 import '../utils/app_colors.dart';
 
@@ -30,7 +31,7 @@ class CustomButton extends StatelessWidget {
         child: Center(
           child: Text(
             text,
-            style: Theme.of(context).textTheme.titleMedium,
+            style: regularStyle(color: AppColors.black, fontSize: 18),
           ),
         ),
       ),

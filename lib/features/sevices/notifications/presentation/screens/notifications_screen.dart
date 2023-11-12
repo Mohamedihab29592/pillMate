@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:pill_mate/core/components/back_arrow.dart';
+import 'package:pill_mate/core/components/custom_app_bar.dart';
 
 import '../../../../../core/utils/app_colors.dart';
 
@@ -40,34 +41,14 @@ class NotificationScreen extends StatelessWidget {
           NotificationCubit profileScreenCubit =
           NotificationCubit.get(context);
           return Scaffold(
-            appBar: AppBar(
-              leading: BackArrow(),
-              titleTextStyle: Theme.of(context).textTheme.bodyLarge,
-              centerTitle: true,
-              backgroundColor: AppColors.white,
-              title: const Text(
-                "Notifications",
-                style: TextStyle(fontSize: 15),
-              ),
-              elevation: 0,
-              actions: [
-                InkWell(
-                  onTap: (){
+            appBar: CustomAppBar(appBarTitle: "Notifications",appBarAction: [
+             Image.asset("assets/images/shopping-bag.png",scale: 3,color: Theme.of(context).brightness == Brightness.dark ?AppColors.kDarkPrimaryColor:AppColors.kPrimaryColor,),
 
-                  },
-                  child: Padding(
-                    padding: const EdgeInsets.only(right: 15.0),
-                    child: Image(
-                      width: mq.size.width * 0.07,
-                      height: mq.size.height * 0.07,
-                      image: AssetImage("assets/images/shopping-bag.png"),
-                    ),
-                  ),
-                )
-              ],
+            ],backArrow: BackArrow(),
+
+
             ),
             body: Container(
-              color: AppColors.white,
               width: mq.size.width,
               height: mq.size.height,
               padding: EdgeInsets.only(top: mq.size.height * 0.05),
@@ -80,7 +61,7 @@ class NotificationScreen extends StatelessWidget {
                       ListTile(onTap: (){
 
                       },
-                        title: Text(notifications[index].notificationTitle,style: AppThemes.lightMode.textTheme.titleLarge,),
+                        title: Text(notifications[index].notificationTitle,),
                         leading: Image(
                           width: mq.size.width * 0.2,
                           height: mq.size.height * 0.2,
@@ -89,7 +70,7 @@ class NotificationScreen extends StatelessWidget {
                       ),
                       Divider(
                         thickness: 2,
-                        color: AppColors.kPrimaryColor,
+                        color: Theme.of(context).brightness == Brightness.dark ?AppColors.kDarkPrimaryColor:AppColors.kPrimaryColor,
                       )
                     ],
                   );

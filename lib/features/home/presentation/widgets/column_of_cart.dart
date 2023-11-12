@@ -56,10 +56,10 @@ class ColumnOfCart extends StatelessWidget {
                 Text(
                   '12\$',
                   style:
-                      boldStyle(color: AppColors.kPrimaryColor, fontSize: 16),
+                      boldStyle(color: Theme.of(context).brightness == Brightness.dark ?AppColors.kLightPrimaryColor:AppColors.kPrimaryColor, fontSize: 16),
                 ),
-                const SizedBox(
-                  width: 100,
+                 SizedBox(
+                  width: 120.h,
                 ),
                 InkWell(
                     onTap: () {

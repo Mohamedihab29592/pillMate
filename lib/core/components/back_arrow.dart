@@ -8,7 +8,7 @@ class BackArrow extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return IconButton(
-      color: AppColors.kPrimaryColor,
+      color: Theme.of(context).brightness == Brightness.dark ?AppColors.kLightPrimaryColor:AppColors.kPrimaryColor,
         onPressed: () {
           Navigator.pop(context);
         },

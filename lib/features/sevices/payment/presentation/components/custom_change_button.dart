@@ -2,8 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:pill_mate/core/utils/app_colors.dart';
 
-import '../../../../../core/utils/app_text_style.dart';
-
 
 class CustomChangeButton extends StatelessWidget {
   const CustomChangeButton({
@@ -23,7 +21,12 @@ class CustomChangeButton extends StatelessWidget {
           children: [
             Text(
               'Change',
-              style: regularStyle(color: AppColors.darkGreen, fontSize: 14),
+              style: Theme.of(context)
+            .textTheme
+            .bodyMedium
+            ?.copyWith(fontSize: 14, color: Theme.of(context).brightness == Brightness.dark?
+
+              AppColors.kLightPrimaryColor:AppColors.kPrimaryColor,),
             ),
             SizedBox(
               width: 6.w,

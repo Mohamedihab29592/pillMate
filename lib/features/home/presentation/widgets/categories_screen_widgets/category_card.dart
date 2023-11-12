@@ -5,7 +5,6 @@ import 'package:pill_mate/core/routes/app_routes.dart';
 import 'package:pill_mate/features/home/data/models/category_model.dart';
 
 import '../../../../../core/utils/app_colors.dart';
-import '../../../../../core/utils/app_text_style.dart';
 
 class CategoriesCard extends StatelessWidget {
   const CategoriesCard({super.key, required this.category});
@@ -35,8 +34,10 @@ class CategoriesCard extends StatelessWidget {
                 padding: const EdgeInsets.only(right: 8),
                 child: Text(
                   category.categoryName,
-                  style: regularStyle(
-                      color: const Color(0xff636161), fontSize: 18),
+                  style: Theme.of(context)
+                      .textTheme
+                      .bodyMedium
+                      ?.copyWith(fontSize: 18, color: AppColors.softGrey),
                   overflow: TextOverflow.ellipsis,
                 ),
               ),

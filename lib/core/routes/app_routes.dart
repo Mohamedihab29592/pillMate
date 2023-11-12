@@ -9,7 +9,9 @@ import '../../features/auth/presenation/screens/login_screen.dart';
 import '../../features/auth/presenation/screens/new-password.dart';
 import '../../features/auth/presenation/screens/register_screen.dart';
 import '../../features/auth/presenation/screens/verification.dart';
+import '../../features/home/data/models/category_model.dart';
 import '../../features/home/presentation/screens/account_screen.dart';
+import '../../features/home/presentation/screens/categories_screen.dart';
 import '../../features/home/presentation/screens/category_screen.dart';
 import '../../features/home/presentation/screens/favourite_screen.dart';
 import '../../features/home/presentation/screens/product_screen.dart';
@@ -36,9 +38,11 @@ class Routes {
   static const String newPassword = 'newPassword';
   static const String verification = 'verification';
   static const String layOut = 'layOut';
-static const String categoryRoute = '/category';
-static const String favouriteRoute = '/favourite';
-static const String productRoute = '/product';
+  static const String categoryRoute = '/category';
+  static const String categoriesIntailRoute = '/categories';
+
+  static const String favouriteRoute = '/favourite';
+  static const String productRoute = '/product';
   static const String paymentScreen = '/paymentScreen';
   static const String detailsScreen = '/detailsScreen';
   static const String profileScreen = '/profileScreen';
@@ -71,11 +75,22 @@ Widget appRoutes(String route, dynamic arg) {
       return const FavouriteScreen();
     case Routes.productRoute:
       return const ProductScreen();
+    case Routes.categoriesIntailRoute:
+      return BlocProvider(
+        create: (context) => SearchCubit<CategoryModel>(),
+        child:  CategoriesScreen(),
+      );
+
+    case Routes.categoryRoute:
+      return BlocProvider(
+        create: (context) => SearchCubit<String>(),
+        child: const CategoryScreen(),
+      );
 
     case Routes.paymentScreen:
       return const PaymentScreen();
     case Routes.detailsScreen:
-      return const DetailsScreen();
+      return const PaymentDetailScreen();
 
     case Routes.forgetPassword:
       return const ForgetPassword();

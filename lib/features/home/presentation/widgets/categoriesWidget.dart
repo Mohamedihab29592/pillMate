@@ -13,10 +13,11 @@ class CategoriesList extends StatelessWidget {
     return InkWell(
       child: CircleAvatar(
         minRadius: 40,
-        backgroundColor: AppColors.kLightPrimaryColor,
+        backgroundColor: Theme.of(context).brightness == Brightness.dark ?AppColors.kPrimaryColor:AppColors.kLightPrimaryColor,
         child: Image.asset(
           image,
           fit: BoxFit.fill,
+
           height: 60,
         ),
       ),

@@ -38,7 +38,9 @@ class CustomProductNameDescriptionPriceColumn extends StatelessWidget {
         ),
         Text(
           '$price\$',
-          style: boldStyle(color: AppColors.darkGreen, fontSize: 12),
+          style: boldStyle(color: Theme.of(context).brightness == Brightness.dark?
+
+          AppColors.kLightPrimaryColor:AppColors.kPrimaryColor, fontSize: 12),
         ),
       ],
     );

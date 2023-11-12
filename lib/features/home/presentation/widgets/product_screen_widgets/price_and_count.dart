@@ -25,7 +25,7 @@ class _PriceAndCountState extends State<PriceAndCount> {
       children: [
         AutoSizeText(
           '\$ 10',
-          style: boldStyle(color: AppColors.kPrimaryColor, fontSize: 24),
+          style: boldStyle(color: Theme.of(context).brightness == Brightness.dark ?AppColors.kLightPrimaryColor:AppColors.kPrimaryColor, fontSize: 24),
           minFontSize: 14,
           maxLines: 2,
           overflow: TextOverflow.ellipsis,
@@ -40,7 +40,7 @@ class _PriceAndCountState extends State<PriceAndCount> {
                   }
                 });
               },
-              icon: Icons.minimize,
+              icon: Icons.remove,
               buttonColor: AppColors.grey,
             ),
             Padding(

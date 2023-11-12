@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:pill_mate/core/functions/navigate.dart';
 import 'package:pill_mate/core/routes/app_routes.dart';
-import 'package:pill_mate/features/home/presentation/widgets/common/favourite.dart';
 import 'package:pill_mate/features/home/presentation/widgets/favourite_screen_widgets/favourite_product_card_base_content.dart';
+
+import '../../../../../core/components/favourite.dart';
 
 class FavouriteProductCard extends StatelessWidget {
   const FavouriteProductCard({
