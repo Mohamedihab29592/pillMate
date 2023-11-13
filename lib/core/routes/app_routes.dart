@@ -1,9 +1,9 @@
-
-
-
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:pill_mate/features/home/presentation/screens/layout.dart';
+import 'package:pill_mate/features/initial/onBoarding/onBoarding.dart';
+import 'package:pill_mate/features/initial/onBoarding/onBoarding1.dart';
+import 'package:pill_mate/features/initial/onBoarding/onBoarding2.dart';
 
 import '../../features/auth/presenation/screens/login_screen.dart';
 import '../../features/auth/presenation/screens/new-password.dart';
@@ -24,16 +24,13 @@ import '../../features/sevices/notifications/presentation/screens/notifications_
 import '../../features/sevices/payment/presentation/screens/details_screens.dart';
 import '../../features/sevices/payment/presentation/screens/payment_screen.dart';
 
-
-
-
-
-
-
 class Routes {
   static const String initialRoute = '/';
   static const String login = 'login';
   static const String register = 'register';
+  static const String onBoarding = 'onBoarding';
+  static const String onBoarding1 = 'onBoarding1';
+  static const String onBoarding2 = 'onBoarding2';
   static const String forgetPassword = 'forgetPassword';
   static const String newPassword = 'newPassword';
   static const String verification = 'verification';
@@ -48,8 +45,6 @@ class Routes {
   static const String profileScreen = '/profileScreen';
   static const String accountScreen = '/accountScreen';
   static const String notificationScreen = '/notificationScreen';
-
-
 }
 
 Widget appRoutes(String route, dynamic arg) {
@@ -57,13 +52,16 @@ Widget appRoutes(String route, dynamic arg) {
     case Routes.initialRoute:
       return const SplashScreen();
     case Routes.login:
-
       return const LoginScreen();
     case Routes.register:
-
       return const RegisterScreen();
+    case Routes.onBoarding:
+      return const OnBoardingScreen();
+    case Routes.onBoarding1:
+      return const OnBoardingScreen1();
+    case Routes.onBoarding2:
+      return const OnBoardingScreen2();
     case Routes.layOut:
-
       return const LayOut();
 
     case Routes.categoryRoute:
@@ -78,7 +76,7 @@ Widget appRoutes(String route, dynamic arg) {
     case Routes.categoriesIntailRoute:
       return BlocProvider(
         create: (context) => SearchCubit<CategoryModel>(),
-        child:  CategoriesScreen(),
+        child: CategoriesScreen(),
       );
 
     case Routes.categoryRoute:
@@ -105,7 +103,6 @@ Widget appRoutes(String route, dynamic arg) {
       return const ProfileScreen();
     case Routes.notificationScreen:
       return NotificationScreen();
-
 
     default:
       return const Scaffold(

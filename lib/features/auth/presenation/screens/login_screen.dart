@@ -2,10 +2,13 @@ import 'package:flutter/material.dart';
 import 'package:pill_mate/core/components/custom_button.dart';
 import 'package:pill_mate/core/functions/navigate.dart';
 import 'package:pill_mate/core/routes/app_routes.dart';
+import 'package:pill_mate/core/utils/app_assets.dart';
+import 'package:pill_mate/core/utils/app_colors.dart';
+import 'package:pill_mate/core/utils/app_strings.dart';
+import 'package:pill_mate/core/utils/app_text_style.dart';
 import 'package:pill_mate/features/auth/presenation/widgets/Custom_authentication_button.dart';
 
 import '../../../../core/components/custom_text_field.dart';
-
 
 class LoginScreen extends StatelessWidget {
   const LoginScreen({super.key});
@@ -23,19 +26,20 @@ class LoginScreen extends StatelessWidget {
             SizedBox(
                 width: 80,
                 height: 95,
-                child: Image.asset('assets/images/pillMateLogo.PNG')),
+                child: Image.asset(ImageAssets.pillMateLogo)),
             const SizedBox(
               height: 10,
             ),
-             Row(
+            Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 SizedBox(
                   width: 172,
                   height: 23,
                   child: Text(
-                    'Welcome To PillMate',
-                    style: Theme.of(context).textTheme.bodyLarge
+                    AppStrings.welcom,
+                    style: regularStyle(
+                        color: AppColors.KDarkBluishGreen, fontSize: 17),
                   ),
                 ),
               ],
@@ -44,32 +48,31 @@ class LoginScreen extends StatelessWidget {
               height: 20,
             ),
             CustomTextField(
-              prefixIcon: 'assets/images/user.png',
-              hintText: 'Enter Yor Email',
-
+              prefixIcon: ImageAssets.userIcon,
+              hintText: AppStrings.enterUrEmail,
             ),
             const SizedBox(
               height: 10,
             ),
             CustomTextField(
-              prefixIcon: 'assets/images/lock.png',
-              hintText: 'Enter Your Password',
+              prefixIcon: ImageAssets.lock,
+              hintText: AppStrings.enterUrPassword,
               obscureText: true,
-              suffixIcon: 'assets/images/eye-slash.png',
-
+              suffixIcon: ImageAssets.eyeSlash,
             ),
             const SizedBox(
               height: 10,
             ),
-             Row(
+            Row(
               mainAxisAlignment: MainAxisAlignment.end,
               children: [
                 InkWell(
-                  onTap: (){
-                    navigateReplacement(context: context, route: Routes.forgetPassword);
+                  onTap: () {
+                    navigateReplacement(
+                        context: context, route: Routes.forgetPassword);
                   },
-                  child: Text(
-                    'Forget password ?',
+                  child: const Text(
+                    AppStrings.forgetPassword,
                     style: TextStyle(decoration: TextDecoration.underline),
                   ),
                 )
@@ -78,34 +81,34 @@ class LoginScreen extends StatelessWidget {
             const SizedBox(
               height: 30,
             ),
-             CustomButton(onTap: (){
-               navigateAndKill(context: context, route: Routes.layOut);
-             }, text: "Login"),
+            CustomButton(
+                onTap: () {
+                  navigateAndKill(context: context, route: Routes.layOut);
+                },
+                text: AppStrings.login),
             const SizedBox(
               height: 20,
             ),
-            const Row(
+            Row(
               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
               children: [
-                SizedBox(
+                const SizedBox(
                   width: 114.5,
                   child: Divider(
                     thickness: 1,
-                    color: Color(0xffDADADA),
+                    color: AppColors.lightGrey,
                   ),
                 ),
                 Text(
-                  'Or Login With',
-                  style: TextStyle(
-                    color: Color(0xff666666),
-                    fontSize: 12,
-                  ),
+                  AppStrings.orLoginWith,
+                  style:
+                      regularStyle(color: AppColors.KMediumGray, fontSize: 12),
                 ),
-                SizedBox(
+                const SizedBox(
                   width: 114.5,
                   child: Divider(
                     thickness: 1,
-                    color: Color(0xffDADADA),
+                    color: AppColors.lightGrey,
                   ),
                 ),
               ],
@@ -114,38 +117,35 @@ class LoginScreen extends StatelessWidget {
               height: 15,
             ),
             const CustomAuthenticationButton(
-                image: 'assets/images/Facebook.png',
-                text: 'Continue With Facebook'),
+              image: ImageAssets.facebookIcon,
+              text: AppStrings.continueWithFacebook,
+            ),
             const SizedBox(
               height: 15,
             ),
             const CustomAuthenticationButton(
-                image: 'assets/images/Google.png',
-                text: 'Continue With Google'),
+              image: ImageAssets.googleIcon,
+              text: AppStrings.continueWithGoogle,
+            ),
             const SizedBox(
               height: 20,
             ),
-             Row(
+            Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 Text(
-                  'Have An Account? ',
-                  style: TextStyle(
-                    fontSize: 12,
-                    color: Color(0xff224A46),
-                  ),
+                  '${AppStrings.haveAnAccount} ',
+                  style: regularStyle(color: AppColors.darkGreen, fontSize: 12),
                 ),
                 InkWell(
-                  onTap: (){
-                    navigateReplacement(context: context, route: Routes.register);
+                  onTap: () {
+                    navigateReplacement(
+                        context: context, route: Routes.register);
                   },
                   child: Text(
-                    'Register',
-                    style: TextStyle(
-                      fontSize: 12,
-                      fontWeight: FontWeight.w600,
-                      color: Color(0xff224A46),
-                    ),
+                    AppStrings.register,
+                    style:
+                        regularStyle(color: AppColors.darkGreen, fontSize: 12),
                   ),
                 ),
               ],
