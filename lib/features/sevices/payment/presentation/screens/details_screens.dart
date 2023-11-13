@@ -5,6 +5,7 @@ import 'package:pill_mate/core/utils/app_assets.dart';
 import 'package:pill_mate/core/utils/app_colors.dart';
 import 'package:pill_mate/core/utils/app_strings.dart';
 import 'package:pill_mate/core/components/custom_button.dart';
+import 'package:pill_mate/features/sevices/payment/presentation/screens/pay_now.dart';
 
 import '../../../../../core/components/custom_app_bar.dart';
 import '../components/custom_payment_method_row.dart';
@@ -28,7 +29,9 @@ class PaymentDetailScreen extends StatelessWidget {
               child: Column(
                 // crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                   CustomAppBar(appBarTitle: AppStrings.details,backArrow: BackArrow(),),
+                   const CustomAppBar(appBarTitle: AppStrings.details,backArrow: BackArrow(
+
+                   ),),
                   SizedBox(
                     height: 20.h,
                   ),
@@ -128,7 +131,10 @@ class PaymentDetailScreen extends StatelessWidget {
                     height: 40.h,
                   ),
                   CustomButton(
-                    onTap: () {},
+                    onTap: () {
+                      Navigator.push(context, MaterialPageRoute(builder: (context)=>const PayNowScreen()));
+
+                    },
                     text: 'Pay Now',
                     horizontal: 150.w,
                     vertical: 15.h,
