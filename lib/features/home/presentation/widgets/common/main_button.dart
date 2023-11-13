@@ -1,5 +1,7 @@
 // ignore_for_file: public_member_api_docs, sort_constructors_first
 import 'package:flutter/material.dart';
+import 'package:pill_mate/core/functions/navigate.dart';
+import 'package:pill_mate/core/routes/app_routes.dart';
 
 import '../../../../../core/utils/app_colors.dart';
 
@@ -27,7 +29,9 @@ class _MainButtonState extends State<MainButton> {
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
-      onTap: () {
+      onTap: widget.buttonName == 'Buy Now' ? (){
+        navigate(context: context, route: Routes.location);
+      }:() {
         setState(() {
           isClicked = !isClicked;
         });
