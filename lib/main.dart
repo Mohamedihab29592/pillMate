@@ -19,13 +19,15 @@ class MyApp extends StatelessWidget {
       child: MaterialApp(
         debugShowCheckedModeBanner: false,
         title: AppStrings.appName,
-        theme: AppThemes.darkMode,
-        initialRoute: Routes.login,
+        theme: AppThemes.lightMode,
+        initialRoute: Routes.accountScreen,
         routes: {
           Routes.login: (context) =>
               appRoutes(Routes.login, null),
           Routes.categoriesIntailRoute: (context) =>
               appRoutes(Routes.categoriesIntailRoute, null),
+          Routes.location: (context) =>
+              appRoutes(Routes.location, null),
           Routes.categoryRoute: (context) =>
               appRoutes(Routes.categoryRoute, null),
           Routes.favouriteRoute: (context) =>
@@ -36,6 +38,12 @@ class MyApp extends StatelessWidget {
               appRoutes(Routes.paymentScreen, null),
           Routes.detailsScreen: (context) =>
               appRoutes(Routes.detailsScreen, null),
+          Routes.notificationScreen: (context) =>
+              appRoutes(Routes.notificationScreen, null),
+          Routes.profileScreen: (context) =>
+              appRoutes(Routes.profileScreen, null),
+          Routes.accountScreen: (context) =>
+              appRoutes(Routes.accountScreen, null),
         },
       ),
     );

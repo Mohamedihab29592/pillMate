@@ -28,6 +28,7 @@ class AppThemes {
     buttonTheme: ButtonThemeData(
       buttonColor: AppColors.kPrimaryColor,
     ),
+    dividerColor: AppColors.white,
     textTheme: TextTheme(
         bodyLarge: boldStyle(fontSize: 18, color: AppColors.white),
         titleMedium: boldStyle(fontSize: 16, color: AppColors.white),
@@ -55,6 +56,7 @@ class AppThemes {
         color: AppColors.grey,
       ),
     ),
+    dividerColor: AppColors.grey,
     buttonTheme: ButtonThemeData(
       buttonColor: AppColors.kPrimaryColor,
     ),

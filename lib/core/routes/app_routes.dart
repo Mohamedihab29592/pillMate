@@ -20,6 +20,7 @@ import '../../features/initial/splash/splash.dart';
 import '../../features/home/presentation/bloc/cubit/search_cubit.dart';
 import '../../features/auth/presenation/screens/forget_password.dart';
 
+import '../../features/sevices/location/presenation/screens/location_screen.dart';
 import '../../features/sevices/notifications/presentation/screens/notifications_screen.dart';
 import '../../features/sevices/payment/presentation/screens/details_screens.dart';
 import '../../features/sevices/payment/presentation/screens/payment_screen.dart';
@@ -40,6 +41,7 @@ class Routes {
   static const String layOut = 'layOut';
   static const String categoryRoute = '/category';
   static const String categoriesIntailRoute = '/categories';
+  static const String location = '/location';
 
   static const String favouriteRoute = '/favourite';
   static const String productRoute = '/product';
@@ -73,8 +75,8 @@ Widget appRoutes(String route, dynamic arg) {
       );
     case Routes.favouriteRoute:
       return const FavouriteScreen();
-    case Routes.productRoute:
-      return const ProductScreen();
+    case Routes.productRoute:return const ProductScreen();
+    case Routes.location:return const LocationScreen();
     case Routes.categoriesIntailRoute:
       return BlocProvider(
         create: (context) => SearchCubit<CategoryModel>(),

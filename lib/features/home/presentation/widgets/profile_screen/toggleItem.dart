@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:pill_mate/core/utils/app_assets.dart';
+import 'package:pill_mate/core/utils/app_assets.dart';
 
-import '../../../../core/utils/app_colors.dart';
-import '../../../../core/utils/themes.dart';
+import '../../../../../core/utils/app_colors.dart';
+
 
 class ToggleItem extends StatelessWidget {
   ToggleItem({
@@ -13,45 +15,44 @@ class ToggleItem extends StatelessWidget {
     this.isEnabled = true,
     this.itemHeight,
     this.onTapAction,
-    this.tap
+    this.onTapItemAction,
   });
 
-  double? imageWidth, imageHeight,itemHeight;
+  double? imageWidth, imageHeight, itemHeight;
   String? title, preffixImage;
   bool isEnabled;
-  GestureTapCallback? onTapAction;
-  void Function()? tap;
+  GestureTapCallback? onTapAction, onTapItemAction;
 
   @override
   Widget build(BuildContext context) {
+    ThemeData th = Theme.of(context);
+    // isEnabled ? AppColors.black : AppColors.grey
     return InkWell(
-      onTap: tap,
+      onTap: onTapItemAction,
       child: Container(
-        margin: const EdgeInsets.only(left: 15.0,right: 15,bottom: 10),
+        margin: const EdgeInsets.only(left: 15.0, right: 15, bottom: 10),
         height: itemHeight!,
         decoration: BoxDecoration(
             border: Border.all(
-                width: 1, color: isEnabled ? AppColors.black : AppColors.grey),
+              width: 1,
+              color: th.brightness == Brightness.dark
+                  ? AppColors.white
+                  : AppColors.grey,
+            ),
             borderRadius: BorderRadius.all(Radius.circular(10))),
         child: Padding(
-          padding: const EdgeInsets.only(left: 8.0,right: 8.0),
+          padding: const EdgeInsets.only(left: 8.0, right: 8.0),
           child: Row(
             children: [
               Image(
                 width: imageWidth,
                 height: imageHeight,
-                color: isEnabled ? AppColors.black : AppColors.grey,
                 image: AssetImage(preffixImage!),
               ),
               Expanded(
                 child: Padding(
                   padding: const EdgeInsets.only(left: 8.0),
-                  child: Text(
-                    title!,
-                    style: isEnabled
-                        ? AppThemes.lightMode.textTheme.titleLarge
-                        : AppThemes.lightMode.textTheme.titleLarge,
-                  ),
+                  child: Text(title!, style: th.textTheme.titleSmall),
                 ),
               ),
               InkWell(
@@ -59,10 +60,10 @@ class ToggleItem extends StatelessWidget {
                 child: Image(
                   width: imageWidth,
                   height: imageHeight,
-                  color: isEnabled ? AppColors.black : AppColors.grey,
+                  color: isEnabled ? AppColors.kPrimaryColor : AppColors.grey,
                   image: AssetImage(isEnabled
-                      ? "assets/images/toggle-on-circle.png"
-                      : "assets/images/toggle-off-circle.png"),
+                      ? ImageAssets.imagesToggleOnCircle
+                      : ImageAssets.imagesToggleOffCircle),
                 ),
               ),
             ],
