@@ -48,4 +48,8 @@ class AppStrings {
   static const String time = '00:120 Sec';
   static const String enterCodeSent = 'Enter the code sent to';
   static const String dontReceiveCode = 'Don’t receive code ? ';
+
+  ///validation
+  static const valid = 'Minimum 8 characters Only  1 special character ';
+  static const vailConfirmPassForm = 'Password mismatched';
 }

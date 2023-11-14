@@ -3,14 +3,21 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 // ignore: must_be_immutable
 class CustomTextField extends StatelessWidget {
-  CustomTextField(
-      {super.key,
-       this.prefixIcon,
-      required this.hintText,
-      this.obscureText = false,
-      this.suffixIcon, });
-   String ? prefixIcon;
+  CustomTextField({
+    super.key,
+    this.prefixIcon,
+    required this.hintText,
+    this.obscureText = false,
+    this.suffixIcon,
+    this.valid,
+    this.controller,
+    this.suffixIconPressed,
+  });
+  String? Function(String?)? valid;
+  TextEditingController? controller;
+  String? prefixIcon;
   String? suffixIcon;
+  final VoidCallback? suffixIconPressed;
   final String hintText;
   bool obscureText;
 
@@ -26,16 +33,10 @@ class CustomTextField extends StatelessWidget {
       child: TextFormField(
         style: const TextStyle(color: Color(0xFF141D21)),
         obscureText: obscureText,
+        validator: valid,
+        controller: controller,
         decoration: InputDecoration(
-          prefixIcon:prefixIcon == null ? null : Padding(
-            padding: const EdgeInsets.symmetric(vertical: 8, horizontal: 8),
-            child: SizedBox(
-              width: 24,
-              height: 24,
-              child: Image.asset(prefixIcon!),
-            ),
-          ),
-          suffixIcon: (suffixIcon == null)
+          prefixIcon: prefixIcon == null
               ? null
               : Padding(
                   padding:
@@ -43,6 +44,22 @@ class CustomTextField extends StatelessWidget {
                   child: SizedBox(
                     width: 24,
                     height: 24,
+                    child: Image.asset(prefixIcon!),
+                  ),
+                ),
+          suffixIcon: (suffixIcon == null)
+              ? null
+              : Padding(
+                  padding:
+                      const EdgeInsets.symmetric(vertical: 8, horizontal: 8),
+                  child: TextButton(
+                    style: ButtonStyle(
+                      overlayColor:
+                          MaterialStateProperty.all(Colors.transparent),
+                    ),
+                    onPressed: () {
+                      suffixIconPressed!();
+                    },
                     child: Image.asset(suffixIcon!),
                   ),
                 ),
