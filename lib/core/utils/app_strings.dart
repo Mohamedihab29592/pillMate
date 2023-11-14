@@ -50,7 +50,7 @@ class AppStrings {
   static const String time = '00:120 Sec';
   static const String enterCodeSent = 'Enter the code sent to';
   static const String dontReceiveCode = 'Don’t receive code ? ';
-  static const String welcom = 'Welcom To $appName';
+  static const String welcom = 'Welcome To PillMate';
   static const String orLoginWith = 'Or Login With';
   static const String continueWithFacebook = 'Continue With Facebook';
   static const String continueWithGoogle = 'Continue With Google';

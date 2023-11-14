@@ -78,17 +78,17 @@ class _PageViewSectionState extends State<PageViewSection> {
             ),
           ),
           const Spacer(),
-          if (_activeIndex == 0) // Show only on the first page
+          if (_activeIndex == 0)
             CustomButton(
               onTap: () {
                 _pageController.nextPage(
-                  duration: Duration(milliseconds: 500),
+                  duration: const Duration(milliseconds: 500),
                   curve: Curves.ease,
                 );
               },
               text: 'Next',
             ),
-          if (_activeIndex == 1) // Show on the second page
+          if (_activeIndex == 1)
             Column(
               children: [
                 CustomButton(

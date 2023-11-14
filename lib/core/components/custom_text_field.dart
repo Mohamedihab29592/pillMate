@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:pill_mate/core/utils/app_colors.dart';
 
 // ignore: must_be_immutable
 class CustomTextField extends StatelessWidget {
@@ -19,12 +20,14 @@ class CustomTextField extends StatelessWidget {
     return Container(
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(10),
-        color: const Color(0xFFF5F5F5),
+        color:Theme.of(context).brightness == Brightness.dark
+            ? const Color(0xFF263238)
+            : Colors.grey.shade100,
       ),
       height: 58.h,
       width: double.infinity,
       child: TextFormField(
-        style: const TextStyle(color: Color(0xFF141D21)),
+        style: Theme.of(context).textTheme.titleMedium,
         obscureText: obscureText,
         decoration: InputDecoration(
           prefixIcon:prefixIcon == null ? null : Padding(
@@ -32,7 +35,7 @@ class CustomTextField extends StatelessWidget {
             child: SizedBox(
               width: 24,
               height: 24,
-              child: Image.asset(prefixIcon!),
+              child: Image.asset(prefixIcon!,color: Colors.grey,),
             ),
           ),
           suffixIcon: (suffixIcon == null)
@@ -43,28 +46,22 @@ class CustomTextField extends StatelessWidget {
                   child: SizedBox(
                     width: 24,
                     height: 24,
-                    child: Image.asset(suffixIcon!),
+                    child: Image.asset(suffixIcon!,color: Colors.grey,),
                   ),
                 ),
           hintText: hintText,
           hintStyle: const TextStyle(color: Color(0xFF9E9E9E), fontSize: 14),
-          focusedBorder: const OutlineInputBorder(
+          focusedBorder:  OutlineInputBorder(
             borderSide: BorderSide(
-              color: Color(0xFFF5F5F5),
+              color:Theme.of(context).brightness == Brightness.dark?  AppColors.grey: AppColors.darkContainer,
             ),
-            borderRadius: BorderRadius.all(Radius.circular(20)),
+            borderRadius: BorderRadius.all(Radius.circular(14)),
           ),
-          enabledBorder: const OutlineInputBorder(
+          enabledBorder:  OutlineInputBorder(
             borderSide: BorderSide(
-              color: Color(0xFFF5F5F5),
+              color:Theme.of(context).brightness == Brightness.dark?  AppColors.darkContainer: AppColors.grey,
             ),
-            borderRadius: BorderRadius.all(Radius.circular(20)),
-          ),
-          border: const OutlineInputBorder(
-            borderSide: BorderSide(
-              color: Color(0xFFF5F5F5),
-            ),
-            borderRadius: BorderRadius.all(Radius.circular(20)),
+            borderRadius: BorderRadius.all(Radius.circular(14)),
           ),
         ),
       ),

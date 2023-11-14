@@ -15,89 +15,90 @@ class RegisterScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Padding(
-        padding: const EdgeInsets.symmetric(horizontal: 15),
-        child: ListView(
-          children: [
-            const SizedBox(
-              height: 106,
-            ),
-            SizedBox(
-              width: 80,
-              height: 110,
-              child: Image.asset(ImageAssets.profilePicture),
-            ),
-            const SizedBox(
-              height: 32,
-            ),
-            CustomTextField(
-              prefixIcon: ImageAssets.userIcon,
-              hintText: AppStrings.name,
-            ),
-            const SizedBox(
-              height: 10,
-            ),
-            CustomTextField(
-              prefixIcon: ImageAssets.sms,
-              hintText: AppStrings.email,
-            ),
-            const SizedBox(
-              height: 10,
-            ),
-            CustomTextField(
-              prefixIcon: ImageAssets.phoneIcon,
-              hintText: AppStrings.phoneNumber,
-            ),
-            const SizedBox(
-              height: 10,
-            ),
-            CustomTextField(
-              prefixIcon: ImageAssets.location,
-              hintText: AppStrings.location,
-            ),
-            const SizedBox(
-              height: 10,
-            ),
-            CustomTextField(
-              prefixIcon: ImageAssets.lock,
-              hintText: AppStrings.password,
-              suffixIcon: ImageAssets.eye,
-            ),
-            const SizedBox(height: 10),
-            CustomTextField(
-              prefixIcon: ImageAssets.lock,
-              hintText: AppStrings.hiddenPassword,
-              suffixIcon: ImageAssets.eyeSlash,
-            ),
-            const SizedBox(
-              height: 20,
-            ),
-            CustomButton(
-              text: AppStrings.register,
-              onTap: () {},
-            ),
-            const SizedBox(
-              height: 10,
-            ),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                Text(
-                  '${AppStrings.alreadyHaveAnAccount} ',
-                  style: regularStyle(color: AppColors.KMediumGray, fontSize: 12),
-                ),
-                InkWell(
-                  onTap: () {
-                    navigateAndKill(context: context, route: Routes.login);
-                  },
-                  child: Text(
-                    AppStrings.login,
-                    style: regularStyle(color: AppColors.darkGreen, fontSize: 12),
+      body: SafeArea(
+        child: Padding(
+          padding: const EdgeInsets.all(20.0),
+          child: Center(
+            child: SingleChildScrollView(
+              child: Column(
+                children: [
+
+                  Image.asset(ImageAssets.profilePicture,scale: 0.5,),
+                  const SizedBox(
+                    height: 20,
                   ),
-                ),
-              ],
+
+                  CustomTextField(
+                    prefixIcon: ImageAssets.userIcon,
+                    hintText: AppStrings.name,
+                  ),
+                  const SizedBox(
+                    height: 10,
+                  ),
+                  CustomTextField(
+                    prefixIcon: ImageAssets.sms,
+                    hintText: AppStrings.email,
+                  ),
+                  const SizedBox(
+                    height: 10,
+                  ),
+                  CustomTextField(
+                    prefixIcon: ImageAssets.phoneIcon,
+                    hintText: AppStrings.phoneNumber,
+                  ),
+                  const SizedBox(
+                    height: 10,
+                  ),
+                  CustomTextField(
+                    prefixIcon: ImageAssets.location,
+                    hintText: AppStrings.location,
+                  ),
+                  const SizedBox(
+                    height: 10,
+                  ),
+                  CustomTextField(
+                    prefixIcon: ImageAssets.lock,
+                    hintText: AppStrings.password,
+                    suffixIcon: ImageAssets.eye,
+                  ),
+                  const SizedBox(height: 10),
+                  CustomTextField(
+                    prefixIcon: ImageAssets.lock,
+                    hintText: AppStrings.hiddenPassword,
+                    suffixIcon: ImageAssets.eyeSlash,
+                  ),
+                  const SizedBox(
+                    height: 20,
+                  ),
+                  CustomButton(
+                    text: AppStrings.register,
+                    onTap: () {},
+                  ),
+                  const SizedBox(
+                    height: 10,
+                  ),
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      Text(
+                        '${AppStrings.alreadyHaveAnAccount} ',
+                        style: Theme.of(context).textTheme.bodyMedium,
+                      ),
+                      InkWell(
+                        onTap: () {
+                          navigateAndKill(context: context, route: Routes.login);
+                        },
+                        child: Text(
+                          AppStrings.login,
+                          style: regularStyle(color: Theme.of(context).brightness == Brightness.dark ?AppColors.kLightPrimaryColor:AppColors.kPrimaryColor, fontSize: 14),
+                        ),
+                      ),
+                    ],
+                  ),
+                ],
+              ),
             ),
-          ],
+          ),
         ),
       ),
     );

@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 
+import '../../../../core/utils/app_colors.dart';
+
 class CustomAuthenticationButton extends StatelessWidget {
   const CustomAuthenticationButton(
       {super.key, required this.image, required this.text});
@@ -13,7 +15,7 @@ class CustomAuthenticationButton extends StatelessWidget {
       height: 50,
       decoration: BoxDecoration(
         border: Border.all(
-          color: const Color(0xff224A46),
+          color: Theme.of(context).brightness == Brightness.dark ?AppColors.kLightPrimaryColor:AppColors.kPrimaryColor,
           width: 1,
         ),
         borderRadius: const BorderRadius.all(Radius.circular(10)),
@@ -28,16 +30,10 @@ class CustomAuthenticationButton extends StatelessWidget {
           ),
           Padding(
             padding: const EdgeInsets.all(18),
-            child: SizedBox(
-                width: 143,
-                height: 32,
-                child: Text(
-                  text,
-                  style: const TextStyle(
-                    fontSize: 12,
-                    fontWeight: FontWeight.w600,
-                  ),
-                )),
+            child: Text(
+              text,
+              style: Theme.of(context).textTheme.bodySmall,
+            ),
           ),
         ],
       ),
