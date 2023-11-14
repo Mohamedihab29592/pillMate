@@ -32,21 +32,16 @@ class ImageAssets {
   static const String visa = '${paymentImages}visa.png';
   static const String vodCash = '${paymentImages}cash.png';
 
-
-
   static const String location = '${homeImages}location.png';
   static const String notification = '${homeImages}notification.png';
   static const String slider = '${homeImages}slider.png';
   static const String heart = '${homeImages}heart.png';
   static const String selectHeart = '${homeImages}select_heart.png';
-  static const String selectShopping= '${homeImages}select-shopping-bag.png';
+  static const String selectShopping = '${homeImages}select-shopping-bag.png';
   static const String shopping = '${homeImages}shopping-bag.png';
   static const String selectProfile = '${homeImages}select-profile-circle.png';
   static const String selectHome = '${homeImages}select_home.png';
   static const String messageHome = '${homeImages}messages.png';
-
-
-
 
   static const String productPageItem = '${baseUrl}productItem.png';
   static const String plusIcon = '${baseUrl}plus.svg';
@@ -57,7 +52,18 @@ class ImageAssets {
       '${baseUrl}Two factor authentication-bro 1.png';
   static const String newPassword = '${baseUrl}newPassword.svg';
   static const String eyeSlash = '${baseUrl}eye-slash.png';
+  static const String eye = '${baseUrl}eye.png';
   static const String lock = '${baseUrl}lock.png';
   static const String home = '${baseUrl}home.png';
   static const String profile = '${baseUrl}profile-circle.png';
+
+  static const String pillMateLogo = '${baseUrl}pillMateLogo.PNG';
+  static const String userIcon = '${baseUrl}user.png';
+  static const String facebookIcon = '${baseUrl}Facebook.png';
+  static const String googleIcon = '${baseUrl}Google.png';
+  static const String profilePicture = '${baseUrl}pp.png';
+  static const String phoneIcon = '${baseUrl}call.png';
+
+  static const String onBoardingPic1 = '${baseUrl}Pharmacist-bro 1.png';
+  static const String onBoardingPic2 = '${baseUrl}Computer login-bro 2.png';
 }
