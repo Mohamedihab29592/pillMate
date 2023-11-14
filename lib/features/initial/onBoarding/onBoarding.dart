@@ -1,49 +1,26 @@
-import 'package:dots_indicator/dots_indicator.dart';
 import 'package:flutter/material.dart';
-import 'package:pill_mate/features/initial/onBoarding/onBoarding1.dart';
-import 'package:pill_mate/features/initial/onBoarding/onBoarding2.dart';
+import 'package:pill_mate/core/components/custom_button.dart';
+import 'package:pill_mate/core/routes/app_routes.dart';
 
-class OnBoardingScreen extends StatefulWidget {
-  const OnBoardingScreen({super.key});
+import '../../../core/components/custom_colored_button.dart';
+import '../../../core/utils/app_colors.dart';
+import 'PageViewSection.dart';
 
-  @override
-  State<OnBoardingScreen> createState() => _OnBoardingScreenState();
-}
+class OnBoardingScreen extends StatelessWidget {
 
-class _OnBoardingScreenState extends State<OnBoardingScreen> {
-  final PageController _pageController = PageController();
-  double currentPageValue = 0.0;
-
-  @override
-  void initState() {
-    super.initState();
-    _pageController.addListener(() {
-      setState(() {
-        currentPageValue = _pageController.page!;
-      });
-    });
-  }
+  OnBoardingScreen({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       body: Column(
         children: [
-          Expanded(
-            child: PageView(
-              controller: _pageController,
-              children: const [
-                OnBoardingScreen1(),
-                OnBoardingScreen2(),
-              ],
-            ),
-            ),
-            DotsIndicator(
-              dotsCount: 2,
-              position: currentPageValue.toInt(),
-              ),
+          const Expanded(
+            child: PageViewSection(),
+          ),
+
         ],
-        ),
+      ),
     );
   }
 }

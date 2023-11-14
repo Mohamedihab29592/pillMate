@@ -22,12 +22,11 @@ class MyApp extends StatelessWidget {
         theme: AppThemes.lightMode,
 
 
-        initialRoute: Routes.login,
+        initialRoute: Routes.initialRoute,
 
         routes: {
           Routes.onBoarding: (context) => appRoutes(Routes.onBoarding, null),
-          Routes.onBoarding1: (context) => appRoutes(Routes.onBoarding1, null),
-          Routes.onBoarding2: (context) => appRoutes(Routes.onBoarding2, null),
+
           Routes.initialRoute: (context) =>
               appRoutes(Routes.initialRoute, null),
           Routes.login: (context) => appRoutes(Routes.login, null),

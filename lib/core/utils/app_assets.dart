@@ -77,7 +77,9 @@ class ImageAssets {
   static const String imagesToggleOffCircle = '${baseUrl}toggle-off-circle.png';
 
 
-  static const String pillMateLogo = '${baseUrl}pillMateLogo.PNG';
+  static const String pillMateLogo = '${baseUrl}pillMateLogo.png';
+  static const String pillMateLogoDark = '${baseUrl}pillMateSplashDark.png';
+  static const String pillMateLogoLight = '${baseUrl}pillMateSplashLight.png';
   static const String userIcon = '${baseUrl}user.png';
   static const String facebookIcon = '${baseUrl}Facebook.png';
   static const String googleIcon = '${baseUrl}Google.png';

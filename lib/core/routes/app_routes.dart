@@ -2,8 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:pill_mate/features/home/presentation/screens/layout.dart';
 import 'package:pill_mate/features/initial/onBoarding/onBoarding.dart';
-import 'package:pill_mate/features/initial/onBoarding/onBoarding1.dart';
-import 'package:pill_mate/features/initial/onBoarding/onBoarding2.dart';
+import 'package:pill_mate/features/initial/onBoarding/PageContent.dart';
+import 'package:pill_mate/features/initial/onBoarding/PageViewSection.dart';
 
 import '../../features/auth/presenation/screens/login_screen.dart';
 import '../../features/auth/presenation/screens/new-password.dart';
@@ -30,8 +30,7 @@ class Routes {
   static const String login = 'login';
   static const String register = 'register';
   static const String onBoarding = 'onBoarding';
-  static const String onBoarding1 = 'onBoarding1';
-  static const String onBoarding2 = 'onBoarding2';
+
   static const String forgetPassword = 'forgetPassword';
   static const String newPassword = 'newPassword';
   static const String verification = 'verification';
@@ -58,11 +57,8 @@ Widget appRoutes(String route, dynamic arg) {
     case Routes.register:
       return const RegisterScreen();
     case Routes.onBoarding:
-      return const OnBoardingScreen();
-    case Routes.onBoarding1:
-      return const OnBoardingScreen1();
-    case Routes.onBoarding2:
-      return const OnBoardingScreen2();
+      return  OnBoardingScreen();
+
     case Routes.layOut:
       return const LayOut();
 

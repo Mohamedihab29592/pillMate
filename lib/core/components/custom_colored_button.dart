@@ -22,13 +22,13 @@ class CustomColoredButton extends StatelessWidget {
         width: double.infinity,
         height: 50,
         decoration: BoxDecoration(
-            border: Border.all(color: Colors.grey, width: 2),
+            border: Border.all(color:Theme.of(context).brightness == Brightness.dark? AppColors.kLightPrimaryColor:AppColors.kDarkPrimaryColor, width: 2),
             color: color,
             borderRadius: BorderRadius.circular(14)),
         child: Center(
           child: Text(
             text,
-            style: regularStyle(color: AppColors.black, fontSize: 18),
+            style: regularStyle(color: Theme.of(context).brightness == Brightness.dark? AppColors.white:AppColors.black, fontSize: 18),
           ),
         ),
       ),

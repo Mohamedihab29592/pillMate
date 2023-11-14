@@ -64,10 +64,7 @@ class AppStrings {
   static const String name = 'Moamen';
 
   //onBoarding screen
-  static const String onBoardingOneLine1 = 'You Can Easily Order Your';
-  static const String onBoardingOneLine2 = 'Medications Online And Have';
-  static const String onBoardingOneLine3 = 'Them Deliverd Right To Your';
-  static const String onBoardingOneLine4 = 'DooeStep.';
-  static const String onBoardingTwoLine1 = 'Create Your Profile: To Get';
-  static const String onBoardingTwoLine2 = 'started with PillMate';
+  static const String onBoardingOneLine1 = 'You Can Easily Order Your Medications Online And Have Them Deliverd Right To Your DooeStep.';
+
+  static const String onBoardingTwoLine1 = 'Create Your Profile: To Get started with PillMate';
 }
