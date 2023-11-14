@@ -13,13 +13,18 @@ class ProfileScreenCubit extends Cubit<ProfileState> {
   bool isNotificationEnabled = true;
   bool isDarkModeEnabled = true;
 
+  TextEditingController nameTextEditingController = TextEditingController();
+  TextEditingController emailTextEditingController = TextEditingController();
+  TextEditingController phoneTextEditingController = TextEditingController();
+  TextEditingController passwordTextEditingController = TextEditingController();
+
   void changeNotification()
   {
     isNotificationEnabled = !isNotificationEnabled;
     emit(NotificationsChangedStatus());
   }
 
-  void changeDarkMode()
+  void changeAppTheme()
   {
     isDarkModeEnabled = !isDarkModeEnabled;
     emit(DarkModeChangedStatus());

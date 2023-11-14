@@ -57,6 +57,26 @@ class ImageAssets {
   static const String home = '${baseUrl}home.png';
   static const String profile = '${baseUrl}profile-circle.png';
 
+  static const String imagesRight = '${baseUrl}right.png';
+  static const String imagesProfile = '${baseUrl}profile.png';
+  static const String imagesWallet3 = '${baseUrl}wallet-3.png';
+  static const String imagesUser = '${baseUrl}user.png';
+  static const String imagesNotificationBing = '${baseUrl}notification-bing.png';
+  static const String imagesN1 = '${baseUrl}n1.png';
+  static const String imagesN2 = '${baseUrl}n2.png';
+  static const String imagesN3 = '${baseUrl}n3.png';
+  static const String imagesN4 = '${baseUrl}n4.png';
+  static const String imagesMoon = '${baseUrl}moon.png';
+  static const String imagesLeft = '${baseUrl}left.png';
+  static const String imagesEdit = '${baseUrl}edit.png';
+  static const String imagesCall = '${baseUrl}call.png';
+  static const String imagesShoppingBag = '${baseUrl}shopping-bag.png';
+  static const String imagesLogout = '${baseUrl}logout.png';
+  static const String imagesGlobal = '${baseUrl}global.png';
+  static const String imagesToggleOnCircle = '${baseUrl}toggle-on-circle.png';
+  static const String imagesToggleOffCircle = '${baseUrl}toggle-off-circle.png';
+
+
   static const String pillMateLogo = '${baseUrl}pillMateLogo.PNG';
   static const String userIcon = '${baseUrl}user.png';
   static const String facebookIcon = '${baseUrl}Facebook.png';
@@ -66,4 +86,5 @@ class ImageAssets {
 
   static const String onBoardingPic1 = '${baseUrl}Pharmacist-bro 1.png';
   static const String onBoardingPic2 = '${baseUrl}Computer login-bro 2.png';
+
 }

@@ -20,7 +20,10 @@ class MyApp extends StatelessWidget {
         debugShowCheckedModeBanner: false,
         title: AppStrings.appName,
         theme: AppThemes.lightMode,
+
+
         initialRoute: Routes.login,
+
         routes: {
           Routes.onBoarding: (context) => appRoutes(Routes.onBoarding, null),
           Routes.onBoarding1: (context) => appRoutes(Routes.onBoarding1, null),
@@ -30,6 +33,10 @@ class MyApp extends StatelessWidget {
           Routes.login: (context) => appRoutes(Routes.login, null),
           Routes.categoriesIntailRoute: (context) =>
               appRoutes(Routes.categoriesIntailRoute, null),
+
+          Routes.location: (context) =>
+              appRoutes(Routes.location, null),
+
 
           Routes.register: (context) => appRoutes(Routes.register, null),
 
@@ -46,6 +53,12 @@ class MyApp extends StatelessWidget {
               appRoutes(Routes.paymentScreen, null),
           Routes.detailsScreen: (context) =>
               appRoutes(Routes.detailsScreen, null),
+          Routes.notificationScreen: (context) =>
+              appRoutes(Routes.notificationScreen, null),
+          Routes.profileScreen: (context) =>
+              appRoutes(Routes.profileScreen, null),
+          Routes.accountScreen: (context) =>
+              appRoutes(Routes.accountScreen, null),
         },
       ),
     );
