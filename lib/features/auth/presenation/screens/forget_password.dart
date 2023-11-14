@@ -7,6 +7,9 @@ import 'package:pill_mate/core/routes/app_routes.dart';
 import 'package:pill_mate/core/utils/app_assets.dart';
 import 'package:pill_mate/core/utils/app_strings.dart';
 
+import '../../../../core/utils/app_colors.dart';
+import '../../../../core/utils/app_text_style.dart';
+
 class ForgetPassword extends StatelessWidget {
   const ForgetPassword({super.key});
 
@@ -68,11 +71,12 @@ class ForgetPassword extends StatelessWidget {
                           navigateAndKill(
                               context: context, route: Routes.login);
                         },
-                        child: const Text(
+                        child:  Text(
                           AppStrings.login,
-                          style: TextStyle(color: Color(0xFF224A46)),
+                          style:
+                          regularStyle(color: Theme.of(context).brightness == Brightness.dark ?AppColors.kLightPrimaryColor:AppColors.kPrimaryColor, fontSize: 14),),
                         ),
-                      ),
+
                     ],
                   ),
                 ],

@@ -19,7 +19,7 @@ class MyApp extends StatelessWidget {
       child: MaterialApp(
         debugShowCheckedModeBanner: false,
         title: AppStrings.appName,
-        theme: AppThemes.lightMode,
+        theme: AppThemes.darkMode,
 
 
         initialRoute: Routes.initialRoute,

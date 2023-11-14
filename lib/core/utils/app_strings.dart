@@ -48,7 +48,7 @@ class AppStrings {
   static const String resend = 'Re-send';
   static const String mailExample = 'moam***@gmail.com';
   static const String time = '00:120 Sec';
-  static const String enterCodeSent = 'Enter the code sent to';
+  static const String enterCodeSent = 'Enter the code sent to ';
   static const String dontReceiveCode = 'Don’t receive code ? ';
   static const String welcom = 'Welcome To PillMate';
   static const String orLoginWith = 'Or Login With';
