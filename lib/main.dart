@@ -20,14 +20,29 @@ class MyApp extends StatelessWidget {
         debugShowCheckedModeBanner: false,
         title: AppStrings.appName,
         theme: AppThemes.lightMode,
-        initialRoute: Routes.accountScreen,
+
+
+        initialRoute: Routes.login,
+
         routes: {
-          Routes.login: (context) =>
-              appRoutes(Routes.login, null),
+          Routes.onBoarding: (context) => appRoutes(Routes.onBoarding, null),
+          Routes.onBoarding1: (context) => appRoutes(Routes.onBoarding1, null),
+          Routes.onBoarding2: (context) => appRoutes(Routes.onBoarding2, null),
+          Routes.initialRoute: (context) =>
+              appRoutes(Routes.initialRoute, null),
+          Routes.login: (context) => appRoutes(Routes.login, null),
           Routes.categoriesIntailRoute: (context) =>
               appRoutes(Routes.categoriesIntailRoute, null),
+
           Routes.location: (context) =>
               appRoutes(Routes.location, null),
+
+
+          Routes.register: (context) => appRoutes(Routes.register, null),
+
+          Routes.location: (context) =>
+              appRoutes(Routes.location, null),
+
           Routes.categoryRoute: (context) =>
               appRoutes(Routes.categoryRoute, null),
           Routes.favouriteRoute: (context) =>
