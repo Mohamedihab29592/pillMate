@@ -3,7 +3,6 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:pill_mate/core/components/custom_button.dart';
 import 'package:pill_mate/core/functions/navigate.dart';
 import 'package:pill_mate/core/routes/app_routes.dart';
-import 'package:pill_mate/core/utils/app_colors.dart';
 
 
 class PayNowScreen extends StatelessWidget {

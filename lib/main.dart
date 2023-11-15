@@ -1,63 +1,53 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:pill_mate/core/appCubit/app_cubit.dart';
+import 'package:pill_mate/core/appCubit/app_state.dart';
 import 'package:pill_mate/core/routes/app_routes.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:pill_mate/core/utils/app_strings.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 import 'core/utils/themes.dart';
 
-void main() {
-  runApp(const MyApp());
+void main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+
+  final sharedPreferences = await SharedPreferences.getInstance();
+  bool? isDarkMode = sharedPreferences.getBool("isDarkMode") ?? false;
+  SystemChrome.setSystemUIOverlayStyle(
+      const SystemUiOverlayStyle(statusBarColor: Colors.transparent));
+  runApp(MyApp(isDarkMode: isDarkMode));
 }
 
 class MyApp extends StatelessWidget {
-  const MyApp({super.key});
+  final bool isDarkMode;
 
-  // This widget is the root of your application.
+  const MyApp({Key? key, required this.isDarkMode}) : super(key: key);
+
   @override
   Widget build(BuildContext context) {
-    return ScreenUtilInit(
-      designSize: const Size(428, 926),
-      child: MaterialApp(
-        debugShowCheckedModeBanner: false,
-        title: AppStrings.appName,
-        theme: AppThemes.darkMode,
-
-
-        initialRoute: Routes.initialRoute,
-
-        routes: {
-          Routes.onBoarding: (context) => appRoutes(Routes.onBoarding, null),
-
-          Routes.initialRoute: (context) =>
-              appRoutes(Routes.initialRoute, null),
-          Routes.login: (context) => appRoutes(Routes.login, null),
-          Routes.categoriesIntailRoute: (context) =>
-              appRoutes(Routes.categoriesIntailRoute, null),
-
-          Routes.location: (context) =>
-              appRoutes(Routes.location, null),
-
-
-          Routes.register: (context) => appRoutes(Routes.register, null),
-
-          Routes.location: (context) =>
-              appRoutes(Routes.location, null),
-
-          Routes.categoryRoute: (context) =>
-              appRoutes(Routes.categoryRoute, null),
-          Routes.favouriteRoute: (context) =>
-              appRoutes(Routes.favouriteRoute, null),
-          Routes.productRoute: (context) =>
-              appRoutes(Routes.productRoute, null),
-          Routes.paymentScreen: (context) =>
-              appRoutes(Routes.paymentScreen, null),
-          Routes.detailsScreen: (context) =>
-              appRoutes(Routes.detailsScreen, null),
-          Routes.notificationScreen: (context) =>
-              appRoutes(Routes.notificationScreen, null),
-          Routes.profileScreen: (context) =>
-              appRoutes(Routes.profileScreen, null),
-          Routes.accountScreen: (context) =>
-              appRoutes(Routes.accountScreen, null),
+    return MultiBlocProvider(
+      providers: [
+        BlocProvider(
+          create: (context) => LocaleCubit()..changeAppMode(fromShared: isDarkMode),
+        ),
+      ],
+      child: BlocBuilder<LocaleCubit,LocalStates>(
+        builder: (context,state) {
+          return ScreenUtilInit(
+            designSize: const Size(428, 926),
+            child: MaterialApp(
+              debugShowCheckedModeBanner: false,
+              title: AppStrings.appName,
+              themeMode: BlocProvider.of<LocaleCubit>(context).isDarkMode
+                  ? ThemeMode.dark
+                  : ThemeMode.light,
+              darkTheme: AppThemes.darkMode,
+              theme: AppThemes.lightMode,
+              initialRoute: Routes.initialRoute,
+              routes: buildRoutes(context),
+            ),
+          );
         },
       ),
     );

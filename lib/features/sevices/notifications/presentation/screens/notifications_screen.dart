@@ -5,11 +5,11 @@ import 'package:pill_mate/core/components/custom_app_bar.dart';
 
 import '../../../../../core/utils/app_colors.dart';
 
-import '../../../../../core/utils/themes.dart';
 import '../../data/models/notification_model.dart';
 import '../store/notification_cubit.dart';
 import '../store/notification_state.dart';
 
+// ignore: must_be_immutable
 class NotificationScreen extends StatelessWidget {
    NotificationScreen({super.key});
 
@@ -31,15 +31,12 @@ class NotificationScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     MediaQueryData mq = MediaQuery.of(context);
-    ThemeData th = Theme.of(context);
     return BlocProvider(
       create: (BuildContext context) {
         return NotificationCubit();
       },
       child: BlocConsumer<NotificationCubit, NotificationStates>(
         builder: (context, state) {
-          NotificationCubit profileScreenCubit =
-          NotificationCubit.get(context);
           return Scaffold(
             appBar: CustomAppBar(appBarTitle: "Notifications",appBarAction: [
              Image.asset("assets/images/shopping-bag.png",scale: 3,color: Theme.of(context).brightness == Brightness.dark ?AppColors.kDarkPrimaryColor:AppColors.kPrimaryColor,),

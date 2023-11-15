@@ -1,12 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:pill_mate/core/appCubit/app_cubit.dart';
+import 'package:pill_mate/core/appCubit/app_state.dart';
 import 'package:pill_mate/core/components/custom_app_bar.dart';
 import 'package:pill_mate/core/functions/navigate.dart';
 import 'package:pill_mate/core/utils/app_assets.dart';
 
 import '../../../../core/routes/app_routes.dart';
-import '../bloc/store/profile_cubit.dart';
-import '../bloc/store/profile_state.dart';
+import '../bloc/cubit/profile/profile_cubit.dart';
+import '../bloc/state/profile/profile_state.dart';
 import '../widgets/profile_screen/account_item.dart';
 import '../widgets/profile_screen/toggleItem.dart';
 
@@ -24,8 +26,6 @@ class AccountScreen extends StatelessWidget {
       },
       child: BlocConsumer<ProfileScreenCubit, ProfileState>(
         builder: (context, state) {
-          ProfileScreenCubit profileScreenCubit =
-              ProfileScreenCubit.get(context);
           return Scaffold(
             appBar: const CustomAppBar(appBarTitle: 'Account',),
             body: Container(
@@ -56,7 +56,6 @@ class AccountScreen extends StatelessWidget {
                     imageHeight: mq.size.height * 0.08,
                     imageWidth: mq.size.width * 0.08,
                     itemHeight: mq.size.height * 0.06,
-                    isDarkModeEnabled: profileScreenCubit.isDarkModeEnabled,
                     title: "Profile",
                     onTapAction: () {
                       navigate(context: context, route: Routes.profileScreen);
@@ -77,23 +76,24 @@ class AccountScreen extends StatelessWidget {
                     },
                     preffixImage: ImageAssets.imagesNotificationBing,
                   ),
-                  ToggleItem(
-                    imageHeight: mq.size.height * 0.08,
-                    imageWidth: mq.size.width * 0.08,
-                    itemHeight: mq.size.height * 0.06,
-                    title: "Dark Mode",
-                    isEnabled:
-                    ProfileScreenCubit.get(context).isDarkModeEnabled,
-                    onTapAction: () {
-                      profileScreenCubit.changeAppTheme();
-                    },
-                    preffixImage: ImageAssets.imagesMoon,
-                  ),
+                 BlocBuilder<LocaleCubit,LocalStates>(builder: (context,state){
+                   return  ToggleItem(
+                     imageHeight: mq.size.height * 0.08,
+                     imageWidth: mq.size.width * 0.08,
+                     itemHeight: mq.size.height * 0.06,
+                     title: "Dark Mode",
+                     isEnabled: LocaleCubit.get(context).isDarkMode,
+                     onTapAction: () {
+                       LocaleCubit.get(context).changeAppMode();
+
+                     },
+                     preffixImage: ImageAssets.imagesMoon,
+                   );
+                 }),
                   AccountItem(
                     preffixImage: ImageAssets.imagesGlobal,
                     suffixImage: ImageAssets.imagesRight,
                     imageHeight: mq.size.height * 0.08,
-                    isDarkModeEnabled: profileScreenCubit.isDarkModeEnabled,
                     imageWidth: mq.size.width * 0.08,
                     itemHeight: mq.size.height * 0.06,
                     title: "Language",
@@ -105,7 +105,6 @@ class AccountScreen extends StatelessWidget {
                     preffixImage: ImageAssets.imagesWallet3,
                     suffixImage: ImageAssets.imagesRight,
                     imageHeight: mq.size.height * 0.08,
-                    isDarkModeEnabled: profileScreenCubit.isDarkModeEnabled,
                     imageWidth: mq.size.width * 0.08,
                     itemHeight: mq.size.height * 0.06,
                     title: "payment Method",
@@ -118,7 +117,6 @@ class AccountScreen extends StatelessWidget {
                     imageWidth: mq.size.width * 0.08,
                     itemHeight: mq.size.height * 0.06,
                     title: "contact us",
-                    isDarkModeEnabled: profileScreenCubit.isDarkModeEnabled,
                     onTapAction: () {},
                   ),
                   AccountItem(
@@ -126,7 +124,6 @@ class AccountScreen extends StatelessWidget {
                     imageHeight: mq.size.height * 0.08,
                     imageWidth: mq.size.width * 0.08,
                     itemHeight: mq.size.height * 0.06,
-                    isDarkModeEnabled: profileScreenCubit.isDarkModeEnabled,
                     title: "Log Out",
                     onTapAction: () {
                       navigateAndKill(context: context, route: Routes.login);

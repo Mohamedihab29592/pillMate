@@ -1,9 +1,8 @@
-import 'dart:async';
 
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
-import 'profile_state.dart';
+import '../../state/profile/profile_state.dart';
 
 class ProfileScreenCubit extends Cubit<ProfileState> {
   ProfileScreenCubit() : super(ProfileStateInitial());
@@ -11,7 +10,6 @@ class ProfileScreenCubit extends Cubit<ProfileState> {
   static ProfileScreenCubit get(BuildContext context) =>
       BlocProvider.of(context);
   bool isNotificationEnabled = true;
-  bool isDarkModeEnabled = true;
 
   TextEditingController nameTextEditingController = TextEditingController();
   TextEditingController emailTextEditingController = TextEditingController();
@@ -24,9 +22,5 @@ class ProfileScreenCubit extends Cubit<ProfileState> {
     emit(NotificationsChangedStatus());
   }
 
-  void changeAppTheme()
-  {
-    isDarkModeEnabled = !isDarkModeEnabled;
-    emit(DarkModeChangedStatus());
-  }
+
 }

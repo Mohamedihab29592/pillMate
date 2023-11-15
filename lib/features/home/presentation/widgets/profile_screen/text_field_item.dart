@@ -4,11 +4,11 @@ import 'package:pill_mate/core/utils/app_assets.dart';
 import '../../../../../core/utils/app_colors.dart';
 
 
+// ignore: must_be_immutable
 class TextFieldItem extends StatelessWidget {
   TextFieldItem({
     super.key,
     this.itemTextEditingController,
-    this.isDarkEnabled = true,
     this.isObsecure = false,
     this.prefixImage,
     this.labelText,
@@ -16,7 +16,7 @@ class TextFieldItem extends StatelessWidget {
 
   String? prefixImage, labelText;
   TextEditingController? itemTextEditingController;
-  bool isDarkEnabled, isObsecure;
+  bool  isObsecure;
 
   @override
   Widget build(BuildContext context) {
@@ -34,7 +34,7 @@ class TextFieldItem extends StatelessWidget {
             color: th.brightness == Brightness.dark
                 ? AppColors.white
                 : AppColors.grey),
-        borderRadius: BorderRadius.all(
+        borderRadius: const BorderRadius.all(
           Radius.circular(
             10,
           ),
@@ -90,7 +90,7 @@ class TextFieldItem extends StatelessWidget {
                 width: mq.size.width * 0.08,
                 height: mq.size.height * 0.08,
                 color: th.brightness == Brightness.dark ? AppColors.kLightPrimaryColor:AppColors.kPrimaryColor,
-                image: AssetImage(ImageAssets.imagesEdit),
+                image: const AssetImage(ImageAssets.imagesEdit),
               ),
             ),
           ],

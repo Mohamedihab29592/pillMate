@@ -6,7 +6,7 @@ import 'package:pill_mate/features/home/presentation/widgets/category_screen_wid
 import 'package:pill_mate/core/components/custom_app_bar.dart';
 import 'package:pill_mate/features/home/presentation/widgets/common/search_text_field.dart';
 
-import '../bloc/cubit/search_cubit.dart';
+import '../bloc/cubit/search/search_cubit.dart';
 
 class CategoryScreen extends StatelessWidget {
   const CategoryScreen({super.key});

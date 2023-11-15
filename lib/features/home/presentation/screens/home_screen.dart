@@ -6,7 +6,7 @@ import 'package:smooth_page_indicator/smooth_page_indicator.dart';
 
 import '../../../../core/utils/app_colors.dart';
 import '../../../sevices/presenation/screens/chat_screen.dart';
-import '../bloc/cubit/search_cubit.dart';
+import '../bloc/cubit/search/search_cubit.dart';
 import '../widgets/categoriesWidget.dart';
 import '../widgets/common/search_text_field.dart';
 import '../widgets/product_screen_widgets/similar_product_grid_view.dart';
@@ -19,6 +19,7 @@ class HomeScreen extends StatefulWidget {
   State<HomeScreen> createState() => _HomeScreenState();
 }
 
+// ignore: unused_element
 int _currentIndex = 0;
 
 class _HomeScreenState extends State<HomeScreen> {
@@ -27,16 +28,16 @@ class _HomeScreenState extends State<HomeScreen> {
     var width = MediaQuery.of(context).size.width;
     var heigh = MediaQuery.of(context).size.height;
 
-    TextEditingController _searchController = TextEditingController();
-    PageController _pageController = PageController();
+    TextEditingController searchController = TextEditingController();
+    PageController pageController = PageController();
 
-    final List<String> _images = [
+    final List<String> images = [
       'assets/images/slider.png',
       'assets/images/slider.png',
       'assets/images/slider.png',
     ];
 
-    final List<String> _imagesCateogry = [
+    final List<String> imagesCateogry = [
       ImageAssets.firstCategory,
       ImageAssets.secondCategory,
       ImageAssets.thirdCategory,
@@ -95,7 +96,7 @@ class _HomeScreenState extends State<HomeScreen> {
                         ),
                       ],
                     ),
-                    Spacer(),
+                    const Spacer(),
                     Image.asset(
                       ImageAssets.notification,
                       color: Theme.of(context).brightness == Brightness.dark ?AppColors.kLightPrimaryColor:AppColors.kPrimaryColor,
@@ -104,7 +105,7 @@ class _HomeScreenState extends State<HomeScreen> {
                 ),
 
                 CustomSearchBar(
-                  textEditingController: _searchController,
+                  textEditingController: searchController,
                   hintText: 'Search', onChanged: (String ) {  },
 
                 ),
@@ -114,8 +115,8 @@ class _HomeScreenState extends State<HomeScreen> {
                 SizedBox(
                   height: 150,
                   child: PageView.builder(
-                    controller: _pageController, 
-                    itemCount: _images.length,
+                    controller: pageController,
+                    itemCount: images.length,
                     onPageChanged: (index) {
                       setState(() {
                         _currentIndex = index;
@@ -131,7 +132,7 @@ class _HomeScreenState extends State<HomeScreen> {
                         child: ClipRRect(
                           borderRadius: BorderRadius.circular(16.0),
                           child: Image(
-                            image: AssetImage(_images[index]),
+                            image: AssetImage(images[index]),
                             fit: BoxFit.cover,
                             width: double.infinity,
                           ),
@@ -142,7 +143,7 @@ class _HomeScreenState extends State<HomeScreen> {
                 ),
                 const SizedBox(height: 10),
                 SmoothPageIndicator(
-                  controller: _pageController,
+                  controller: pageController,
                   count: 3,
                   effect: ExpandingDotsEffect(
                     dotHeight: 6,
@@ -162,7 +163,7 @@ class _HomeScreenState extends State<HomeScreen> {
                       'Categories',
                       style: Theme.of(context).textTheme.bodyLarge,
                     ),
-                    Spacer(),
+                    const Spacer(),
                     InkWell(
                       child:  Text(
                         'see all',
@@ -190,9 +191,9 @@ class _HomeScreenState extends State<HomeScreen> {
                     scrollDirection: Axis.horizontal,
 
                       itemBuilder: (context,index)=>
-                      CategoriesList(image: _imagesCateogry[index],),
+                      CategoriesList(image: imagesCateogry[index],),
 
-                      separatorBuilder: (context,index)=>const SizedBox(width: 3,), itemCount: _imagesCateogry.length),
+                      separatorBuilder: (context,index)=>const SizedBox(width: 3,), itemCount: imagesCateogry.length),
                 ),
                 const SizedBox(height: 10,),
                 Row(
@@ -234,7 +235,7 @@ class _HomeScreenState extends State<HomeScreen> {
 
       Navigator.push(
         context,
-        MaterialPageRoute(builder: (context) => ChatScreen ()),
+        MaterialPageRoute(builder: (context) => const ChatScreen ()),
       );
     },
     backgroundColor: AppColors.darkGreen,

@@ -1,7 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:pill_mate/core/components/back_arrow.dart';
-import 'package:pill_mate/core/components/app_bar_pop_icon.dart';
-import 'package:pill_mate/core/components/app_bar_title.dart';
 
 import '../utils/app_colors.dart';
 
@@ -22,7 +19,7 @@ class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
       leading: backArrow,
       backgroundColor:color?? AppColors.transparent,
       elevation: 0,
-      title: Text(appBarTitle,style: style,),
+      title: Text(appBarTitle,style: style?? Theme.of(context).textTheme.bodyLarge,),
 
       centerTitle: true,
       actions: appBarAction

@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:pill_mate/core/utils/app_assets.dart';
-import 'package:pill_mate/core/utils/app_assets.dart';
 
 import '../../../../../core/utils/app_colors.dart';
 
 
+// ignore: must_be_immutable
 class ToggleItem extends StatelessWidget {
   ToggleItem({
     super.key,
@@ -39,7 +39,7 @@ class ToggleItem extends StatelessWidget {
                   ? AppColors.white
                   : AppColors.grey,
             ),
-            borderRadius: BorderRadius.all(Radius.circular(10))),
+            borderRadius: const BorderRadius.all(Radius.circular(10))),
         child: Padding(
           padding: const EdgeInsets.only(left: 8.0, right: 8.0),
           child: Row(

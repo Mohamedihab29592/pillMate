@@ -1,3 +1,5 @@
+// ignore_for_file: unused_import
+
 import 'package:flutter/material.dart';
 import 'package:pill_mate/core/components/custom_button.dart';
 import 'package:pill_mate/core/routes/app_routes.dart';

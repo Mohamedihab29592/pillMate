@@ -1,4 +1,4 @@
-import 'dart:async';
+
 
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -14,7 +14,7 @@ import '../../../core/utils/app_colors.dart';
 import 'PageContent.dart';
 
 class PageViewSection extends StatefulWidget {
-  const PageViewSection({Key? key});
+  const PageViewSection({super.key,});
 
   @override
   State<PageViewSection> createState() => _PageViewSectionState();

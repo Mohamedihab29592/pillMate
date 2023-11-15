@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:pill_mate/core/utils/app_colors.dart';
 
 
+// ignore: must_be_immutable
 class AccountItem extends StatelessWidget {
   AccountItem(
       {super.key,
@@ -11,13 +12,11 @@ class AccountItem extends StatelessWidget {
       this.imageWidth,
       this.preffixImage,
       this.onTapAction,
-      this.isDarkModeEnabled = true,
       this.title});
 
   double? imageWidth, imageHeight, itemHeight;
   String? title, preffixImage, suffixImage;
   GestureTapCallback? onTapAction;
-  bool isDarkModeEnabled;
   //bool
   @override
   Widget build(BuildContext context) {
@@ -34,7 +33,7 @@ class AccountItem extends StatelessWidget {
                   ? AppColors.white
                   : AppColors.grey,
             ),
-            borderRadius: BorderRadius.all(Radius.circular(10))),
+            borderRadius: const BorderRadius.all(Radius.circular(10))),
         child: Padding(
           padding: const EdgeInsets.only(left: 8.0, right: 8.0),
           child: Row(

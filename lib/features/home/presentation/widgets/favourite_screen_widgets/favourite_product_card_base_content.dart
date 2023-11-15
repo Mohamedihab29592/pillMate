@@ -67,7 +67,7 @@ class FavouriteProductCardBaseContent extends StatelessWidget {
                 ),
               ),
             ),
-            Spacer(),
+            const Spacer(),
             Container(
               color: Theme.of(context).brightness == Brightness.dark
                   ? const Color(0xFF263238)
@@ -87,7 +87,7 @@ class FavouriteProductCardBaseContent extends StatelessWidget {
                         const EdgeInsets.symmetric(vertical: 8, horizontal: 8)),
               ),
             ),
-            Spacer()
+            const Spacer()
           ],
         ),
       );

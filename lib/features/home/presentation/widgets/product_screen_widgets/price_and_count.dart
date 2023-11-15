@@ -3,7 +3,6 @@ import 'package:flutter/material.dart';
 
 import 'package:pill_mate/features/home/presentation/widgets/product_screen_widgets/count_widget_button.dart';
 
-import '../../../../../core/utils/app_assets.dart';
 import '../../../../../core/utils/app_colors.dart';
 import '../../../../../core/utils/app_text_style.dart';
 

@@ -2,8 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:pill_mate/features/home/presentation/screens/layout.dart';
 import 'package:pill_mate/features/initial/onBoarding/onBoarding.dart';
-import 'package:pill_mate/features/initial/onBoarding/PageContent.dart';
-import 'package:pill_mate/features/initial/onBoarding/PageViewSection.dart';
+
 
 import '../../features/auth/presenation/screens/login_screen.dart';
 import '../../features/auth/presenation/screens/new-password.dart';
@@ -17,7 +16,7 @@ import '../../features/home/presentation/screens/favourite_screen.dart';
 import '../../features/home/presentation/screens/product_screen.dart';
 import '../../features/home/presentation/screens/profile_screen.dart';
 import '../../features/initial/splash/splash.dart';
-import '../../features/home/presentation/bloc/cubit/search_cubit.dart';
+import '../../features/home/presentation/bloc/cubit/search/search_cubit.dart';
 import '../../features/auth/presenation/screens/forget_password.dart';
 
 import '../../features/sevices/location/presenation/screens/location_screen.dart';
@@ -77,12 +76,6 @@ Widget appRoutes(String route, dynamic arg) {
         child: CategoriesScreen(),
       );
 
-    case Routes.categoryRoute:
-      return BlocProvider(
-        create: (context) => SearchCubit<String>(),
-        child: const CategoryScreen(),
-      );
-
     case Routes.paymentScreen:
       return const PaymentScreen();
     case Routes.detailsScreen:
@@ -108,5 +101,34 @@ Widget appRoutes(String route, dynamic arg) {
           child: Text('Not Found..!'),
         ),
       );
+
   }
+
+
+
 }
+
+Map<String, Widget Function(dynamic context)> buildRoutes(BuildContext context) {
+  return {
+    Routes.initialRoute: (context) => appRoutes(Routes.initialRoute, null),
+    Routes.onBoarding: (context) => appRoutes(Routes.onBoarding, null),
+    Routes.login: (context) => appRoutes(Routes.login, null),
+    Routes.register: (context) => appRoutes(Routes.register, null),
+    Routes.categoriesIntailRoute: (context) => appRoutes(Routes.categoriesIntailRoute, null),
+    Routes.location: (context) => appRoutes(Routes.location, null),
+    Routes.categoryRoute: (context) => appRoutes(Routes.categoryRoute, null),
+    Routes.favouriteRoute: (context) => appRoutes(Routes.favouriteRoute, null),
+    Routes.productRoute: (context) => appRoutes(Routes.productRoute, null),
+    Routes.paymentScreen: (context) => appRoutes(Routes.paymentScreen, null),
+    Routes.detailsScreen: (context) => appRoutes(Routes.detailsScreen, null),
+    Routes.notificationScreen: (context) => appRoutes(Routes.notificationScreen, null),
+    Routes.profileScreen: (context) => appRoutes(Routes.profileScreen, null),
+    Routes.accountScreen: (context) => appRoutes(Routes.accountScreen, null),
+  };
+}
+
+
+
+
+
+

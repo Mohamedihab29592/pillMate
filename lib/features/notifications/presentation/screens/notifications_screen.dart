@@ -7,6 +7,7 @@ import '../../data/models/notification_model.dart';
 import '../store/notification_cubit.dart';
 import '../store/notification_state.dart';
 
+// ignore: must_be_immutable
 class NotificationScreen extends StatelessWidget {
    NotificationScreen({super.key});
 
@@ -35,17 +36,15 @@ class NotificationScreen extends StatelessWidget {
       },
       child: BlocConsumer<NotificationCubit, NotificationStates>(
         builder: (context, state) {
-          NotificationCubit notificationCubit =
-          NotificationCubit.get(context);
           return Scaffold(
             appBar: AppBar(
               leading: IconButton(
-                icon: Icon(Icons.arrow_back_ios),
+                icon: const Icon(Icons.arrow_back_ios),
                 iconSize: 15,
                 color: th.iconTheme.color,
                 onPressed: () {},
               ),
-              titleTextStyle: TextStyle(color: AppColors.black),
+              titleTextStyle: const TextStyle(color: AppColors.black),
               centerTitle: true,
               backgroundColor: th.scaffoldBackgroundColor,
               title: Text(
@@ -64,7 +63,7 @@ class NotificationScreen extends StatelessWidget {
                       width: mq.size.width * 0.07,
                       height: mq.size.height * 0.07,
                       color: th.iconTheme.color,
-                      image: AssetImage(ImageAssets.imagesShoppingBag),
+                      image: const AssetImage(ImageAssets.imagesShoppingBag),
                     ),
                   ),
                 )

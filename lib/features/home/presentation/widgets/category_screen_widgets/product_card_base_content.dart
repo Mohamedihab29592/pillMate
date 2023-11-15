@@ -1,6 +1,5 @@
 import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/material.dart';
-import 'package:pill_mate/core/utils/app_colors.dart';
 import 'package:pill_mate/features/home/presentation/widgets/category_screen_widgets/price_and_cart_icon.dart';
 
 import '../../../../../core/utils/app_assets.dart';

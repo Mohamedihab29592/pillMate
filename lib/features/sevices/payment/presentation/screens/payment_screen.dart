@@ -92,7 +92,6 @@ class _PaymentScreenState extends State<PaymentScreen> {
                                 onChanged: (value) {
                                   setState(() {
                                     groupValue = value as PaymentType;
-                                    print(groupValue);
                                   });
                                 },
                               ),
@@ -116,7 +115,6 @@ class _PaymentScreenState extends State<PaymentScreen> {
                                 onChanged: (value) {
                                   setState(() {
                                     groupValue = value as PaymentType;
-                                    print(groupValue);
                                   });
                                 },
                               ),

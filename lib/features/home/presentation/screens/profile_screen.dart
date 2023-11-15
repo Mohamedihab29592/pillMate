@@ -2,11 +2,10 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:pill_mate/core/components/back_arrow.dart';
 import 'package:pill_mate/core/components/custom_app_bar.dart';
-import 'package:pill_mate/core/utils/themes.dart';
 import '../../../../core/utils/app_assets.dart';
 import '../../../../core/utils/app_colors.dart';
-import '../bloc/store/profile_cubit.dart';
-import '../bloc/store/profile_state.dart';
+import '../bloc/cubit/profile/profile_cubit.dart';
+import '../bloc/state/profile/profile_state.dart';
 import '../widgets/profile_screen/text_field_item.dart';
 class ProfileScreen extends StatelessWidget {
   const ProfileScreen({super.key});
@@ -68,19 +67,16 @@ class ProfileScreen extends StatelessWidget {
                               itemTextEditingController: profileScreenCubit.nameTextEditingController,
                               labelText: "Name",
                               prefixImage: ImageAssets.imagesUser,
-                              isDarkEnabled: profileScreenCubit.isDarkModeEnabled,
                             ),
                             TextFieldItem(
                               itemTextEditingController: profileScreenCubit.emailTextEditingController,
                               labelText: "email",
                               prefixImage: ImageAssets.sms,
-                              isDarkEnabled: profileScreenCubit.isDarkModeEnabled,
                             ),
                             TextFieldItem(
                               itemTextEditingController: profileScreenCubit.phoneTextEditingController,
                               labelText: "phone",
                               prefixImage: ImageAssets.imagesCall,
-                              isDarkEnabled: profileScreenCubit.isDarkModeEnabled,
 
                             ),
                             TextFieldItem(
@@ -88,7 +84,6 @@ class ProfileScreen extends StatelessWidget {
                               labelText: "password",
                               prefixImage: ImageAssets.lock,
                               isObsecure: true,
-                              isDarkEnabled: profileScreenCubit.isDarkModeEnabled,
                             ),
                             Padding(
                               padding:

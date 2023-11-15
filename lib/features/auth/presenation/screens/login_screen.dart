@@ -95,7 +95,7 @@ class LoginScreen extends StatelessWidget {
                       Text(
                         AppStrings.orLoginWith,
                         style:
-                            regularStyle(color: AppColors.KMediumGray, fontSize: 12),
+                            regularStyle(color: AppColors.kMediumGray, fontSize: 12),
                       ),
                       const SizedBox(
                         width: 114.5,
