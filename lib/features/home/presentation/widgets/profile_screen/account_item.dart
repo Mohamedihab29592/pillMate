@@ -59,9 +59,10 @@ class AccountItem extends StatelessWidget {
               if (suffixImage == null) Container(),
               if (suffixImage != null)
                 Image(
+                  color:  Theme.of(context).brightness == Brightness.dark ?AppColors.kLightPrimaryColor:AppColors.kPrimaryColor,
                   width: imageWidth,
                   height: imageHeight,
-                  image: AssetImage(suffixImage!),
+                  image: AssetImage(suffixImage!,),
                 ),
             ],
           ),

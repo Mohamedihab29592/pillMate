@@ -29,7 +29,7 @@ class PaymentDetailScreen extends StatelessWidget {
               child: Column(
                 // crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                   const CustomAppBar(appBarTitle: AppStrings.details,backArrow: BackArrow(
+                    CustomAppBar(appBarTitle: AppStrings.details,backArrow: BackArrow(
 
                    ),),
                   SizedBox(

@@ -27,6 +27,8 @@ class CustomTextField extends StatelessWidget {
       height: 58.h,
       width: double.infinity,
       child: TextFormField(
+        cursorColor: Theme.of(context).brightness == Brightness.dark? AppColors.white:AppColors.black,
+
         style: Theme.of(context).textTheme.titleMedium,
         obscureText: obscureText,
         decoration: InputDecoration(
@@ -58,11 +60,11 @@ class CustomTextField extends StatelessWidget {
             borderRadius: BorderRadius.all(Radius.circular(14)),
           ),
           enabledBorder:  OutlineInputBorder(
-            borderSide: BorderSide(
-              color:Theme.of(context).brightness == Brightness.dark?  AppColors.darkContainer: AppColors.grey,
-            ),
-            borderRadius: BorderRadius.all(Radius.circular(14)),
+          borderSide: BorderSide(
+            color:Theme.of(context).brightness == Brightness.dark?  AppColors.darkContainer: AppColors.grey,
           ),
+          borderRadius: BorderRadius.all(Radius.circular(14)),
+        ),
         ),
       ),
     );

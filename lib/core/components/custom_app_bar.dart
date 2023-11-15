@@ -3,10 +3,14 @@ import 'package:pill_mate/core/components/back_arrow.dart';
 import 'package:pill_mate/core/components/app_bar_pop_icon.dart';
 import 'package:pill_mate/core/components/app_bar_title.dart';
 
+import '../utils/app_colors.dart';
+
 class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
-  const CustomAppBar({super.key, required this.appBarTitle, this.appBarAction,  this.backArrow});
+  const CustomAppBar({super.key, required this.appBarTitle, this.appBarAction,  this.backArrow, this.style, this.color});
   final String appBarTitle;
   final Widget ?backArrow;
+  final Color ?color;
+  final TextStyle ?style;
   final List<Widget>? appBarAction;
 
   @override
@@ -16,9 +20,10 @@ class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
   Widget build(BuildContext context) {
     return AppBar(
       leading: backArrow,
-      backgroundColor: Colors.transparent,
+      backgroundColor:color?? AppColors.transparent,
       elevation: 0,
-      title: AppBarTitle(appBarTitle: appBarTitle),
+      title: Text(appBarTitle,style: style,),
+
       centerTitle: true,
       actions: appBarAction
     );

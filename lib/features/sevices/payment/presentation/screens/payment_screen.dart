@@ -34,7 +34,7 @@ class _PaymentScreenState extends State<PaymentScreen> {
               padding: const EdgeInsets.all(16.0),
               child: Column(
                 children: [
-                   const CustomAppBar(
+                    CustomAppBar(
                      backArrow: BackArrow(),
                     appBarTitle: AppStrings.paymentDetails,
                   ),

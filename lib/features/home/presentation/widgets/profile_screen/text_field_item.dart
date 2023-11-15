@@ -86,9 +86,10 @@ class TextFieldItem extends StatelessWidget {
             InkWell(
               onTap: () {},
               child: Image(
+
                 width: mq.size.width * 0.08,
                 height: mq.size.height * 0.08,
-                color: AppColors.kPrimaryColor,
+                color: th.brightness == Brightness.dark ? AppColors.kLightPrimaryColor:AppColors.kPrimaryColor,
                 image: AssetImage(ImageAssets.imagesEdit),
               ),
             ),

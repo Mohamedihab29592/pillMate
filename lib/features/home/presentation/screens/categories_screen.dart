@@ -45,7 +45,7 @@ class CategoriesScreen extends StatelessWidget {
     final searchCubit = BlocProvider.of<SearchCubit<CategoryModel>>(context);
     TextEditingController searchController = TextEditingController();
     return Scaffold(
-      appBar: const CustomAppBar(        backArrow: BackArrow(),
+      appBar:  CustomAppBar(        backArrow: BackArrow(),
           appBarTitle: 'Categories'),
       body: Padding(
         padding: const EdgeInsets.only(left: 16, right: 16),

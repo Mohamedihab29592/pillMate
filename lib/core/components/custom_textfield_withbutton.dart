@@ -25,18 +25,26 @@ class CustomTextFieldWithButton extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return TextField(
-      cursorColor: AppColors.black,
+
+      cursorColor: Theme.of(context).brightness == Brightness.dark? AppColors.white:AppColors.black,
       decoration: InputDecoration(
         hintText: hintText,
         hintStyle: Theme.of(context)
             .textTheme
             .bodyMedium
             ?.copyWith(fontSize: 14, color: AppColors.grey),
-        focusedBorder: OutlineInputBorder(
-          borderSide: BorderSide(color: AppColors.darkGrey, width: 1.0),
-          borderRadius: BorderRadius.circular(16),
+        focusedBorder:  OutlineInputBorder(
+          borderSide: BorderSide(
+            color:Theme.of(context).brightness == Brightness.dark?  AppColors.grey: AppColors.darkContainer,
+          ),
+          borderRadius: BorderRadius.all(Radius.circular(14)),
         ),
-        border: OutlineInputBorder(borderRadius: BorderRadius.circular(16)),
+        enabledBorder:  OutlineInputBorder(
+          borderSide: BorderSide(
+            color:Theme.of(context).brightness == Brightness.dark?  AppColors.darkContainer: AppColors.grey,
+          ),
+          borderRadius: BorderRadius.all(Radius.circular(14)),
+        ),
         suffixIcon: isButton
             ? SizedBox(
           width: 150.h,

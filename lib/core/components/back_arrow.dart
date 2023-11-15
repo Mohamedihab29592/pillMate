@@ -3,12 +3,13 @@ import 'package:flutter/material.dart';
 import '../utils/app_colors.dart';
 
 class BackArrow extends StatelessWidget {
-  const BackArrow({super.key});
+   BackArrow({super.key,this.color});
+  Color? color;
 
   @override
   Widget build(BuildContext context) {
     return IconButton(
-      color: Theme.of(context).brightness == Brightness.dark ?AppColors.kLightPrimaryColor:AppColors.kPrimaryColor,
+      color:color ?? (Theme.of(context).brightness == Brightness.dark ?AppColors.kLightPrimaryColor:AppColors.black),
         onPressed: () {
           Navigator.pop(context);
         },

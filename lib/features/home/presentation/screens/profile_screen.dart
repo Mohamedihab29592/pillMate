@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:pill_mate/core/components/back_arrow.dart';
+import 'package:pill_mate/core/components/custom_app_bar.dart';
 import 'package:pill_mate/core/utils/themes.dart';
 import '../../../../core/utils/app_assets.dart';
 import '../../../../core/utils/app_colors.dart';
@@ -22,21 +24,9 @@ class ProfileScreen extends StatelessWidget {
           ProfileScreenCubit profileScreenCubit =
               ProfileScreenCubit.get(context);
           return Scaffold(
-            appBar: AppBar(
-              leading: IconButton(
-                icon: Icon(Icons.arrow_back_ios),
-                iconSize: 15,
-                color: AppColors.black,
-                onPressed: () {},
-              ),
-              titleTextStyle: TextStyle(color: AppColors.black),
-              centerTitle: true,
-              backgroundColor: AppColors.kPrimaryColor,
-              title: const Text("Edit Profile"),
-              elevation: 0,
-            ),
+            appBar: CustomAppBar(color:AppColors.kDarkPrimaryColor,appBarTitle: 'Edit Profile',style: const TextStyle(color: AppColors.black),backArrow: BackArrow(color: AppColors.black,),),
             body: Container(
-              color: AppColors.kPrimaryColor,
+              color: AppColors.kDarkPrimaryColor,
               width: mq.size.width,
               height: mq.size.height,
               child: Stack(
@@ -50,7 +40,7 @@ class ProfileScreen extends StatelessWidget {
                           left: 12.0, right: 10.0, bottom: 5.0, top: 5.0),
                       decoration: BoxDecoration(
                           color: th.scaffoldBackgroundColor,
-                          borderRadius: BorderRadius.only(
+                          borderRadius: const BorderRadius.only(
                             topLeft: Radius.circular(15),
                             topRight: Radius.circular(15),
                           )),
@@ -63,7 +53,7 @@ class ProfileScreen extends StatelessWidget {
                             GestureDetector(
                               child: SizedBox(
                                 width: mq.size.width * 0.7,
-                                child: Row(
+                                child: const Row(
                                   mainAxisAlignment: MainAxisAlignment.center,
                                   children: [
                                     Text(
@@ -105,7 +95,7 @@ class ProfileScreen extends StatelessWidget {
                                   const EdgeInsets.only(bottom: 5.0, top: 5.0),
                               child: Material(
                                 borderRadius: BorderRadius.circular(10.0),
-                                color: AppColors.kPrimaryColor,
+                                color: AppColors.kDarkPrimaryColor,
                                 child: InkWell(
                                   borderRadius: BorderRadius.circular(10.0),
                                   onTap: () {},
@@ -113,10 +103,10 @@ class ProfileScreen extends StatelessWidget {
                                     alignment: Alignment.center,
                                     width: mq.size.width,
                                     height: mq.size.height * 0.07,
-                                    child: Text(
+                                    child: const Text(
                                       "Add An Account",
                                       textAlign: TextAlign.center,
-                                      style: TextStyle(fontSize: 20),
+                                      style: TextStyle(fontSize: 20,color: AppColors.black),
                                     ),
                                   ),
                                 ),
@@ -130,11 +120,11 @@ class ProfileScreen extends StatelessWidget {
                   Positioned(
                     top: mq.size.height * 0.04,
                     left: mq.size.width / 3,
-                    child: CircleAvatar(
+                    child: const CircleAvatar(
+                      radius: 60,
                       child: Image(
                         image: AssetImage(ImageAssets.imagesProfile),
                       ),
-                      radius: 60,
                     ),
                   ),
                 ],

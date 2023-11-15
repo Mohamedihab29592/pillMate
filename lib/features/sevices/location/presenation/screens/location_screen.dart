@@ -20,7 +20,7 @@ class LocationScreen extends StatelessWidget {
             padding: EdgeInsets.all(20.sp),
             child: Column(
               children: [
-                const Row(
+                 Row(
                   children: [
                     BackArrow(),
                   ],

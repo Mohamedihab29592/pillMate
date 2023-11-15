@@ -60,7 +60,7 @@ class ToggleItem extends StatelessWidget {
                 child: Image(
                   width: imageWidth,
                   height: imageHeight,
-                  color: isEnabled ? AppColors.kPrimaryColor : AppColors.grey,
+                  color: isEnabled ? th.brightness == Brightness.dark ?AppColors.kLightPrimaryColor:AppColors.kPrimaryColor : AppColors.grey,
                   image: AssetImage(isEnabled
                       ? ImageAssets.imagesToggleOnCircle
                       : ImageAssets.imagesToggleOffCircle),

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:pill_mate/core/components/custom_app_bar.dart';
 import 'package:pill_mate/core/functions/navigate.dart';
 import 'package:pill_mate/core/utils/app_assets.dart';
 
@@ -26,31 +27,18 @@ class AccountScreen extends StatelessWidget {
           ProfileScreenCubit profileScreenCubit =
               ProfileScreenCubit.get(context);
           return Scaffold(
-            appBar: AppBar(
-              leading: IconButton(
-                icon: Icon(Icons.arrow_back_ios),
-                iconSize: 15,
-                onPressed: () {},
-              ),
-              titleTextStyle: th.textTheme.titleLarge,
-              centerTitle: true,
-              title: Text(
-                "Account",
-                style: th.textTheme.titleSmall,
-              ),
-              elevation: 0,
-            ),
+            appBar: const CustomAppBar(appBarTitle: 'Account',),
             body: Container(
               width: mq.size.width,
               height: mq.size.height,
               padding: EdgeInsets.only(top: mq.size.height * 0.05),
               child: Column(
                 children: [
-                  CircleAvatar(
+                  const CircleAvatar(
+                    radius: 60,
                     child: Image(
                       image: AssetImage(ImageAssets.imagesProfile),
                     ),
-                    radius: 60,
                   ),
                   SizedBox(
                     height: mq.size.height * 0.02,
@@ -140,7 +128,9 @@ class AccountScreen extends StatelessWidget {
                     itemHeight: mq.size.height * 0.06,
                     isDarkModeEnabled: profileScreenCubit.isDarkModeEnabled,
                     title: "Log Out",
-                    onTapAction: () {},
+                    onTapAction: () {
+                      navigateAndKill(context: context, route: Routes.login);
+                    },
                   ),
                 ],
               ),
