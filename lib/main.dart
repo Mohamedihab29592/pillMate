@@ -14,8 +14,11 @@ void main() async {
 
   final sharedPreferences = await SharedPreferences.getInstance();
   bool? isDarkMode = sharedPreferences.getBool("isDarkMode") ?? false;
-  SystemChrome.setSystemUIOverlayStyle(
-      const SystemUiOverlayStyle(statusBarColor: Colors.transparent));
+  SystemChrome.setSystemUIOverlayStyle(SystemUiOverlayStyle(
+    statusBarColor: Colors.transparent,
+    statusBarIconBrightness:
+    isDarkMode ? Brightness.light : Brightness.dark,
+  ));
   runApp(MyApp(isDarkMode: isDarkMode));
 }
 
@@ -32,8 +35,8 @@ class MyApp extends StatelessWidget {
           create: (context) => LocaleCubit()..changeAppMode(fromShared: isDarkMode),
         ),
       ],
-      child: BlocBuilder<LocaleCubit,LocalStates>(
-        builder: (context,state) {
+      child: BlocBuilder<LocaleCubit, LocalStates>(
+        builder: (context, state) {
           return ScreenUtilInit(
             designSize: const Size(428, 926),
             child: MaterialApp(
@@ -46,6 +49,18 @@ class MyApp extends StatelessWidget {
               theme: AppThemes.lightMode,
               initialRoute: Routes.initialRoute,
               routes: buildRoutes(context),
+              builder: (context, child) {
+                return AnnotatedRegion<SystemUiOverlayStyle>(
+                  value: SystemUiOverlayStyle(
+                    statusBarColor: Colors.transparent,
+                    statusBarIconBrightness:
+                    BlocProvider.of<LocaleCubit>(context).isDarkMode
+                        ? Brightness.light
+                        : Brightness.dark,
+                  ),
+                  child: child!,
+                );
+              },
             ),
           );
         },
