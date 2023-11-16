@@ -37,11 +37,7 @@ class PayNowScreen extends StatelessWidget {
               SizedBox(
                 height: 83.h,
               ),
-              SizedBox(
-                  width: MediaQuery.of(context).size.width,
-                  height: 46.h,
-                  child: CustomButton(onTap: () { navigateAndKill(context: context, route: Routes.layOut); },text: 'Back to home', ),
-              )
+              CustomButton(onTap: () { navigateAndKill(context: context, route: Routes.layOut); },text: 'Back to home', )
             ],
           ),
         ),

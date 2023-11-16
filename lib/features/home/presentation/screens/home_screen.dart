@@ -32,9 +32,9 @@ class _HomeScreenState extends State<HomeScreen> {
     PageController pageController = PageController();
 
     final List<String> images = [
-      'assets/images/slider.png',
-      'assets/images/slider.png',
-      'assets/images/slider.png',
+      'assets/images/home/slider.png',
+      'assets/images/home/slider.png',
+      'assets/images/home/slider.png',
     ];
 
     final List<String> imagesCateogry = [
@@ -124,16 +124,16 @@ class _HomeScreenState extends State<HomeScreen> {
                     },
                     itemBuilder: (BuildContext context, int index) {
                       return Container(
-                          margin: const EdgeInsets.symmetric(horizontal: 3.0), // Add spacing
+                          margin: const EdgeInsets.symmetric(horizontal: 3.0),
                       decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(16.0), // Make it rounded
-                      color: Colors.white, // Set the background color (if needed)
+                      borderRadius: BorderRadius.circular(16.0),
+                      color: Colors.white,
                       ),
                         child: ClipRRect(
                           borderRadius: BorderRadius.circular(16.0),
                           child: Image(
                             image: AssetImage(images[index]),
-                            fit: BoxFit.cover,
+                            fit: BoxFit.fill,
                             width: double.infinity,
                           ),
                         ),

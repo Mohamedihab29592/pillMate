@@ -17,15 +17,21 @@ class PageContent extends StatelessWidget {
       child: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
-          Image.asset(
-            image,
-            alignment: Alignment.center,
+          Expanded(
+            flex: 2,
+            child: Image.asset(
+              image,
+              alignment: Alignment.center,
+            ),
           ),
           const SizedBox(height: 10,),
-          Text(
-            description,
-            textAlign: TextAlign.center,
-            style: Theme.of(context).textTheme.titleMedium
+          Expanded(
+            flex: 1,
+            child: Text(
+              description,
+              textAlign: TextAlign.center,
+              style: Theme.of(context).textTheme.titleMedium
+            ),
           ),
         ],
       ),

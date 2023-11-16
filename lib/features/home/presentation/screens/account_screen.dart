@@ -50,85 +50,101 @@ class AccountScreen extends StatelessWidget {
                   SizedBox(
                     height: mq.size.height * 0.03,
                   ),
-                  AccountItem(
-                    preffixImage: ImageAssets.imagesUser,
-                    suffixImage: ImageAssets.imagesRight,
-                    imageHeight: mq.size.height * 0.08,
-                    imageWidth: mq.size.width * 0.08,
-                    itemHeight: mq.size.height * 0.06,
-                    title: "Profile",
-                    onTapAction: () {
-                      navigate(context: context, route: Routes.profileScreen);
-                    },
+                  Expanded(
+                    child: AccountItem(
+                      preffixImage: ImageAssets.imagesUser,
+                      suffixImage: ImageAssets.imagesRight,
+                      imageHeight: mq.size.height * 0.08,
+                      imageWidth: mq.size.width * 0.08,
+                      itemHeight: mq.size.height * 0.06,
+                      title: "Profile",
+                      onTapAction: () {
+                        navigate(context: context, route: Routes.profileScreen);
+                      },
+                    ),
                   ),
-                  ToggleItem(
-                    imageHeight: mq.size.height * 0.08,
-                    imageWidth: mq.size.width * 0.08,
-                    itemHeight: mq.size.height * 0.06,
-                    title: "notifications",
-                    isEnabled:
-                        ProfileScreenCubit.get(context).isNotificationEnabled,
-                    onTapItemAction: (){
-                      navigate(context: context, route: Routes.notificationScreen);
-                    },
-                    onTapAction: () {
-                      ProfileScreenCubit.get(context).changeNotification();
-                    },
-                    preffixImage: ImageAssets.imagesNotificationBing,
+                  Expanded(
+                    child: ToggleItem(
+                      imageHeight: mq.size.height * 0.08,
+                      imageWidth: mq.size.width * 0.08,
+                      itemHeight: mq.size.height * 0.06,
+                      title: "notifications",
+                      isEnabled:
+                          ProfileScreenCubit.get(context).isNotificationEnabled,
+                      onTapItemAction: (){
+                        navigate(context: context, route: Routes.notificationScreen);
+                      },
+                      onTapAction: () {
+                        ProfileScreenCubit.get(context).changeNotification();
+                      },
+                      preffixImage: ImageAssets.imagesNotificationBing,
+                    ),
                   ),
                  BlocBuilder<LocaleCubit,LocalStates>(builder: (context,state){
-                   return  ToggleItem(
-                     imageHeight: mq.size.height * 0.08,
-                     imageWidth: mq.size.width * 0.08,
-                     itemHeight: mq.size.height * 0.06,
-                     title: "Dark Mode",
-                     isEnabled: LocaleCubit.get(context).isDarkMode,
-                     onTapAction: () {
-                       LocaleCubit.get(context).changeAppMode();
+                   return  Expanded(
+                     child: ToggleItem(
+                       imageHeight: mq.size.height * 0.08,
+                       imageWidth: mq.size.width * 0.08,
+                       itemHeight: mq.size.height * 0.06,
+                       title: "Dark Mode",
+                       isEnabled: LocaleCubit.get(context).isDarkMode,
+                       onTapAction: () {
+                         LocaleCubit.get(context).changeAppMode();
 
-                     },
-                     preffixImage: ImageAssets.imagesMoon,
+                       },
+                       preffixImage: ImageAssets.imagesMoon,
+                     ),
                    );
                  }),
-                  AccountItem(
-                    preffixImage: ImageAssets.imagesGlobal,
-                    suffixImage: ImageAssets.imagesRight,
-                    imageHeight: mq.size.height * 0.08,
-                    imageWidth: mq.size.width * 0.08,
-                    itemHeight: mq.size.height * 0.06,
-                    title: "Language",
-                    onTapAction: () {
+                  Expanded(
+                    child: AccountItem(
+                      preffixImage: ImageAssets.imagesGlobal,
+                      suffixImage: ImageAssets.imagesRight,
+                      imageHeight: mq.size.height * 0.08,
+                      imageWidth: mq.size.width * 0.08,
+                      itemHeight: mq.size.height * 0.06,
+                      title: "Language",
+                      onTapAction: () {
 
-                    },
+                      },
+                    ),
                   ),
-                  AccountItem(
-                    preffixImage: ImageAssets.imagesWallet3,
-                    suffixImage: ImageAssets.imagesRight,
-                    imageHeight: mq.size.height * 0.08,
-                    imageWidth: mq.size.width * 0.08,
-                    itemHeight: mq.size.height * 0.06,
-                    title: "payment Method",
-                    onTapAction: () {},
+                  Expanded(
+                    child: AccountItem(
+                      preffixImage: ImageAssets.imagesWallet3,
+                      suffixImage: ImageAssets.imagesRight,
+                      imageHeight: mq.size.height * 0.08,
+                      imageWidth: mq.size.width * 0.08,
+                      itemHeight: mq.size.height * 0.06,
+                      title: "payment Method",
+                      onTapAction: () {},
+                    ),
                   ),
-                  AccountItem(
-                    preffixImage: ImageAssets.imagesCall,
-                    suffixImage: ImageAssets.imagesRight,
-                    imageHeight: mq.size.height * 0.08,
-                    imageWidth: mq.size.width * 0.08,
-                    itemHeight: mq.size.height * 0.06,
-                    title: "contact us",
-                    onTapAction: () {},
+                  Expanded(
+                    child: AccountItem(
+                      preffixImage: ImageAssets.imagesCall,
+                      suffixImage: ImageAssets.imagesRight,
+                      imageHeight: mq.size.height * 0.08,
+                      imageWidth: mq.size.width * 0.08,
+                      itemHeight: mq.size.height * 0.06,
+                      title: "contact us",
+                      onTapAction: () {},
+                    ),
                   ),
-                  AccountItem(
-                    preffixImage: ImageAssets.imagesLogout,
-                    imageHeight: mq.size.height * 0.08,
-                    imageWidth: mq.size.width * 0.08,
-                    itemHeight: mq.size.height * 0.06,
-                    title: "Log Out",
-                    onTapAction: () {
-                      navigateAndKill(context: context, route: Routes.login);
-                    },
+                  Expanded(
+                    child: AccountItem(
+                      preffixImage: ImageAssets.imagesLogout,
+                      imageHeight: mq.size.height * 0.08,
+                      imageWidth: mq.size.width * 0.08,
+                      itemHeight: mq.size.height * 0.06,
+                      title: "Log Out",
+                      onTapAction: () {
+                        navigateAndKill(context: context, route: Routes.login);
+                      },
+                    ),
                   ),
+
+
                 ],
               ),
             ),

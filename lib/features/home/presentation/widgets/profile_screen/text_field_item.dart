@@ -59,12 +59,16 @@ class TextFieldItem extends StatelessWidget {
                 color: th.dividerColor),
             Expanded(
               child: TextField(
+                cursorColor: th.brightness == Brightness.dark
+                    ? AppColors.white
+                    : AppColors.black,
                 controller: itemTextEditingController,
                 style: th.textTheme.titleLarge,
                 obscureText: isObsecure,
                 keyboardType: isObsecure ? TextInputType.visiblePassword : null,
                 decoration: InputDecoration(
-                  labelText: labelText,
+
+                  hintText: labelText,
                   enabledBorder: UnderlineInputBorder(
                     borderSide: BorderSide(color: th.brightness == Brightness.dark
                         ? AppColors.darkContainer

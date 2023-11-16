@@ -93,7 +93,7 @@ class _PageViewSectionState extends State<PageViewSection> {
               children: [
                 CustomButton(
                   onTap: () {
-                    navigate(context: context, route: Routes.login);
+                    navigateAndKill(context: context, route: Routes.login);
                   },
                   text: 'Login',
                 ),
@@ -101,7 +101,7 @@ class _PageViewSectionState extends State<PageViewSection> {
                 CustomColoredButton(
                   text: 'Register',
                   onTap: () {
-                    navigate(context: context, route: Routes.register);
+                    navigateAndKill(context: context, route: Routes.register);
                   },
                   color: Theme.of(context).brightness == Brightness.dark
                       ? AppColors.black

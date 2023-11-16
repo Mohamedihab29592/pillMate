@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:pill_mate/core/components/back_arrow.dart';
 import 'package:pill_mate/core/components/custom_app_bar.dart';
+import '../../../../core/components/custom_button.dart';
 import '../../../../core/utils/app_assets.dart';
 import '../../../../core/utils/app_colors.dart';
 import '../bloc/cubit/profile/profile_cubit.dart';
@@ -24,26 +25,27 @@ class ProfileScreen extends StatelessWidget {
               ProfileScreenCubit.get(context);
           return Scaffold(
             appBar: CustomAppBar(color:AppColors.kDarkPrimaryColor,appBarTitle: 'Edit Profile',style: const TextStyle(color: AppColors.black),backArrow: BackArrow(color: AppColors.black,),),
-            body: Container(
-              color: AppColors.kDarkPrimaryColor,
-              width: mq.size.width,
-              height: mq.size.height,
-              child: Stack(
-                children: [
-                  Align(
-                    alignment: Alignment.bottomCenter,
-                    child: Container(
-                      width: mq.size.width,
-                      height: mq.size.height * 0.76,
-                      padding: const EdgeInsets.only(
-                          left: 12.0, right: 10.0, bottom: 5.0, top: 5.0),
-                      decoration: BoxDecoration(
-                          color: th.scaffoldBackgroundColor,
-                          borderRadius: const BorderRadius.only(
-                            topLeft: Radius.circular(15),
-                            topRight: Radius.circular(15),
-                          )),
-                      child: SingleChildScrollView(
+            body: SingleChildScrollView(
+
+              child: Container(
+                color: AppColors.kDarkPrimaryColor,
+                width: mq.size.width,
+                height: mq.size.height,
+                child: Stack(
+                  children: [
+                    Align(
+                      alignment: Alignment.bottomCenter,
+                      child: Container(
+                        width: mq.size.width,
+                        height: mq.size.height * 0.88,
+                        padding: const EdgeInsets.only(
+                            left: 12.0, right: 10.0, bottom: 5.0, top: 5.0),
+                        decoration: BoxDecoration(
+                            color: th.scaffoldBackgroundColor,
+                            borderRadius: const BorderRadius.only(
+                              topLeft: Radius.circular(15),
+                              topRight: Radius.circular(15),
+                            )),
                         child: Column(
                           children: [
                             SizedBox(
@@ -85,44 +87,24 @@ class ProfileScreen extends StatelessWidget {
                               prefixImage: ImageAssets.lock,
                               isObsecure: true,
                             ),
-                            Padding(
-                              padding:
-                                  const EdgeInsets.only(bottom: 5.0, top: 5.0),
-                              child: Material(
-                                borderRadius: BorderRadius.circular(10.0),
-                                color: AppColors.kDarkPrimaryColor,
-                                child: InkWell(
-                                  borderRadius: BorderRadius.circular(10.0),
-                                  onTap: () {},
-                                  child: Container(
-                                    alignment: Alignment.center,
-                                    width: mq.size.width,
-                                    height: mq.size.height * 0.07,
-                                    child: const Text(
-                                      "Add An Account",
-                                      textAlign: TextAlign.center,
-                                      style: TextStyle(fontSize: 20,color: AppColors.black),
-                                    ),
-                                  ),
-                                ),
-                              ),
-                            ),
+                            CustomButton(onTap: () {  }, text: 'Add An Account',),
+
                           ],
                         ),
                       ),
                     ),
-                  ),
-                  Positioned(
-                    top: mq.size.height * 0.04,
-                    left: mq.size.width / 3,
-                    child: const CircleAvatar(
-                      radius: 60,
-                      child: Image(
-                        image: AssetImage(ImageAssets.imagesProfile),
+                    Positioned(
+                      top: mq.size.height * 0.04,
+                      left: mq.size.width / 3,
+                      child: const CircleAvatar(
+                        radius: 60,
+                        child: Image(
+                          image: AssetImage(ImageAssets.imagesProfile),
+                        ),
                       ),
                     ),
-                  ),
-                ],
+                  ],
+                ),
               ),
             ),
           );
